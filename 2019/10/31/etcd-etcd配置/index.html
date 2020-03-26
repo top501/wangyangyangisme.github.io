@@ -73,175 +73,209 @@ function activateLightMode(){
 }</script><script>var GLOBAL_CONFIG_SITE = { 
   isPost: true,
   isHome: false
-}</script></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Etcd配置"><span class="toc-text">Etcd配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#成员标记"><span class="toc-text">成员标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–name"><span class="toc-text">–name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–data-dir"><span class="toc-text">–data-dir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–wal-dir"><span class="toc-text">–wal-dir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–snapshot-count"><span class="toc-text">–snapshot-count</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–heartbeat-interval"><span class="toc-text">–heartbeat-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–election-timeout"><span class="toc-text">–election-timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–listen-peer-urls"><span class="toc-text">–listen-peer-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–listen-client-urls"><span class="toc-text">–listen-client-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–max-snapshots"><span class="toc-text">–max-snapshots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–max-wals"><span class="toc-text">–max-wals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–cors"><span class="toc-text">–cors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–quota-backend-bytes"><span class="toc-text">–quota-backend-bytes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–backend-batch-limit"><span class="toc-text">–backend-batch-limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–backend-batch-interval"><span class="toc-text">–backend-batch-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–max-txn-ops"><span class="toc-text">–max-txn-ops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–max-request-bytes"><span class="toc-text">–max-request-bytes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–grpc-keepalive-min-time"><span class="toc-text">–grpc-keepalive-min-time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–grpc-keepalive-interval"><span class="toc-text">–grpc-keepalive-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–grpc-keepalive-timeout"><span class="toc-text">–grpc-keepalive-timeout</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集群标记"><span class="toc-text">集群标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–initial-advertise-peer-urls"><span class="toc-text">–initial-advertise-peer-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–initial-cluster"><span class="toc-text">–initial-cluster</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–initial-cluster-state"><span class="toc-text">–initial-cluster-state</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–initial-cluster-token"><span class="toc-text">–initial-cluster-token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–advertise-client-urls"><span class="toc-text">–advertise-client-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–discovery"><span class="toc-text">–discovery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–discovery-srv"><span class="toc-text">–discovery-srv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–discovery-srv-name"><span class="toc-text">–discovery-srv-name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–discovery-fallback"><span class="toc-text">–discovery-fallback</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–discovery-proxy"><span class="toc-text">–discovery-proxy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–strict-reconfig-check"><span class="toc-text">–strict-reconfig-check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–auto-compaction-retention"><span class="toc-text">–auto-compaction-retention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–auto-compaction-mode"><span class="toc-text">–auto-compaction-mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–enable-v2"><span class="toc-text">–enable-v2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxy-flags"><span class="toc-text">Proxy flags</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–proxy"><span class="toc-text">–proxy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–proxy-failure-wait"><span class="toc-text">–proxy-failure-wait</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–proxy-refresh-interval"><span class="toc-text">–proxy-refresh-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–proxy-dial-timeout"><span class="toc-text">–proxy-dial-timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–proxy-write-timeout"><span class="toc-text">–proxy-write-timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–proxy-read-timeout"><span class="toc-text">–proxy-read-timeout</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全标记"><span class="toc-text">安全标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–ca-file-弃用"><span class="toc-text">–ca-file [弃用]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–cert-file"><span class="toc-text">–cert-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–key-file"><span class="toc-text">–key-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–client-cert-auth"><span class="toc-text">–client-cert-auth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–client-crl-file"><span class="toc-text">–client-crl-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–client-cert-allowed-hostname"><span class="toc-text">–client-cert-allowed-hostname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–trusted-ca-file"><span class="toc-text">–trusted-ca-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–auto-tls"><span class="toc-text">–auto-tls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-ca-file-弃用"><span class="toc-text">–peer-ca-file [弃用]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-cert-file"><span class="toc-text">–peer-cert-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-key-file"><span class="toc-text">–peer-key-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-client-cert-auth"><span class="toc-text">–peer-client-cert-auth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-crl-file"><span class="toc-text">–peer-crl-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-trusted-ca-file"><span class="toc-text">–peer-trusted-ca-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-auto-tls"><span class="toc-text">–peer-auto-tls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-cert-allowed-cn"><span class="toc-text">–peer-cert-allowed-cn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–peer-cert-allowed-hostname"><span class="toc-text">–peer-cert-allowed-hostname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–cipher-suites"><span class="toc-text">–cipher-suites</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志标记"><span class="toc-text">日志标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–logger"><span class="toc-text">–logger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–log-outputs"><span class="toc-text">–log-outputs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–log-level"><span class="toc-text">–log-level</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–debug"><span class="toc-text">–debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–log-package-levels"><span class="toc-text">–log-package-levels</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不安全的标记"><span class="toc-text">不安全的标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–force-new-cluster"><span class="toc-text">–force-new-cluster</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他标记"><span class="toc-text">其他标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–version"><span class="toc-text">–version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–config-file"><span class="toc-text">–config-file</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析标记"><span class="toc-text">分析标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–enable-pprof"><span class="toc-text">–enable-pprof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–metrics"><span class="toc-text">–metrics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–listen-metrics-urls"><span class="toc-text">–listen-metrics-urls</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#认证标记"><span class="toc-text">认证标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–auth-token"><span class="toc-text">–auth-token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–bcrypt-cost"><span class="toc-text">–bcrypt-cost</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验性标志"><span class="toc-text">实验性标志</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#–experimental-backend-bbolt-freelist-type"><span class="toc-text">–experimental-backend-bbolt-freelist-type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–experimental-corrupt-check-time"><span class="toc-text">–experimental-corrupt-check-time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–experimental-compaction-batch-limit"><span class="toc-text">–experimental-compaction-batch-limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#–experimental-peer-skip-client-san-verification"><span class="toc-text">–experimental-peer-skip-client-san-verification</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/etcd/1d5c1c1f521d39433514309016be0bc6.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Etcd配置</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-10-31<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/etcd/">etcd</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">3.6k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 12 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="Etcd配置"><a href="#Etcd配置" class="headerlink" title="Etcd配置"></a>Etcd配置</h1><p>etcd 可以通过命令行标记和环境变量来配置。命令行上设置的选项优先于环境变量。</p>
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#etcd配置"><span class="toc-text"> Etcd配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#成员标记"><span class="toc-text"> 成员标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#name"><span class="toc-text"> –name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data-dir"><span class="toc-text"> –data-dir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wal-dir"><span class="toc-text"> –wal-dir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#snapshot-count"><span class="toc-text"> –snapshot-count</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#heartbeat-interval"><span class="toc-text"> –heartbeat-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#election-timeout"><span class="toc-text"> –election-timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listen-peer-urls"><span class="toc-text"> –listen-peer-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listen-client-urls"><span class="toc-text"> –listen-client-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-snapshots"><span class="toc-text"> –max-snapshots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-wals"><span class="toc-text"> –max-wals</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cors"><span class="toc-text"> –cors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quota-backend-bytes"><span class="toc-text"> –quota-backend-bytes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#backend-batch-limit"><span class="toc-text"> –backend-batch-limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#backend-batch-interval"><span class="toc-text"> –backend-batch-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-txn-ops"><span class="toc-text"> –max-txn-ops</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-request-bytes"><span class="toc-text"> –max-request-bytes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grpc-keepalive-min-time"><span class="toc-text"> –grpc-keepalive-min-time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grpc-keepalive-interval"><span class="toc-text"> –grpc-keepalive-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#grpc-keepalive-timeout"><span class="toc-text"> –grpc-keepalive-timeout</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集群标记"><span class="toc-text"> 集群标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#initial-advertise-peer-urls"><span class="toc-text"> –initial-advertise-peer-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#initial-cluster"><span class="toc-text"> –initial-cluster</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#initial-cluster-state"><span class="toc-text"> –initial-cluster-state</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#initial-cluster-token"><span class="toc-text"> –initial-cluster-token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#advertise-client-urls"><span class="toc-text"> –advertise-client-urls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discovery"><span class="toc-text"> –discovery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discovery-srv"><span class="toc-text"> –discovery-srv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discovery-srv-name"><span class="toc-text"> –discovery-srv-name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discovery-fallback"><span class="toc-text"> –discovery-fallback</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#discovery-proxy"><span class="toc-text"> –discovery-proxy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strict-reconfig-check"><span class="toc-text"> –strict-reconfig-check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#auto-compaction-retention"><span class="toc-text"> –auto-compaction-retention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#auto-compaction-mode"><span class="toc-text"> –auto-compaction-mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#enable-v2"><span class="toc-text"> –enable-v2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxy-flags"><span class="toc-text"> Proxy flags</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#proxy"><span class="toc-text"> –proxy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proxy-failure-wait"><span class="toc-text"> –proxy-failure-wait</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proxy-refresh-interval"><span class="toc-text"> –proxy-refresh-interval</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proxy-dial-timeout"><span class="toc-text"> –proxy-dial-timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proxy-write-timeout"><span class="toc-text"> –proxy-write-timeout</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#proxy-read-timeout"><span class="toc-text"> –proxy-read-timeout</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全标记"><span class="toc-text"> 安全标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ca-file-弃用"><span class="toc-text"> –ca-file [弃用]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cert-file"><span class="toc-text"> –cert-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#key-file"><span class="toc-text"> –key-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#client-cert-auth"><span class="toc-text"> –client-cert-auth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#client-crl-file"><span class="toc-text"> –client-crl-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#client-cert-allowed-hostname"><span class="toc-text"> –client-cert-allowed-hostname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trusted-ca-file"><span class="toc-text"> –trusted-ca-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#auto-tls"><span class="toc-text"> –auto-tls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-ca-file-弃用"><span class="toc-text"> –peer-ca-file [弃用]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-cert-file"><span class="toc-text"> –peer-cert-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-key-file"><span class="toc-text"> –peer-key-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-client-cert-auth"><span class="toc-text"> –peer-client-cert-auth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-crl-file"><span class="toc-text"> –peer-crl-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-trusted-ca-file"><span class="toc-text"> –peer-trusted-ca-file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-auto-tls"><span class="toc-text"> –peer-auto-tls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-cert-allowed-cn"><span class="toc-text"> –peer-cert-allowed-cn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#peer-cert-allowed-hostname"><span class="toc-text"> –peer-cert-allowed-hostname</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cipher-suites"><span class="toc-text"> –cipher-suites</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日志标记"><span class="toc-text"> 日志标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#logger"><span class="toc-text"> –logger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-outputs"><span class="toc-text"> –log-outputs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-level"><span class="toc-text"> –log-level</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#debug"><span class="toc-text"> –debug</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-package-levels"><span class="toc-text"> –log-package-levels</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不安全的标记"><span class="toc-text"> 不安全的标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#force-new-cluster"><span class="toc-text"> –force-new-cluster</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他标记"><span class="toc-text"> 其他标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#version"><span class="toc-text"> –version</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#config-file"><span class="toc-text"> –config-file</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析标记"><span class="toc-text"> 分析标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#enable-pprof"><span class="toc-text"> –enable-pprof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#metrics"><span class="toc-text"> –metrics</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listen-metrics-urls"><span class="toc-text"> –listen-metrics-urls</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#认证标记"><span class="toc-text"> 认证标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#auth-token"><span class="toc-text"> –auth-token</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bcrypt-cost"><span class="toc-text"> –bcrypt-cost</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实验性标志"><span class="toc-text"> 实验性标志</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#experimental-backend-bbolt-freelist-type"><span class="toc-text"> –experimental-backend-bbolt-freelist-type</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#experimental-corrupt-check-time"><span class="toc-text"> –experimental-corrupt-check-time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#experimental-compaction-batch-limit"><span class="toc-text"> –experimental-compaction-batch-limit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#experimental-peer-skip-client-san-verification"><span class="toc-text"> –experimental-peer-skip-client-san-verification</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/etcd/1d5c1c1f521d39433514309016be0bc6.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">Etcd配置</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-10-31<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/etcd/">etcd</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">3.6k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 12 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="etcd配置"><a class="markdownIt-Anchor" href="#etcd配置"></a> Etcd配置</h1>
+<p>etcd 可以通过命令行标记和环境变量来配置。命令行上设置的选项优先于环境变量。</p>
 <p>对于标记 <code>--my-flag</code> 环境变量的格式是 <code>ETCD_MY_FLAG</code>。 适用于所有标记。</p>
 <p><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=etcd" target="_blank" rel="noopener">正式的ectd端口</a> 是 2379 用于客户端连接，而 2380 用于伙伴通讯。etcd 端口可以设置为接受 TLS 通讯，non-TLS 通讯，或者同时有 TLS 和 non-TLS 通讯。</p>
 <p>为了在 linux 启动试使用自定义设置自动启动 etcd ，强烈推荐使用 <a href="http://freedesktop.org/wiki/Software/systemd/" target="_blank" rel="noopener">systemd</a>单元。</p>
-<h2 id="成员标记"><a href="#成员标记" class="headerlink" title="成员标记"></a>成员标记</h2><h3 id="–name"><a href="#–name" class="headerlink" title="–name"></a>–name</h3><ul>
+<h2 id="成员标记"><a class="markdownIt-Anchor" href="#成员标记"></a> 成员标记</h2>
+<h3 id="name"><a class="markdownIt-Anchor" href="#name"></a> –name</h3>
+<ul>
 <li>成员的可读性的名字.</li>
 <li>默认: “default”</li>
 <li>环境变量: ETCD_NAME</li>
 <li>这个值被作为这个节点自己的入口中被引用， 在 <code>--initial-cluster</code> 标记(例如, <code>default=http://localhost:2380</code>)中列出。如果使用 <a href="https://github.com/doczhcn/etcd/blob/master/documentation/op-guide/clustering.md#static" target="_blank" rel="noopener">static bootstrapping</a>,这需要匹配在标记中使用的key。当使用发现时，每个成员必须有唯一名字。<code>Hostname</code> 或 <code>machine-id</code> 可以是一个好选择。</li>
 </ul>
-<h3 id="–data-dir"><a href="#–data-dir" class="headerlink" title="–data-dir"></a>–data-dir</h3><ul>
+<h3 id="data-dir"><a class="markdownIt-Anchor" href="#data-dir"></a> –data-dir</h3>
+<ul>
 <li>到数据目录的路径.</li>
 <li>默认: “${name}.etcd”</li>
 <li>环境变量: ETCD_DATA_DIR</li>
 </ul>
-<h3 id="–wal-dir"><a href="#–wal-dir" class="headerlink" title="–wal-dir"></a>–wal-dir</h3><ul>
+<h3 id="wal-dir"><a class="markdownIt-Anchor" href="#wal-dir"></a> –wal-dir</h3>
+<ul>
 <li>到专用的 wal 目录的路径。如果这个标记被设置，etcd将写 WAL 文件到 walDIR 而不是 dataDIR。这容许使用专门的硬盘，并帮助避免日志和其他IO操作之间的IO竞争。</li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_WAL_DIR</li>
 </ul>
-<h3 id="–snapshot-count"><a href="#–snapshot-count" class="headerlink" title="–snapshot-count"></a>–snapshot-count</h3><ul>
+<h3 id="snapshot-count"><a class="markdownIt-Anchor" href="#snapshot-count"></a> –snapshot-count</h3>
+<ul>
 <li>触发快照到硬盘的已提交事务的数量.</li>
 <li>默认: “10000”</li>
 <li>环境变量: ETCD_SNAPSHOT_COUNT</li>
 </ul>
-<h3 id="–heartbeat-interval"><a href="#–heartbeat-interval" class="headerlink" title="–heartbeat-interval"></a>–heartbeat-interval</h3><ul>
+<h3 id="heartbeat-interval"><a class="markdownIt-Anchor" href="#heartbeat-interval"></a> –heartbeat-interval</h3>
+<ul>
 <li>心跳间隔时间 (单位 毫秒).</li>
 <li>默认: “100”</li>
 <li>环境变量: ETCD_HEARTBEAT_INTERVAL</li>
 </ul>
-<h3 id="–election-timeout"><a href="#–election-timeout" class="headerlink" title="–election-timeout"></a>–election-timeout</h3><ul>
+<h3 id="election-timeout"><a class="markdownIt-Anchor" href="#election-timeout"></a> –election-timeout</h3>
+<ul>
 <li>选举的超时时间(单位 毫秒). 阅读 <a href="https://github.com/coreos/etcd/blob/master/Documentation/tuning.md#time-parameters" target="_blank" rel="noopener">Documentation/tuning.md</a> 得到更多详情.</li>
 <li>默认: “1000”</li>
 <li>环境变量: ETCD_ELECTION_TIMEOUT</li>
 </ul>
-<h3 id="–listen-peer-urls"><a href="#–listen-peer-urls" class="headerlink" title="–listen-peer-urls"></a>–listen-peer-urls</h3><p>用于监听伙伴通讯的URL列表。这个标记告诉 etcd 在特定的 scheme://IP:port  组合上从它的伙伴接收进来的请求。scheme 可是 http 或者 https。如果IP被指定为0.0.0.0,etcd  在所有接口上监听给定端口。如果给定IP地址和端口，etcd  将监听在给定端口和接口上。多个URL可以用来指定多个地址和端口来监听。etcd将从任何列出来的地址和端口上应答请求。</p>
+<h3 id="listen-peer-urls"><a class="markdownIt-Anchor" href="#listen-peer-urls"></a> –listen-peer-urls</h3>
+<p>用于监听伙伴通讯的URL列表。这个标记告诉 etcd 在特定的 scheme://IP:port  组合上从它的伙伴接收进来的请求。scheme 可是 http 或者 https。如果IP被指定为0.0.0.0,etcd  在所有接口上监听给定端口。如果给定IP地址和端口，etcd  将监听在给定端口和接口上。多个URL可以用来指定多个地址和端口来监听。etcd将从任何列出来的地址和端口上应答请求。</p>
 <ul>
-<li>默认: “<a href="http://localhost:2380&quot;" target="_blank" rel="noopener">http://localhost:2380&quot;</a></li>
+<li>默认: “<a href="http://localhost:2380" target="_blank" rel="noopener">http://localhost:2380</a>”</li>
 <li>环境变量: ETCD_LISTEN_PEER_URLS</li>
-<li>例子: “<a href="http://10.0.0.1:2380&quot;" target="_blank" rel="noopener">http://10.0.0.1:2380&quot;</a></li>
-<li>无效例子: “<a href="http://example.com:2380&quot;" target="_blank" rel="noopener">http://example.com:2380&quot;</a> (对于绑定域名无效)</li>
+<li>例子: “<a href="http://10.0.0.1:2380" target="_blank" rel="noopener">http://10.0.0.1:2380</a>”</li>
+<li>无效例子: “<a href="http://example.com:2380" target="_blank" rel="noopener">http://example.com:2380</a>” (对于绑定域名无效)</li>
 </ul>
-<h3 id="–listen-client-urls"><a href="#–listen-client-urls" class="headerlink" title="–listen-client-urls"></a>–listen-client-urls</h3><p>用于监听客户端通讯的URL列表。这个标记告诉 etcd 在特定的 scheme://IP:port  组合上从客户端接收进来的请求。scheme 可是 http 或者 https。如果IP被指定为 0.0.0.0,etcd  在所有接口上监听给定端口。如果给定IP地址和端口，etcd 将监听在给定端口和接口上。多个 URL 可以用来指定多个地址和端口来监听。etcd  将从任何列出来的地址和端口上应答请求。</p>
+<h3 id="listen-client-urls"><a class="markdownIt-Anchor" href="#listen-client-urls"></a> –listen-client-urls</h3>
+<p>用于监听客户端通讯的URL列表。这个标记告诉 etcd 在特定的 scheme://IP:port  组合上从客户端接收进来的请求。scheme 可是 http 或者 https。如果IP被指定为 0.0.0.0,etcd  在所有接口上监听给定端口。如果给定IP地址和端口，etcd 将监听在给定端口和接口上。多个 URL 可以用来指定多个地址和端口来监听。etcd  将从任何列出来的地址和端口上应答请求。</p>
 <ul>
-<li>默认: “<a href="http://localhost:2379&quot;" target="_blank" rel="noopener">http://localhost:2379&quot;</a></li>
+<li>默认: “<a href="http://localhost:2379" target="_blank" rel="noopener">http://localhost:2379</a>”</li>
 <li>环境变量: ETCD_LISTEN_CLIENT_URLS</li>
-<li>例子: “<a href="http://10.0.0.1:2379&quot;" target="_blank" rel="noopener">http://10.0.0.1:2379&quot;</a></li>
-<li>无效例子: “<a href="http://example.com:2379&quot;" target="_blank" rel="noopener">http://example.com:2379&quot;</a> (对于绑定域名无效)</li>
+<li>例子: “<a href="http://10.0.0.1:2379" target="_blank" rel="noopener">http://10.0.0.1:2379</a>”</li>
+<li>无效例子: “<a href="http://example.com:2379" target="_blank" rel="noopener">http://example.com:2379</a>” (对于绑定域名无效)</li>
 </ul>
-<h3 id="–max-snapshots"><a href="#–max-snapshots" class="headerlink" title="–max-snapshots"></a>–max-snapshots</h3><ul>
+<h3 id="max-snapshots"><a class="markdownIt-Anchor" href="#max-snapshots"></a> –max-snapshots</h3>
+<ul>
 <li>保持的快照文件的最大数量 (0 表示不限制)</li>
 <li>默认: 5</li>
 <li>环境变量: ETCD_MAX_SNAPSHOTS</li>
 <li>对于 windows 用户默认不限制，而且推荐手工降低到5（或者某些安全偏好)。</li>
 </ul>
-<h3 id="–max-wals"><a href="#–max-wals" class="headerlink" title="–max-wals"></a>–max-wals</h3><ul>
+<h3 id="max-wals"><a class="markdownIt-Anchor" href="#max-wals"></a> –max-wals</h3>
+<ul>
 <li>保持的 wal 文件的最大数量 (0 表示不限制)</li>
 <li>默认: 5</li>
 <li>环境变量: ETCD_MAX_WALS</li>
 <li>对于windows用户默认不限制，而且推荐手工降低到5（或者某些安全偏好)。</li>
 </ul>
-<h3 id="–cors"><a href="#–cors" class="headerlink" title="–cors"></a>–cors</h3><ul>
+<h3 id="cors"><a class="markdownIt-Anchor" href="#cors"></a> –cors</h3>
+<ul>
 <li>逗号分割的 origin 白名单，用于 CORS (cross-origin resource sharing/跨 origin 资源共享).</li>
 <li>默认: none</li>
 <li>环境变量: ETCD_CORS</li>
 </ul>
-<h3 id="–quota-backend-bytes"><a href="#–quota-backend-bytes" class="headerlink" title="–quota-backend-bytes"></a>–quota-backend-bytes</h3><ul>
+<h3 id="quota-backend-bytes"><a class="markdownIt-Anchor" href="#quota-backend-bytes"></a> –quota-backend-bytes</h3>
+<ul>
 <li>后端大小超过给定配额时引发警报（0默认为低空间配额）。</li>
 <li>默认: 0</li>
 <li>环境变量: ETCD_QUOTA_BACKEND_BYTES</li>
 </ul>
-<h3 id="–backend-batch-limit"><a href="#–backend-batch-limit" class="headerlink" title="–backend-batch-limit"></a>–backend-batch-limit</h3><ul>
+<h3 id="backend-batch-limit"><a class="markdownIt-Anchor" href="#backend-batch-limit"></a> –backend-batch-limit</h3>
+<ul>
 <li>BackendBatchLimit是提交后端事务之前的最大操作。</li>
 <li>默认: 0</li>
 <li>环境变量: ETCD_BACKEND_BATCH_LIMIT</li>
 </ul>
-<h3 id="–backend-batch-interval"><a href="#–backend-batch-interval" class="headerlink" title="–backend-batch-interval"></a>–backend-batch-interval</h3><ul>
+<h3 id="backend-batch-interval"><a class="markdownIt-Anchor" href="#backend-batch-interval"></a> –backend-batch-interval</h3>
+<ul>
 <li>BackendBatchInterval是提交后端事务之前的最长时间。</li>
 <li>默认: 0</li>
 <li>环境变量: ETCD_BACKEND_BATCH_INTERVAL</li>
 </ul>
-<h3 id="–max-txn-ops"><a href="#–max-txn-ops" class="headerlink" title="–max-txn-ops"></a>–max-txn-ops</h3><ul>
-<li>事务中允许的最大操作数 </li>
+<h3 id="max-txn-ops"><a class="markdownIt-Anchor" href="#max-txn-ops"></a> –max-txn-ops</h3>
+<ul>
+<li>事务中允许的最大操作数</li>
 <li>默认: 128</li>
 <li>环境变量: ETCD_MAX_TXN_OPS</li>
 </ul>
-<h3 id="–max-request-bytes"><a href="#–max-request-bytes" class="headerlink" title="–max-request-bytes"></a>–max-request-bytes</h3><ul>
+<h3 id="max-request-bytes"><a class="markdownIt-Anchor" href="#max-request-bytes"></a> –max-request-bytes</h3>
+<ul>
 <li>服务器将接受的最大客户端请求大小（以字节为单位）。</li>
 <li>默认: 1572864</li>
 <li>环境变量: ETCD_MAX_REQUEST_BYTES</li>
 </ul>
-<h3 id="–grpc-keepalive-min-time"><a href="#–grpc-keepalive-min-time" class="headerlink" title="–grpc-keepalive-min-time"></a>–grpc-keepalive-min-time</h3><ul>
+<h3 id="grpc-keepalive-min-time"><a class="markdownIt-Anchor" href="#grpc-keepalive-min-time"></a> –grpc-keepalive-min-time</h3>
+<ul>
 <li>客户端在ping服务器之前应等待的最小持续时间间隔。</li>
 <li>默认: 5s</li>
 <li>环境变量: ETCD_GRPC_KEEPALIVE_MIN_TIME</li>
 </ul>
-<h3 id="–grpc-keepalive-interval"><a href="#–grpc-keepalive-interval" class="headerlink" title="–grpc-keepalive-interval"></a>–grpc-keepalive-interval</h3><ul>
+<h3 id="grpc-keepalive-interval"><a class="markdownIt-Anchor" href="#grpc-keepalive-interval"></a> –grpc-keepalive-interval</h3>
+<ul>
 <li>服务器到客户端ping的频率持续时间，以检查连接是否有效（0禁用）。</li>
 <li>默认: 2h</li>
 <li>环境变量: ETCD_GRPC_KEEPALIVE_INTERVAL</li>
 </ul>
-<h3 id="–grpc-keepalive-timeout"><a href="#–grpc-keepalive-timeout" class="headerlink" title="–grpc-keepalive-timeout"></a>–grpc-keepalive-timeout</h3><ul>
+<h3 id="grpc-keepalive-timeout"><a class="markdownIt-Anchor" href="#grpc-keepalive-timeout"></a> –grpc-keepalive-timeout</h3>
+<ul>
 <li>关闭无响应的连接之前的额外等待时间（0禁用）。</li>
 <li>默认: 20s</li>
 <li>环境变量: ETCD_GRPC_KEEPALIVE_TIMEOUT</li>
 </ul>
-<h2 id="集群标记"><a href="#集群标记" class="headerlink" title="集群标记"></a>集群标记</h2><p><code>--initial-advertise-peer-urls</code>，<code>-initial-cluster</code>，<code>-initial-cluster-state</code>和<code>--initial-cluster-token</code>标志用于引导（静态引导，发现服务引导或运行时重新配置） 新成员，并且在重新启动现有成员时将其忽略。</p>
+<h2 id="集群标记"><a class="markdownIt-Anchor" href="#集群标记"></a> 集群标记</h2>
+<p><code>--initial-advertise-peer-urls</code>，<code>-initial-cluster</code>，<code>-initial-cluster-state</code>和<code>--initial-cluster-token</code>标志用于引导（静态引导，发现服务引导或运行时重新配置） 新成员，并且在重新启动现有成员时将其忽略。</p>
 <p><code>--discovery</code> 前缀标记在使用<a href="https://github.com/doczhcn/etcd/blob/master/documentation/op-guide/clustering.md#discovery" target="_blank" rel="noopener">发现服务</a>需要设置.</p>
-<h3 id="–initial-advertise-peer-urls"><a href="#–initial-advertise-peer-urls" class="headerlink" title="–initial-advertise-peer-urls"></a>–initial-advertise-peer-urls</h3><p>列出这个成员的伙伴 URL 以便通告给集群的其他成员。这些地方用于在集群中通讯 etcd 数据。至少有一个必须对所有集群成员可以路由的。这些 URL 可以包含域名。</p>
+<h3 id="initial-advertise-peer-urls"><a class="markdownIt-Anchor" href="#initial-advertise-peer-urls"></a> –initial-advertise-peer-urls</h3>
+<p>列出这个成员的伙伴 URL 以便通告给集群的其他成员。这些地方用于在集群中通讯 etcd 数据。至少有一个必须对所有集群成员可以路由的。这些 URL 可以包含域名。</p>
 <ul>
-<li>默认: “<a href="http://localhost:2380&quot;" target="_blank" rel="noopener">http://localhost:2380&quot;</a></li>
+<li>默认: “<a href="http://localhost:2380" target="_blank" rel="noopener">http://localhost:2380</a>”</li>
 <li>环境变量: ETCD_INITIAL_ADVERTISE_PEER_URLS</li>
-<li>例子: “<a href="http://example.com:2380" target="_blank" rel="noopener">http://example.com:2380</a>, <a href="http://10.0.0.1:2380&quot;" target="_blank" rel="noopener">http://10.0.0.1:2380&quot;</a></li>
+<li>例子: “<a href="http://example.com:2380" target="_blank" rel="noopener">http://example.com:2380</a>, <a href="http://10.0.0.1:2380" target="_blank" rel="noopener">http://10.0.0.1:2380</a>”</li>
 </ul>
-<h3 id="–initial-cluster"><a href="#–initial-cluster" class="headerlink" title="–initial-cluster"></a>–initial-cluster</h3><p>为启动初始化集群配置。</p>
+<h3 id="initial-cluster"><a class="markdownIt-Anchor" href="#initial-cluster"></a> –initial-cluster</h3>
+<p>为启动初始化集群配置。</p>
 <ul>
-<li>默认: “default=<a href="http://localhost:2380&quot;" target="_blank" rel="noopener">http://localhost:2380&quot;</a></li>
+<li>默认: “default=http://localhost:2380”</li>
 <li>环境变量: ETCD_INITIAL_CLUSTER</li>
 <li>key是每个提供的节点的 <code>--name</code> 标记的值. 默认为这个 key 使用 <code>default</code> 因为这是 <code>--name</code> 标记的默认值.</li>
 </ul>
-<h3 id="–initial-cluster-state"><a href="#–initial-cluster-state" class="headerlink" title="–initial-cluster-state"></a>–initial-cluster-state</h3><p>初始化集群状态(“new” or “existing”)。在初始化静态(initial static)或者 DNS 启动 (DNS bootstrapping) 期间为所有成员设置为 <code>new</code> 。如果这个选项被设置为 <code>existing</code> , etcd 将试图加入已有的集群。如果设置为错误的值，etcd 将尝试启动但安全失败。</p>
+<h3 id="initial-cluster-state"><a class="markdownIt-Anchor" href="#initial-cluster-state"></a> –initial-cluster-state</h3>
+<p>初始化集群状态(“new” or “existing”)。在初始化静态(initial static)或者 DNS 启动 (DNS bootstrapping) 期间为所有成员设置为 <code>new</code> 。如果这个选项被设置为 <code>existing</code> , etcd 将试图加入已有的集群。如果设置为错误的值，etcd 将尝试启动但安全失败。</p>
 <ul>
 <li>默认: “new”</li>
 <li>环境变量: ETCD_INITIAL_CLUSTER_STATE</li>
 </ul>
-<h3 id="–initial-cluster-token"><a href="#–initial-cluster-token" class="headerlink" title="–initial-cluster-token"></a>–initial-cluster-token</h3><p>在启动期间用于 etcd 集群的初始化集群记号(cluster token)。</p>
+<h3 id="initial-cluster-token"><a class="markdownIt-Anchor" href="#initial-cluster-token"></a> –initial-cluster-token</h3>
+<p>在启动期间用于 etcd 集群的初始化集群记号(cluster token)。</p>
 <ul>
 <li>默认: “etcd-cluster”</li>
 <li>环境变量: ETCD_INITIAL_CLUSTER_TOKEN</li>
 </ul>
-<h3 id="–advertise-client-urls"><a href="#–advertise-client-urls" class="headerlink" title="–advertise-client-urls"></a>–advertise-client-urls</h3><p>列出这个成员的客户端URL，通告给集群中的其他成员。这些 URL 可以包含域名。</p>
+<h3 id="advertise-client-urls"><a class="markdownIt-Anchor" href="#advertise-client-urls"></a> –advertise-client-urls</h3>
+<p>列出这个成员的客户端URL，通告给集群中的其他成员。这些 URL 可以包含域名。</p>
 <ul>
-<li>默认: “<a href="http://localhost:2379&quot;" target="_blank" rel="noopener">http://localhost:2379&quot;</a></li>
+<li>默认: “<a href="http://localhost:2379" target="_blank" rel="noopener">http://localhost:2379</a>”</li>
 <li>环境变量: ETCD_ADVERTISE_CLIENT_URLS</li>
-<li>例子: “<a href="http://example.com:2379" target="_blank" rel="noopener">http://example.com:2379</a>, <a href="http://10.0.0.1:2379&quot;" target="_blank" rel="noopener">http://10.0.0.1:2379&quot;</a></li>
+<li>例子: “<a href="http://example.com:2379" target="_blank" rel="noopener">http://example.com:2379</a>, <a href="http://10.0.0.1:2379" target="_blank" rel="noopener">http://10.0.0.1:2379</a>”</li>
 </ul>
 <p>小心，如果来自集群成员的通告 URL 比如 <a href="http://localhost:2379" target="_blank" rel="noopener">http://localhost:2379</a> 正在使用 etcd 的 proxy 特性。这将导致循环，因为代理将转发请求给它自己直到它的资源(内存，文件描述符)最终耗尽。</p>
-<h3 id="–discovery"><a href="#–discovery" class="headerlink" title="–discovery"></a>–discovery</h3><p>用于启动集群的发现URL。</p>
+<h3 id="discovery"><a class="markdownIt-Anchor" href="#discovery"></a> –discovery</h3>
+<p>用于启动集群的发现URL。</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_DISCOVERY</li>
 </ul>
-<h3 id="–discovery-srv"><a href="#–discovery-srv" class="headerlink" title="–discovery-srv"></a>–discovery-srv</h3><p>用于启动集群的 DNS srv 域名。</p>
+<h3 id="discovery-srv"><a class="markdownIt-Anchor" href="#discovery-srv"></a> –discovery-srv</h3>
+<p>用于启动集群的 DNS srv 域名。</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_DISCOVERY_SRV</li>
 </ul>
-<h3 id="–discovery-srv-name"><a href="#–discovery-srv-name" class="headerlink" title="–discovery-srv-name"></a>–discovery-srv-name</h3><ul>
+<h3 id="discovery-srv-name"><a class="markdownIt-Anchor" href="#discovery-srv-name"></a> –discovery-srv-name</h3>
+<ul>
 <li>使用DNS引导时查询的DNS srv名称的后缀。</li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_DISCOVERY_SRV_NAME</li>
 <li></li>
 </ul>
-<h3 id="–discovery-fallback"><a href="#–discovery-fallback" class="headerlink" title="–discovery-fallback"></a>–discovery-fallback</h3><p>当发现服务失败时的期待行为(“exit” 或 “proxy”). “proxy” 仅支持 v2 API.</p>
+<h3 id="discovery-fallback"><a class="markdownIt-Anchor" href="#discovery-fallback"></a> –discovery-fallback</h3>
+<p>当发现服务失败时的期待行为(“exit” 或 “proxy”). “proxy” 仅支持 v2 API.</p>
 <ul>
 <li>默认: “proxy”</li>
 <li>环境变量: ETCD_DISCOVERY_FALLBACK</li>
 </ul>
-<h3 id="–discovery-proxy"><a href="#–discovery-proxy" class="headerlink" title="–discovery-proxy"></a>–discovery-proxy</h3><p>用于请求到发现服务的 HTTP 代理。</p>
+<h3 id="discovery-proxy"><a class="markdownIt-Anchor" href="#discovery-proxy"></a> –discovery-proxy</h3>
+<p>用于请求到发现服务的 HTTP 代理。</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_DISCOVERY_PROXY</li>
 </ul>
-<h3 id="–strict-reconfig-check"><a href="#–strict-reconfig-check" class="headerlink" title="–strict-reconfig-check"></a>–strict-reconfig-check</h3><p>拒绝将导致法定人数丢失的重配置请求。</p>
+<h3 id="strict-reconfig-check"><a class="markdownIt-Anchor" href="#strict-reconfig-check"></a> –strict-reconfig-check</h3>
+<p>拒绝将导致法定人数丢失的重配置请求。</p>
 <ul>
 <li>默认: false</li>
 <li>环境变量: ETCD_STRICT_RECONFIG_CHECK</li>
 </ul>
-<h3 id="–auto-compaction-retention"><a href="#–auto-compaction-retention" class="headerlink" title="–auto-compaction-retention"></a>–auto-compaction-retention</h3><p>自动压缩用于 mvcc 键值存储的保持力(注：应该指多版本保存)，单位小时。 0 表示关闭自动压缩。</p>
+<h3 id="auto-compaction-retention"><a class="markdownIt-Anchor" href="#auto-compaction-retention"></a> –auto-compaction-retention</h3>
+<p>自动压缩用于 mvcc 键值存储的保持力(注：应该指多版本保存)，单位小时。 0 表示关闭自动压缩。</p>
 <ul>
 <li>默认: 0</li>
 <li>环境变量: ETCD_AUTO_COMPACTION_RETENTION</li>
@@ -249,242 +283,295 @@ function activateLightMode(){
 <blockquote>
 <p>注： 对于服务注册等只保存运行时动态信息的场合，建议开启。完全没有理由损失存储空间和效率来保存之前的版本信息。推荐设置为1,每小时压缩一次。</p>
 </blockquote>
-<h3 id="–auto-compaction-mode"><a href="#–auto-compaction-mode" class="headerlink" title="–auto-compaction-mode"></a>–auto-compaction-mode</h3><ul>
+<h3 id="auto-compaction-mode"><a class="markdownIt-Anchor" href="#auto-compaction-mode"></a> –auto-compaction-mode</h3>
+<ul>
 <li>解释“auto-compaction-retention”之一：“periodic”，“revision”。 基于周期的保留期为“periodic”，如果未提供时间单位（例如“ 5m”），则默认为小时。 “revision”用于基于修订号的保留。</li>
 <li>默认: periodic</li>
 <li>环境变量: ETCD_AUTO_COMPACTION_MODE</li>
 </ul>
-<h3 id="–enable-v2"><a href="#–enable-v2" class="headerlink" title="–enable-v2"></a>–enable-v2</h3><ul>
+<h3 id="enable-v2"><a class="markdownIt-Anchor" href="#enable-v2"></a> –enable-v2</h3>
+<ul>
 <li>接受etcd V2客户请求</li>
 <li>默认: false</li>
 <li>环境变量: ETCD_ENABLE_V2</li>
 </ul>
-<h2 id="Proxy-flags"><a href="#Proxy-flags" class="headerlink" title="Proxy flags"></a>Proxy flags</h2><p><code>--proxy</code> 前缀标记配置 etcd 以 <a href="https://github.com/coreos/etcd/blob/master/Documentation/v2/proxy.md" target="_blank" rel="noopener">代理模式</a> 运行. “proxy” 仅支持 v2 API.</p>
-<h3 id="–proxy"><a href="#–proxy" class="headerlink" title="–proxy"></a>–proxy</h3><p>代理模式设置(“off”, “readonly” or “on”).</p>
+<h2 id="proxy-flags"><a class="markdownIt-Anchor" href="#proxy-flags"></a> Proxy flags</h2>
+<p><code>--proxy</code> 前缀标记配置 etcd 以 <a href="https://github.com/coreos/etcd/blob/master/Documentation/v2/proxy.md" target="_blank" rel="noopener">代理模式</a> 运行. “proxy” 仅支持 v2 API.</p>
+<h3 id="proxy"><a class="markdownIt-Anchor" href="#proxy"></a> –proxy</h3>
+<p>代理模式设置(“off”, “readonly” or “on”).</p>
 <ul>
 <li>默认: “off”</li>
 <li>环境变量: ETCD_PROXY</li>
 </ul>
-<h3 id="–proxy-failure-wait"><a href="#–proxy-failure-wait" class="headerlink" title="–proxy-failure-wait"></a>–proxy-failure-wait</h3><p>在被重新考虑之前，终端将被视为失败状态的时间(单位 毫秒)，用于被代理的请求。</p>
+<h3 id="proxy-failure-wait"><a class="markdownIt-Anchor" href="#proxy-failure-wait"></a> –proxy-failure-wait</h3>
+<p>在被重新考虑之前，终端将被视为失败状态的时间(单位 毫秒)，用于被代理的请求。</p>
 <ul>
 <li>默认: 5000</li>
 <li>环境变量: ETCD_PROXY_FAILURE_WAIT</li>
 </ul>
-<h3 id="–proxy-refresh-interval"><a href="#–proxy-refresh-interval" class="headerlink" title="–proxy-refresh-interval"></a>–proxy-refresh-interval</h3><p>终端刷新间隔时间(单位 毫秒)</p>
+<h3 id="proxy-refresh-interval"><a class="markdownIt-Anchor" href="#proxy-refresh-interval"></a> –proxy-refresh-interval</h3>
+<p>终端刷新间隔时间(单位 毫秒)</p>
 <ul>
 <li>默认: 30000</li>
 <li>环境变量: ETCD_PROXY_REFRESH_INTERVAL</li>
 </ul>
-<h3 id="–proxy-dial-timeout"><a href="#–proxy-dial-timeout" class="headerlink" title="–proxy-dial-timeout"></a>–proxy-dial-timeout</h3><p>请求的拨号(dial)超时时间(单位 毫秒)，或者 0 禁用超时。</p>
+<h3 id="proxy-dial-timeout"><a class="markdownIt-Anchor" href="#proxy-dial-timeout"></a> –proxy-dial-timeout</h3>
+<p>请求的拨号(dial)超时时间(单位 毫秒)，或者 0 禁用超时。</p>
 <ul>
 <li>默认: 1000</li>
 <li>环境变量 ETCD_PROXY_DIAL_TIMEOUT</li>
 </ul>
-<h3 id="–proxy-write-timeout"><a href="#–proxy-write-timeout" class="headerlink" title="–proxy-write-timeout"></a>–proxy-write-timeout</h3><p>写操作的超时时间(单位 毫秒)，或者 0 禁用超时。 </p>
+<h3 id="proxy-write-timeout"><a class="markdownIt-Anchor" href="#proxy-write-timeout"></a> –proxy-write-timeout</h3>
+<p>写操作的超时时间(单位 毫秒)，或者 0 禁用超时。</p>
 <ul>
 <li>默认: 5000</li>
 <li>环境变量: ETCD_PROXY_WRITE_TIMEOUT</li>
 </ul>
-<h3 id="–proxy-read-timeout"><a href="#–proxy-read-timeout" class="headerlink" title="–proxy-read-timeout"></a>–proxy-read-timeout</h3><p>读操作的超时时间(单位 毫秒)，或者 0 禁用超时。</p>
-<p>不要修改这个值，如果在使用 watch，因为 watch 将使用 long polling 请求。 </p>
+<h3 id="proxy-read-timeout"><a class="markdownIt-Anchor" href="#proxy-read-timeout"></a> –proxy-read-timeout</h3>
+<p>读操作的超时时间(单位 毫秒)，或者 0 禁用超时。</p>
+<p>不要修改这个值，如果在使用 watch，因为 watch 将使用 long polling 请求。</p>
 <ul>
 <li>默认: 0</li>
 <li>环境变量: ETCD_PROXY_READ_TIMEOUT</li>
 </ul>
-<h2 id="安全标记"><a href="#安全标记" class="headerlink" title="安全标记"></a>安全标记</h2><p>安全标记用于帮助 <a href="https://github.com/doczhcn/etcd/blob/master/documentation/op-guide/security.md" target="_blank" rel="noopener">搭建安全 etcd 集群</a>.</p>
-<h3 id="–ca-file-弃用"><a href="#–ca-file-弃用" class="headerlink" title="–ca-file [弃用]"></a>–ca-file [弃用]</h3><p>客户端服务器 TLS 证书文件的路径。<code>--ca-file ca.crt</code> 可以被 <code>--trusted-ca-file ca.crt --client-cert-auth</code> 替代，而 etcd 同样工作。</p>
+<h2 id="安全标记"><a class="markdownIt-Anchor" href="#安全标记"></a> 安全标记</h2>
+<p>安全标记用于帮助 <a href="https://github.com/doczhcn/etcd/blob/master/documentation/op-guide/security.md" target="_blank" rel="noopener">搭建安全 etcd 集群</a>.</p>
+<h3 id="ca-file-弃用"><a class="markdownIt-Anchor" href="#ca-file-弃用"></a> –ca-file [弃用]</h3>
+<p>客户端服务器 TLS 证书文件的路径。<code>--ca-file ca.crt</code> 可以被 <code>--trusted-ca-file ca.crt --client-cert-auth</code> 替代，而 etcd 同样工作。</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_CA_FILE</li>
 </ul>
-<h3 id="–cert-file"><a href="#–cert-file" class="headerlink" title="–cert-file"></a>–cert-file</h3><p>客户端服务器 TLS 证书文件的路径。</p>
+<h3 id="cert-file"><a class="markdownIt-Anchor" href="#cert-file"></a> –cert-file</h3>
+<p>客户端服务器 TLS 证书文件的路径。</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_CERT_FILE</li>
 </ul>
-<h3 id="–key-file"><a href="#–key-file" class="headerlink" title="–key-file"></a>–key-file</h3><p>客户端服务器 TLS key 文件的路径。</p>
+<h3 id="key-file"><a class="markdownIt-Anchor" href="#key-file"></a> –key-file</h3>
+<p>客户端服务器 TLS key 文件的路径。</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_KEY_FILE</li>
 </ul>
-<h3 id="–client-cert-auth"><a href="#–client-cert-auth" class="headerlink" title="–client-cert-auth"></a>–client-cert-auth</h3><p>开启客户端证书认证。</p>
+<h3 id="client-cert-auth"><a class="markdownIt-Anchor" href="#client-cert-auth"></a> –client-cert-auth</h3>
+<p>开启客户端证书认证。</p>
 <ul>
 <li>默认: false</li>
 <li>环境变量: ETCD_CLIENT_CERT_AUTH</li>
 <li>gRPC网关不支持CN身份验证。</li>
 </ul>
-<h3 id="–client-crl-file"><a href="#–client-crl-file" class="headerlink" title="–client-crl-file"></a>–client-crl-file</h3><ul>
+<h3 id="client-crl-file"><a class="markdownIt-Anchor" href="#client-crl-file"></a> –client-crl-file</h3>
+<ul>
 <li>客户端证书吊销列表文件的路径。</li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_CLIENT_CRL_FILE</li>
 </ul>
-<h3 id="–client-cert-allowed-hostname"><a href="#–client-cert-allowed-hostname" class="headerlink" title="–client-cert-allowed-hostname"></a>–client-cert-allowed-hostname</h3><ul>
+<h3 id="client-cert-allowed-hostname"><a class="markdownIt-Anchor" href="#client-cert-allowed-hostname"></a> –client-cert-allowed-hostname</h3>
+<ul>
 <li>允许客户端证书身份验证的TLS名称。</li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_CLIENT_CERT_ALLOWED_HOSTNAME</li>
 </ul>
-<h3 id="–trusted-ca-file"><a href="#–trusted-ca-file" class="headerlink" title="–trusted-ca-file"></a>–trusted-ca-file</h3><p>客户端服务器 TLS 信任证书文件的路径。</p>
+<h3 id="trusted-ca-file"><a class="markdownIt-Anchor" href="#trusted-ca-file"></a> –trusted-ca-file</h3>
+<p>客户端服务器 TLS 信任证书文件的路径。</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_TRUSTED_CA_FILE</li>
 </ul>
-<h3 id="–auto-tls"><a href="#–auto-tls" class="headerlink" title="–auto-tls"></a>–auto-tls</h3><p>使用生成证书的客户端 TLS。</p>
+<h3 id="auto-tls"><a class="markdownIt-Anchor" href="#auto-tls"></a> –auto-tls</h3>
+<p>使用生成证书的客户端 TLS。</p>
 <ul>
 <li>默认: false</li>
 <li>环境变量: ETCD_AUTO_TLS</li>
 </ul>
-<h3 id="–peer-ca-file-弃用"><a href="#–peer-ca-file-弃用" class="headerlink" title="–peer-ca-file [弃用]"></a>–peer-ca-file [弃用]</h3><p>peer server TLS 证书文件的路径. <code>--peer-ca-file ca.crt</code> 可以被 <code>--peer-trusted-ca-file ca.crt --peer-client-cert-auth</code> 替代，而 etcd 同样工作.</p>
+<h3 id="peer-ca-file-弃用"><a class="markdownIt-Anchor" href="#peer-ca-file-弃用"></a> –peer-ca-file [弃用]</h3>
+<p>peer server TLS 证书文件的路径. <code>--peer-ca-file ca.crt</code> 可以被 <code>--peer-trusted-ca-file ca.crt --peer-client-cert-auth</code> 替代，而 etcd 同样工作.</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_PEER_CA_FILE</li>
 </ul>
-<h3 id="–peer-cert-file"><a href="#–peer-cert-file" class="headerlink" title="–peer-cert-file"></a>–peer-cert-file</h3><p>peer server TLS 证书文件的路径.</p>
+<h3 id="peer-cert-file"><a class="markdownIt-Anchor" href="#peer-cert-file"></a> –peer-cert-file</h3>
+<p>peer server TLS 证书文件的路径.</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_PEER_CERT_FILE</li>
 </ul>
-<h3 id="–peer-key-file"><a href="#–peer-key-file" class="headerlink" title="–peer-key-file"></a>–peer-key-file</h3><p>peer server TLS key 文件的路径.</p>
+<h3 id="peer-key-file"><a class="markdownIt-Anchor" href="#peer-key-file"></a> –peer-key-file</h3>
+<p>peer server TLS key 文件的路径.</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_PEER_KEY_FILE</li>
 </ul>
-<h3 id="–peer-client-cert-auth"><a href="#–peer-client-cert-auth" class="headerlink" title="–peer-client-cert-auth"></a>–peer-client-cert-auth</h3><p>开启 peer client 证书验证.</p>
+<h3 id="peer-client-cert-auth"><a class="markdownIt-Anchor" href="#peer-client-cert-auth"></a> –peer-client-cert-auth</h3>
+<p>开启 peer client 证书验证.</p>
 <ul>
 <li>默认: false</li>
 <li>环境变量: ETCD_PEER_CLIENT_CERT_AUTH</li>
 </ul>
-<h3 id="–peer-crl-file"><a href="#–peer-crl-file" class="headerlink" title="–peer-crl-file"></a>–peer-crl-file</h3><ul>
+<h3 id="peer-crl-file"><a class="markdownIt-Anchor" href="#peer-crl-file"></a> –peer-crl-file</h3>
+<ul>
 <li>路径对证书吊销列表文件。</li>
 <li>默认: “”</li>
 <li>环境变量:: ETCD_PEER_CRL_FILE</li>
 </ul>
-<h3 id="–peer-trusted-ca-file"><a href="#–peer-trusted-ca-file" class="headerlink" title="–peer-trusted-ca-file"></a>–peer-trusted-ca-file</h3><p>peer server TLS 信任证书文件路径.</p>
+<h3 id="peer-trusted-ca-file"><a class="markdownIt-Anchor" href="#peer-trusted-ca-file"></a> –peer-trusted-ca-file</h3>
+<p>peer server TLS 信任证书文件路径.</p>
 <ul>
 <li>默认: none</li>
 <li>环境变量: ETCD_PEER_TRUSTED_CA_FILE</li>
 </ul>
-<h3 id="–peer-auto-tls"><a href="#–peer-auto-tls" class="headerlink" title="–peer-auto-tls"></a>–peer-auto-tls</h3><p>使用生成证书的peer TLS。</p>
+<h3 id="peer-auto-tls"><a class="markdownIt-Anchor" href="#peer-auto-tls"></a> –peer-auto-tls</h3>
+<p>使用生成证书的peer TLS。</p>
 <ul>
 <li>默认: false</li>
 <li>环境变量: ETCD_PEER_AUTO_TLS</li>
 </ul>
-<h3 id="–peer-cert-allowed-cn"><a href="#–peer-cert-allowed-cn" class="headerlink" title="–peer-cert-allowed-cn"></a>–peer-cert-allowed-cn</h3><ul>
+<h3 id="peer-cert-allowed-cn"><a class="markdownIt-Anchor" href="#peer-cert-allowed-cn"></a> –peer-cert-allowed-cn</h3>
+<ul>
 <li>允许使用CommonName进行对等身份验证。</li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_PEER_CERT_ALLOWED_CN</li>
 </ul>
-<h3 id="–peer-cert-allowed-hostname"><a href="#–peer-cert-allowed-hostname" class="headerlink" title="–peer-cert-allowed-hostname"></a>–peer-cert-allowed-hostname</h3><ul>
+<h3 id="peer-cert-allowed-hostname"><a class="markdownIt-Anchor" href="#peer-cert-allowed-hostname"></a> –peer-cert-allowed-hostname</h3>
+<ul>
 <li>允许的TLS证书名称用于对等身份验证。</li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_PEER_CERT_ALLOWED_HOSTNAME</li>
 </ul>
-<h3 id="–cipher-suites"><a href="#–cipher-suites" class="headerlink" title="–cipher-suites"></a>–cipher-suites</h3><ul>
+<h3 id="cipher-suites"><a class="markdownIt-Anchor" href="#cipher-suites"></a> –cipher-suites</h3>
+<ul>
 <li>服务器/客户端和对等方之间受支持的TLS密码套件的逗号分隔列表。</li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_CIPHER_SUITES</li>
 </ul>
-<h2 id="日志标记"><a href="#日志标记" class="headerlink" title="日志标记"></a>日志标记</h2><h3 id="–logger"><a href="#–logger" class="headerlink" title="–logger"></a>–logger</h3><p><strong>从v3.4起可用。</strong> <strong>警告：<code>--logger = capnslog</code>在v3.5中已弃用。</strong></p>
+<h2 id="日志标记"><a class="markdownIt-Anchor" href="#日志标记"></a> 日志标记</h2>
+<h3 id="logger"><a class="markdownIt-Anchor" href="#logger"></a> –logger</h3>
+<p><strong>从v3.4起可用。</strong> <strong>警告：<code>--logger = capnslog</code>在v3.5中已弃用。</strong></p>
 <ul>
 <li>指定“ zap”进行结构化日志记录或“ capnslog”。</li>
 <li>默认: capnslog</li>
 <li>环境变量: ETCD_LOGGER</li>
 </ul>
-<h3 id="–log-outputs"><a href="#–log-outputs" class="headerlink" title="–log-outputs"></a>–log-outputs</h3><ul>
+<h3 id="log-outputs"><a class="markdownIt-Anchor" href="#log-outputs"></a> –log-outputs</h3>
+<ul>
 <li>指定“标准输出”或“标准错误”跳过journald下systemd运行时，即使记录，或逗号分隔列表输出目标。</li>
 <li>默认: default</li>
 <li>环境变量: ETCD_LOG_OUTPUTS</li>
 <li>在zap logger迁移过程中，v3.4的“默认”使用“ stderr”配置</li>
 </ul>
-<h3 id="–log-level"><a href="#–log-level" class="headerlink" title="–log-level"></a>–log-level</h3><p><strong>从V3.4开始可用。</strong></p>
+<h3 id="log-level"><a class="markdownIt-Anchor" href="#log-level"></a> –log-level</h3>
+<p><strong>从V3.4开始可用。</strong></p>
 <ul>
 <li>配置日志级别。 仅支持调试，信息，警告，错误，紧急或致命。</li>
 <li>默认: info</li>
 <li>环境变量: ETCD_LOG_LEVEL</li>
 <li>‘default’ 使用‘info’.</li>
 </ul>
-<h3 id="–debug"><a href="#–debug" class="headerlink" title="–debug"></a>–debug</h3><p>警告：在v3.5中已弃用。 </p>
+<h3 id="debug"><a class="markdownIt-Anchor" href="#debug"></a> –debug</h3>
+<p>警告：在v3.5中已弃用。</p>
 <p>设置所有子包的默认日志级别为 DEBUG</p>
 <ul>
 <li>默认: false (所有包为 INFO)</li>
 <li>环境变量: ETCD_DEBUG</li>
 </ul>
-<h3 id="–log-package-levels"><a href="#–log-package-levels" class="headerlink" title="–log-package-levels"></a>–log-package-levels</h3><p>警告：在v3.5中已弃用。 </p>
+<h3 id="log-package-levels"><a class="markdownIt-Anchor" href="#log-package-levels"></a> –log-package-levels</h3>
+<p>警告：在v3.5中已弃用。</p>
 <p>设置个人 etcd 子包为指定日志级别。例如 <code>etcdserver=WARNING,security=DEBUG</code></p>
 <ul>
 <li>默认: none (所有包为 INFO)</li>
 <li>环境变量: ETCD_LOG_PACKAGE_LEVELS</li>
 </ul>
-<h2 id="不安全的标记"><a href="#不安全的标记" class="headerlink" title="不安全的标记"></a>不安全的标记</h2><p>请谨慎使用不安全标记，因为它将打破一致性协议提供的保证。</p>
+<h2 id="不安全的标记"><a class="markdownIt-Anchor" href="#不安全的标记"></a> 不安全的标记</h2>
+<p>请谨慎使用不安全标记，因为它将打破一致性协议提供的保证。</p>
 <p>例如，它可能惊慌，如果集群中的其他成员还活着。</p>
 <p>当使用这些标记时，遵循操作指南。</p>
-<h3 id="–force-new-cluster"><a href="#–force-new-cluster" class="headerlink" title="–force-new-cluster"></a>–force-new-cluster</h3><p>强制创建新的单一成员的集群。它提交配置修改来强制移除集群中的所有现有成员然后添加自身。当 <a href="https://github.com/coreos/etcd/blob/master/Documentation/v2/admin_guide.md#restoring-a-backup" target="_blank" rel="noopener">restore a backup</a> 时需要设置。</p>
+<h3 id="force-new-cluster"><a class="markdownIt-Anchor" href="#force-new-cluster"></a> –force-new-cluster</h3>
+<p>强制创建新的单一成员的集群。它提交配置修改来强制移除集群中的所有现有成员然后添加自身。当 <a href="https://github.com/coreos/etcd/blob/master/Documentation/v2/admin_guide.md#restoring-a-backup" target="_blank" rel="noopener">restore a backup</a> 时需要设置。</p>
 <ul>
 <li>默认: false</li>
 <li>环境变量: ETCD_FORCE_NEW_CLUSTER</li>
 </ul>
-<h2 id="其他标记"><a href="#其他标记" class="headerlink" title="其他标记"></a>其他标记</h2><h3 id="–version"><a href="#–version" class="headerlink" title="–version"></a>–version</h3><p>打印版本并退出.</p>
+<h2 id="其他标记"><a class="markdownIt-Anchor" href="#其他标记"></a> 其他标记</h2>
+<h3 id="version"><a class="markdownIt-Anchor" href="#version"></a> –version</h3>
+<p>打印版本并退出.</p>
 <ul>
 <li>默认: false</li>
 </ul>
-<h3 id="–config-file"><a href="#–config-file" class="headerlink" title="–config-file"></a>–config-file</h3><p>从文件中装载服务器配置.请注意，如果提供了配置文件，则其他命令行标志和环境变量将被忽略。</p>
+<h3 id="config-file"><a class="markdownIt-Anchor" href="#config-file"></a> –config-file</h3>
+<p>从文件中装载服务器配置.请注意，如果提供了配置文件，则其他命令行标志和环境变量将被忽略。</p>
 <ul>
 <li>默认: “”</li>
 <li>例子: <a href="https://etcd.io/docs/v3.4.0/etcd.conf.yml.sample" target="_blank" rel="noopener">sample configuration file</a></li>
 <li>环境变量: ETCD_CONFIG_FILE</li>
 </ul>
-<h2 id="分析标记"><a href="#分析标记" class="headerlink" title="分析标记"></a>分析标记</h2><h3 id="–enable-pprof"><a href="#–enable-pprof" class="headerlink" title="–enable-pprof"></a>–enable-pprof</h3><ul>
-<li>通过 HTTP 服务器开启运行时分析数据。地址是 client URL + “/debug/pprof/“</li>
+<h2 id="分析标记"><a class="markdownIt-Anchor" href="#分析标记"></a> 分析标记</h2>
+<h3 id="enable-pprof"><a class="markdownIt-Anchor" href="#enable-pprof"></a> –enable-pprof</h3>
+<ul>
+<li>通过 HTTP 服务器开启运行时分析数据。地址是 client URL + “/debug/pprof/”</li>
 <li>默认: false</li>
 <li>环境变量: ETCD_ENABLE_PPROF</li>
 </ul>
-<h3 id="–metrics"><a href="#–metrics" class="headerlink" title="–metrics"></a>–metrics</h3><ul>
+<h3 id="metrics"><a class="markdownIt-Anchor" href="#metrics"></a> –metrics</h3>
+<ul>
 <li>为导出的度量，设置详情的等级，指定 ‘extensive’ 来包含柱状图</li>
 <li>默认: basic</li>
 <li>环境变量: ETCD_METRICS</li>
 </ul>
-<h3 id="–listen-metrics-urls"><a href="#–listen-metrics-urls" class="headerlink" title="–listen-metrics-urls"></a>–listen-metrics-urls</h3><ul>
+<h3 id="listen-metrics-urls"><a class="markdownIt-Anchor" href="#listen-metrics-urls"></a> –listen-metrics-urls</h3>
+<ul>
 <li>要监听的其他URL列表将同时响应<code>/ metrics</code>和<code>/ health</code></li>
 <li>默认: “”</li>
 <li>环境变量: ETCD_LISTEN_METRICS_URLS</li>
 </ul>
-<h2 id="认证标记"><a href="#认证标记" class="headerlink" title="认证标记"></a>认证标记</h2><h3 id="–auth-token"><a href="#–auth-token" class="headerlink" title="–auth-token"></a>–auth-token</h3><ul>
+<h2 id="认证标记"><a class="markdownIt-Anchor" href="#认证标记"></a> 认证标记</h2>
+<h3 id="auth-token"><a class="markdownIt-Anchor" href="#auth-token"></a> –auth-token</h3>
+<ul>
 <li>Specify a token type and token specific options, especially for JWT. Its format is “type,var1=val1,var2=val2,…”. Possible type is ‘simple’ or ‘jwt’.  Possible variables are ‘sign-method’ for specifying a sign method of jwt (its possible values are ‘ES256’, ‘ES384’, ‘ES512’, ‘HS256’, ‘HS384’,  ‘HS512’, ‘RS256’, ‘RS384’, ‘RS512’, ‘PS256’, ‘PS384’, or ‘PS512’),  ‘pub-key’ for specifying a path to a public key for verifying jwt,  ‘priv-key’ for specifying a path to a private key for signing jwt, and  ‘ttl’ for specifying TTL of jwt tokens.</li>
 <li>对于非对称算法（“ RS”，“ PS”，“ ES”），公钥是可选的，因为私钥包含足够的信息来签名和验证令牌。</li>
 <li>Example option of JWT: ‘–auth-token jwt,pub-key=app.rsa.pub,priv-key=app.rsa,sign-method=RS512,ttl=10m’</li>
 <li>默认: “simple”</li>
 <li>环境变量: ETCD_AUTH_TOKEN</li>
 </ul>
-<h3 id="–bcrypt-cost"><a href="#–bcrypt-cost" class="headerlink" title="–bcrypt-cost"></a>–bcrypt-cost</h3><ul>
+<h3 id="bcrypt-cost"><a class="markdownIt-Anchor" href="#bcrypt-cost"></a> –bcrypt-cost</h3>
+<ul>
 <li>指定用于哈希认证密码的bcrypt算法的成本/强度。 有效值在4到31之间。</li>
 <li>默认: 10</li>
 <li>环境变量: (not supported)</li>
 </ul>
-<h2 id="实验性标志"><a href="#实验性标志" class="headerlink" title="实验性标志"></a>实验性标志</h2><h3 id="–experimental-backend-bbolt-freelist-type"><a href="#–experimental-backend-bbolt-freelist-type" class="headerlink" title="–experimental-backend-bbolt-freelist-type"></a>–experimental-backend-bbolt-freelist-type</h3><ul>
+<h2 id="实验性标志"><a class="markdownIt-Anchor" href="#实验性标志"></a> 实验性标志</h2>
+<h3 id="experimental-backend-bbolt-freelist-type"><a class="markdownIt-Anchor" href="#experimental-backend-bbolt-freelist-type"></a> –experimental-backend-bbolt-freelist-type</h3>
+<ul>
 <li>etcd后端（bboltdb）使用的自由列表类型（支持数组和映射的类型）。</li>
 <li>默认: array</li>
 <li>环境变量: ETCD_EXPERIMENTAL_BACKEND_BBOLT_FREELIST_TYPE</li>
 </ul>
-<h3 id="–experimental-corrupt-check-time"><a href="#–experimental-corrupt-check-time" class="headerlink" title="–experimental-corrupt-check-time"></a>–experimental-corrupt-check-time</h3><ul>
+<h3 id="experimental-corrupt-check-time"><a class="markdownIt-Anchor" href="#experimental-corrupt-check-time"></a> –experimental-corrupt-check-time</h3>
+<ul>
 <li>群集损坏检查通过之间的持续时间</li>
 <li>默认: 0s</li>
 <li>环境变量: ETCD_EXPERIMENTAL_CORRUPT_CHECK_TIME</li>
 </ul>
-<h3 id="–experimental-compaction-batch-limit"><a href="#–experimental-compaction-batch-limit" class="headerlink" title="–experimental-compaction-batch-limit"></a>–experimental-compaction-batch-limit</h3><ul>
+<h3 id="experimental-compaction-batch-limit"><a class="markdownIt-Anchor" href="#experimental-compaction-batch-limit"></a> –experimental-compaction-batch-limit</h3>
+<ul>
 <li>设置每个压缩批处理中删除的最大修订。</li>
 <li>默认: 1000</li>
 <li>环境变量: ETCD_EXPERIMENTAL_COMPACTION_BATCH_LIMIT</li>
 </ul>
-<h3 id="–experimental-peer-skip-client-san-verification"><a href="#–experimental-peer-skip-client-san-verification" class="headerlink" title="–experimental-peer-skip-client-san-verification"></a>–experimental-peer-skip-client-san-verification</h3><ul>
+<h3 id="experimental-peer-skip-client-san-verification"><a class="markdownIt-Anchor" href="#experimental-peer-skip-client-san-verification"></a> –experimental-peer-skip-client-san-verification</h3>
+<ul>
 <li>跳过客户端证书中对等连接的SAN字段验证。 这可能是有帮助的，例如 如果群集成员在NAT后面的不同网络中运行。</li>
 <li>在这种情况下，请确保基于私有证书颁发机构使用对等证书，该证书使用<code>--peer-cert-file</code>，-peer-key-file，-peer-trusted-ca-file</li>
 </ul>
 <ul>
-<li><p>默认: false </p>
+<li>
+<p>默认: false</p>
 </li>
-<li><p>环境变量: ETCD_EXPERIMENTAL_PEER_SKIP_CLIENT_SAN_VERIFICATION</p>
+<li>
+<p>环境变量: ETCD_EXPERIMENTAL_PEER_SKIP_CLIENT_SAN_VERIFICATION</p>
 </li>
 </ul>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/">http://wangyangyangisme.github.io/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/10/31/ssl-%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6%E5%88%B6%E4%BD%9C/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/ssl/c717b9d87da33c716fbec4b25842c1aa.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">生成证书的三种方式</div></div></a></div><div class="next-post pull_right"><a href="/2019/10/31/etcd-etcd%E9%9B%86%E7%BE%A4%E6%8C%87%E5%8D%97/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/etcd/55556e54209b5be718614c259f8aca64.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Etcd集群指南</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/">http://wangyangyangisme.github.io/2019/10/31/etcd-etcd%E9%85%8D%E7%BD%AE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/10/31/ssl-%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6%E5%88%B6%E4%BD%9C/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/ssl/c717b9d87da33c716fbec4b25842c1aa.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">生成证书的三种方式</div></div></a></div><div class="next-post pull_right"><a href="/2019/10/31/etcd-etcd%E9%9B%86%E7%BE%A4%E6%8C%87%E5%8D%97/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/etcd/55556e54209b5be718614c259f8aca64.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Etcd集群指南</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
 var guest_info = 'nick,mail,link'.split(',').filter(function(item){
   return GUEST_INFO.indexOf(item) > -1
 });
