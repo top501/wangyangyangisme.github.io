@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ansible入门 | WangYangYang</title><meta name="description" content="ansible入门"><meta name="author" content="Wang YangYang"><meta name="copyright" content="Wang YangYang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="ansible入门"><meta name="twitter:description" content="ansible入门"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/ansible/5aa6a74dbc004c1186fe8099c325caf0.jpg"><meta property="og:type" content="article"><meta property="og:title" content="ansible入门"><meta property="og:url" content="http://wangyangyangisme.github.io/2019/10/20/ansible-ansible/"><meta property="og:site_name" content="WangYangYang"><meta property="og:description" content="ansible入门"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/ansible/5aa6a74dbc004c1186fe8099c325caf0.jpg"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      now = new Date();
+      hour = now.getHours();
+      isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://wangyangyangisme.github.io/2019/10/20/ansible-ansible/"><link rel="prev" title="palybook详解" href="http://wangyangyangisme.github.io/2019/10/20/ansible-playbook/"><link rel="next" title="Nginx配置文件nginx.conf详解" href="http://wangyangyangisme.github.io/2019/10/18/nginx-Nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6nginx.conf%E8%AF%A6%E8%A7%A3/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js" defer></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"C4QN4OTLJM","apiKey":"c2c026ba64eeb77abd2164975fa41f34","indexName":"wyy","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://wangyangyangisme.github.io","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: false,
+  isFontAwesomeV5: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false
+}</script></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ansible-命令执行过程"><span class="toc-text">ansible 命令执行过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ansible配置文件查找顺序"><span class="toc-text">ansible配置文件查找顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ansible配置文件"><span class="toc-text">ansible配置文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ansible-命令集"><span class="toc-text">ansible 命令集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ansible查看帮助文档"><span class="toc-text">ansible查看帮助文档</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hosts文件"><span class="toc-text">hosts文件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#远程主机定义"><span class="toc-text">远程主机定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义分组"><span class="toc-text">定义分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主机名支持正则描述"><span class="toc-text">主机名支持正则描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定义别名"><span class="toc-text">定义别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#群组整合"><span class="toc-text">群组整合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主机调用"><span class="toc-text">主机调用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ansible-命令详解"><span class="toc-text">ansible 命令详解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ansible-常用模块"><span class="toc-text">ansible 常用模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1）ping模块"><span class="toc-text">1）ping模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2）command-模块"><span class="toc-text">2）command 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3）shell-模块"><span class="toc-text">3）shell 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4）copy-模块"><span class="toc-text">4）copy 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5）file-模块"><span class="toc-text">5）file 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6）fetch-模块"><span class="toc-text">6）fetch 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7）cron-模块"><span class="toc-text">7）cron 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8）yum-模块"><span class="toc-text">8）yum 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9）service-模块"><span class="toc-text">9）service 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10）user-模块"><span class="toc-text">10）user 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11）group-模块"><span class="toc-text">11）group 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12）script-模块"><span class="toc-text">12）script 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13）setup-模块"><span class="toc-text">13）setup 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14）stat-模块"><span class="toc-text">14）stat 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15）get-url-模块"><span class="toc-text">15）get_url 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16）-mount-模块"><span class="toc-text">16） mount 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17）firewalld-模块"><span class="toc-text">17）firewalld 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18）unarchive-模块"><span class="toc-text">18）unarchive 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19）apt-模块"><span class="toc-text">19）apt 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20）raw-模块"><span class="toc-text">20）raw 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell、command、script、raw模块的区别"><span class="toc-text">shell、command、script、raw模块的区别</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/ansible/5aa6a74dbc004c1186fe8099c325caf0.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">ansible入门</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-10-20<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/ansible/">ansible</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">5.4k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 19 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/10/20/ansible-ansible/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/10/20/ansible-ansible/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><blockquote>
+<p>中文教程：<a href="https://ansible-tran.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">https://ansible-tran.readthedocs.io/en/latest/index.html</a></p>
+<p>模块：<a href="https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html" target="_blank" rel="noopener">https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html</a></p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>当下有许多的运维自动化工具( 配置管理 )，例如：Ansible、SaltStack、Puppet、Fabric 等。</p>
+<p>Ansible 一种集成 IT 系统的配置管理、应用部署、执行特定任务的开源平台，是 AnsibleWorks 公司名下的项目，该公司由 Cobbler 及 Func 的作者于 2012 年创建成立。</p>
+<p>Ansible 基于 Python 语言实现，由 Paramiko 和 PyYAML 两个关键模块构建。</p>
+<p>Ansible 特点：</p>
+<ul>
+<li>部署简单，只需在主控端部署 Ansible 环境，被控端无需做任何操作。</li>
+<li>默认使用 SSH（Secure Shell）协议对设备进行管理。</li>
+<li>主从集中化管理。</li>
+<li>配置简单、功能强大、扩展性强。</li>
+<li>支持 API 及自定义模块，可通过 Python 轻松扩展。</li>
+<li>通过 Playbooks 来定制强大的配置、状态管理。</li>
+<li>对云计算平台、大数据都有很好的支持。</li>
+<li>提供一个功能强大、操作性强的 Web 管理界面和 REST API 接口 —- AWX 平台。</li>
+</ul>
+<p>Ansible 与 SaltStack：</p>
+<ul>
+<li>最大的区别是 Ansible 无需在被监控主机部署任何客户端代理，默认通过 SSH 通道进行远程命令执行或下发配置。</li>
+<li>相同点是都具备功能强大、灵活的系统管理、状态配置，都使用 YAML 格式来描述配置，两者都提供丰富的模板及 API，对云计算平台、大数据都有很好的支持</li>
+</ul>
+<h1 id="ansible-命令执行过程"><a href="#ansible-命令执行过程" class="headerlink" title="ansible 命令执行过程"></a>ansible 命令执行过程</h1><ul>
+<li>加载自己的配置文件，默认<code>/etc/ansible/ansible.cfg</code>；</li>
+<li>查找对应的主机配置文件，找到要执行的主机或者组；</li>
+<li>加载自己对应的模块文件，如 command；</li>
+<li>通过ansible将模块或命令生成对应的临时py文件(python脚本)， 并将该文件传输至远程服务器；</li>
+<li>对应执行用户的家目录的<code>.ansible/tmp/XXX/XXX.PY</code>文件；</li>
+<li>给文件 +x 执行权限；</li>
+<li>执行并返回结果；</li>
+<li>删除临时py文件，<code>sleep 0</code>退出；</li>
+</ul>
+<h1 id="ansible配置文件查找顺序"><a href="#ansible配置文件查找顺序" class="headerlink" title="ansible配置文件查找顺序"></a>ansible配置文件查找顺序</h1><p>ansible与我们其他的服务在这一点上有很大不同，这里的配置文件查找是从多个地方找的，顺序如下：</p>
+<ul>
+<li>检查环境变量<code>ANSIBLE_CONFIG</code>指向的路径文件(export ANSIBLE_CONFIG=/etc/ansible.cfg)；</li>
+<li><code>~/.ansible.cfg</code>，检查当前目录下的ansible.cfg配置文件；</li>
+<li><code>/etc/ansible.cfg</code>检查etc目录的配置文件。</li>
+</ul>
+<h3 id="ansible配置文件"><a href="#ansible配置文件" class="headerlink" title="ansible配置文件"></a>ansible配置文件</h3><p>ansible 的配置文件为<code>/etc/ansible/ansible.cfg</code>，ansible 有许多参数，下面我们列出一些常见的参数：</p>
+<ul>
+<li>inventory = /etc/ansible/hosts：这个参数表示资源清单inventory文件的位置``</li>
+<li>library = /usr/share/ansible：指向存放Ansible模块的目录，支持多个目录方式，只要用冒号（：）隔开就可以</li>
+<li>forks = 5：并发连接数，默认为5</li>
+<li>sudo_user = root：设置默认执行命令的用户</li>
+<li>remote_port = 22：指定连接被管节点的管理端口，默认为22端口，建议修改，能够更加安全</li>
+<li>host_key_checking = False：设置是否检查SSH主机的密钥，值为True/False。关闭后第一次连接不会提示配置实例</li>
+<li>timeout = 60：设置SSH连接的超时时间，单位为秒</li>
+<li>log_path = /var/log/ansible.log：指定一个存储ansible日志的文件（默认不记录日志）</li>
+</ul>
+<h1 id="ansible-命令集"><a href="#ansible-命令集" class="headerlink" title="ansible 命令集"></a>ansible 命令集</h1><ul>
+<li><code>/usr/bin/ansible</code>：Ansibe AD-Hoc 临时命令执行工具，常用于临时命令的执行</li>
+<li><code>/usr/bin/ansible-doc</code>：Ansible 模块功能查看工具</li>
+<li><code>/usr/bin/ansible-galaxy</code>：下载/上传优秀代码或Roles模块 的官网平台，基于网络的</li>
+<li><code>/usr/bin/ansible-playbook</code>：Ansible 定制自动化的任务集编排工具</li>
+<li><code>/usr/bin/ansible-pull</code>：Ansible远程执行命令的工具，拉取配置而非推送配置（使用较少，海量机器时使用，对运维的架构能力要求较高）</li>
+<li><code>/usr/bin/ansible-vault</code>：Ansible 文件加密工具</li>
+<li><code>/usr/bin/ansible-console</code>：Ansible基于Linux Consoble界面可与用户交互的命令执行工具</li>
+</ul>
+<h3 id="ansible查看帮助文档"><a href="#ansible查看帮助文档" class="headerlink" title="ansible查看帮助文档"></a>ansible查看帮助文档</h3><p>ansible-doc 命令常用于获取模块信息及其使用帮助，一般用法如下：</p>
+<ul>
+<li><code>ansible-doc -l</code>：获取全部模块的信息</li>
+<li><code>ansible-doc -s MOD_NAME</code>：获取指定模块的使用帮助</li>
+</ul>
+<h1 id="hosts文件"><a href="#hosts文件" class="headerlink" title="hosts文件"></a>hosts文件</h1><h2 id="远程主机定义"><a href="#远程主机定义" class="headerlink" title="远程主机定义"></a>远程主机定义</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> #</span><span class="bash"> 定义域名</span></span><br><span class="line">www.abc.com</span><br><span class="line"></span><br><span class="line"><span class="meta"> #</span><span class="bash"> 定义 IP</span></span><br><span class="line">192.168.1.100</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 指定端口号</span></span><br><span class="line">192.168.1.150:37268</span><br></pre></td></tr></table></figure>
+
+<h2 id="定义分组"><a href="#定义分组" class="headerlink" title="定义分组"></a>定义分组</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[group1]           # 定义分组</span><br><span class="line">192.168.1.10</span><br><span class="line">192.168.1.20</span><br><span class="line">192.168.1.30</span><br><span class="line"></span><br><span class="line">[group2]           # 定义分组</span><br><span class="line">192.168.1.40</span><br><span class="line">192.168.1.50</span><br></pre></td></tr></table></figure>
+
+<h2 id="主机名支持正则描述"><a href="#主机名支持正则描述" class="headerlink" title="主机名支持正则描述"></a>主机名支持正则描述</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">www01.example.com-www50.example.com</span></span><br><span class="line">[webservers]</span><br><span class="line">www[01:50].example.com</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">db-a.example.com-db-f.example.com</span></span><br><span class="line">[dbservers]</span><br><span class="line">db-[a:f].example.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="定义别名"><a href="#定义别名" class="headerlink" title="定义别名"></a>定义别名</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Monitor是别名</span></span><br><span class="line">Monitor ansible_ssh_port=12378 ansible_ssh_host=192.168.1.200</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> ansible_ssh_host 连接目标主机的地址</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ansible_ssh_port 连接目标主机的端口，默认 22 时无需指定</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ansible_ssh_user 连接目标主机默认用户</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ansible_ssh_pass 连接目标主机默认用户密码</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ansible_ssh_connection 目标主机连接类型，可以是 <span class="built_in">local</span> 、ssh 或 paramiko</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ansible_ssh_private_key_file 连接目标主机的 ssh 私钥</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ansible_*_interpreter 指定采用非 Python 的其他脚本语言，如 Ruby 、Perl 或其他类似 ansible_python_interpreter 解释器</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> vars底下为群组共同便变量，包括已定义变量和自定义变量</span></span><br><span class="line">[test1]</span><br><span class="line">name1 ansible_ssh_host=192.168.1.[20:50]</span><br><span class="line">[test1:vars]</span><br><span class="line">ansible_ssh_user=root</span><br><span class="line">ansible_ssh_pass="1234"</span><br><span class="line">testvar="test" #自定义</span><br></pre></td></tr></table></figure>
+
+<h2 id="群组整合"><a href="#群组整合" class="headerlink" title="群组整合"></a>群组整合</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> children底下为父群组<span class="built_in">test</span>的子群组，调用方式为ansible <span class="built_in">test</span> -m ping：</span></span><br><span class="line">[dbtest]</span><br><span class="line">name1 ansible_ssh_host=192.168.1.[20:50] ansible_ssh_user="root" ansible_ssh_pass="1234" ansible_ssh_port=22</span><br><span class="line"></span><br><span class="line">[webtest]</span><br><span class="line">name2 ansible_ssh_host=192.168.2.[20:50] ansible_ssh_user="root" ansible_ssh_pass="1234" ansible_ssh_port=22</span><br><span class="line"></span><br><span class="line">[test:children]</span><br><span class="line">dbtest</span><br><span class="line">webtest</span><br><span class="line"></span><br><span class="line">[test:var]</span><br><span class="line">testvar="test"</span><br></pre></td></tr></table></figure>
+
+<h2 id="主机调用"><a href="#主机调用" class="headerlink" title="主机调用"></a>主机调用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> win_ping模块  ping</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 调用两个主机组的写法，以下webservers和dbservers都会被调用：</span></span><br><span class="line">ansible webservers:dbservers -m win_ping</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在webservers组中但不在dbsersers中的调用：</span></span><br><span class="line">ansible webservers:!dbservers -m win_ping</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在webservers组中并且在dbservers组中的才会调用：</span></span><br><span class="line">ansible webservers:&amp;dbservers -m win_ping</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 在调用前加~，代表正则表达式：</span></span><br><span class="line">ansible ~(web|db).*.91it.org -m win_ping</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 组合的例子：</span></span><br><span class="line">ansible webserver:dbservers:&amp;nginx:!ntp -m win_ping</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> -m 		  指定执行 ping 模块</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i          指定 hosts 文件位置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -u username 指定 SSH 连接的用户名</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -k          指定远程用户密码</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -f          指定并发数</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -s          如需要 root 权限执行时使用 ( 连接用户不是 root 时 )</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -K          -s 时，-K 输入 root 密码</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="ansible-命令详解"><a href="#ansible-命令详解" class="headerlink" title="ansible 命令详解"></a>ansible 命令详解</h1><p>命令的具体格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible &lt;host-pattern&gt; [-f forks] [-m module_name] [-a args]</span><br></pre></td></tr></table></figure>
+
+<p>也可以通过<code>ansible -h</code>来查看帮助，下面我们列出一些比较常用的选项，并解释其含义：</p>
+<ul>
+<li><code>-a MODULE_ARGS</code>：模块的参数，如果执行默认COMMAND的模块，即是命令参数，如： “date”，“pwd”等等</li>
+<li><code>-k</code>，<code>--ask-pass</code>：ask for SSH password。登录密码，提示输入SSH密码而不是假设基于密钥的验证</li>
+<li><code>--ask-su-pass</code>：ask for su password。su切换密码</li>
+<li><code>-K</code>，<code>--ask-sudo-pass</code>：ask for sudo password。提示密码使用sudo，sudo表示提权操作</li>
+<li><code>--ask-vault-pass</code>：ask for vault password。假设我们设定了加密的密码，则用该选项进行访问</li>
+<li><code>-B SECONDS</code>：后台运行超时时间</li>
+<li><code>-C</code>：模拟运行环境并进行预运行，可以进行查错测试</li>
+<li><code>-c CONNECTION</code>：连接类型使用</li>
+<li><code>-f FORKS</code>：并行任务数，默认为5</li>
+<li><code>-i INVENTORY</code>：指定主机清单的路径，默认为<code>/etc/ansible/hosts</code></li>
+<li><code>--list-hosts</code>：查看有哪些主机组</li>
+<li><code>-m MODULE_NAME</code>：执行模块的名字，默认使用 command 模块，所以如果是只执行单一命令可以不用 -m参数</li>
+<li><code>-o</code>：压缩输出，尝试将所有结果在一行输出，一般针对收集工具使用</li>
+<li><code>-S</code>：用 su 命令</li>
+<li><code>-R SU_USER</code>：指定 su 的用户，默认为 root 用户</li>
+<li><code>-s</code>：用 sudo 命令</li>
+<li><code>-U SUDO_USER</code>：指定 sudo 到哪个用户，默认为 root 用户</li>
+<li><code>-T TIMEOUT</code>：指定 ssh 默认超时时间，默认为10s，也可在配置文件中修改</li>
+<li><code>-u REMOTE_USER</code>：远程用户，默认为 root 用户</li>
+<li><code>-v</code>：查看详细信息，同时支持<code>-vvv</code>，<code>-vvvv</code>可查看更详细信息</li>
+</ul>
+<h1 id="ansible-常用模块"><a href="#ansible-常用模块" class="headerlink" title="ansible 常用模块"></a>ansible 常用模块</h1><h2 id="1）ping模块"><a href="#1）ping模块" class="headerlink" title="1）ping模块"></a>1）ping模块</h2><p>检查指定节点机器是否还能连通，用法很简单，不涉及参数<br><code>ansible erp -m ping</code></p>
+<h2 id="2）command-模块"><a href="#2）command-模块" class="headerlink" title="2）command 模块"></a>2）command 模块</h2><p>这个模块可以直接在远程主机上执行命令，并将结果返回本主机。</p>
+<p>命令模块接受命令名称，后面是空格分隔的列表参数。给定的命令将在所有选定的节点上执行。它不会通过shell进行处理，比如$HOME和操作如”&lt;”，”&gt;”，”|”，”;”，”&amp;”  工作（需要使用（shell）模块实现这些功能）。注意，该命令不支持<code>| 管道命令</code>。</p>
+<p>下面来看一看该模块下常用的几个命令：</p>
+<ul>
+<li><code>chdir</code>：在执行命令之前，先切换到该目录</li>
+<li><code>executable</code>：切换shell来执行命令，需要使用命令的绝对路径</li>
+<li><code>free_form</code>：要执行的Linux指令，一般使用<code>Ansible</code>的-a参数代替。</li>
+<li><code>creates</code>：一个文件名，当这个文件存在，则该命令不执行,可以用来做判断</li>
+<li><code>removes</code>：一个文件名，这个文件不存在，则该命令不执行</li>
+<li><code>stdin</code>：将命令的<code>stdin</code>设置为指定的值</li>
+<li><code>warn</code>：如果在<code>ansible.cfg</code>中存在告警，如果设定了false，不会告警该行</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ansible web -m command -a 'ss -ntl'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">先切换到/data/ 目录，再执行“ls”命令</span></span><br><span class="line">ansible web -m command -a 'chdir=/data/ ls'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">如果/data/aaa.jpg存在，则不执行“ls”命令</span></span><br><span class="line">ansible web -m command -a 'creates=/data/aaa.jpg ls'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">如果/data/aaa.jpg存在，则执行“cat /data/a”命令</span></span><br><span class="line">ansible web -m command -a 'removes=/data/aaa.jpg cat /data/a'</span><br></pre></td></tr></table></figure>
+
+<h2 id="3）shell-模块"><a href="#3）shell-模块" class="headerlink" title="3）shell 模块"></a>3）shell 模块</h2><p>shell模块可以在远程主机上调用shell解释器运行命令，支持shell的各种功能，例如管道等。</p>
+<ul>
+<li>chdir：在运行命令之前，切换到此目录。 </li>
+<li>executable：更改用于执行命令的shell（bash，sh）。 应该是可执行文件的绝对路径。</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible web -m shell -a 'cat /etc/passwd |grep "keer"'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4）copy-模块"><a href="#4）copy-模块" class="headerlink" title="4）copy 模块"></a>4）copy 模块</h2><p>这个模块用于将文件复制到远程主机，同时支持给定内容生成文件和修改权限等。类似于 scp 功能<br>其相关选项如下：</p>
+<ul>
+<li><code>src</code>：被复制到远程主机的本地文件。可以是绝对路径，也可以是相对路径。如果路径是一个目录，则会递归复制，用法类似于”rsync”，空目录不复制</li>
+<li><code>content</code>：用来替代src，用于将指定文件的内容复制到远程文件内</li>
+<li><code>dest</code>：必选项，将源文件复制到的远程主机的绝对路径</li>
+<li><code>backup</code>：当文件内容发生改变后，在覆盖之前把源文件备份，备份文件包含时间信息</li>
+<li><code>directory_mode</code>：递归设定目录的权限，默认为系统默认权限</li>
+<li><code>follow</code>：支持link文件复制</li>
+<li><code>force</code>：当目标主机包含该文件，但内容不同时，设为”yes”，表示强制覆盖；设为”no”，表示目标主机的目标位置不存在该文件才复制。默认为”yes”</li>
+<li><code>group</code>：设定远程主机目录的组名</li>
+<li><code>mode</code>：设定远程主机文件及目录的权限</li>
+<li><code>owner</code>：设定远程主机目录的用户名</li>
+<li><code>others</code>：所有的 file 模块中的选项可以在这里使用</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 复制文件</span></span><br><span class="line">ansible web -m copy -a 'src=~/hello dest=/data/hello'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 给定内容生成文件，并制定权限</span></span><br><span class="line">ansible web -m copy -a 'content="I am keer\n" dest=/data/name mode=666' </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看一下我们生成的文件及其权限</span></span><br><span class="line">ansible web -m shell -a 'ls -l /data/'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 覆盖备份</span></span><br><span class="line">ansible web -m copy -a 'content="I am keerya\n" backup=yes dest=/data/name mode=666'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5）file-模块"><a href="#5）file-模块" class="headerlink" title="5）file 模块"></a>5）file 模块</h2><p>该模块主要用于设置文件的属性，比如创建文件、创建链接文件、删除文件等。<br>下面是一些常见的命令：</p>
+<ul>
+<li><code>force</code>：需要在两种情况下强制创建软链接，一种是源文件不存在，但之后会建立的情况下；另一种是目标软链接已存在，需要先取消之前的软链，然后创建新的软链，有两个选项：yes|no</li>
+<li><code>group</code>：定义文件/目录的属组。后面可以加上<code>mode</code>：定义文件/目录的权限</li>
+<li><code>owner</code>：定义文件/目录的属主。后面必须跟上<code>path</code>：定义文件/目录的路径</li>
+<li><code>recurse</code>：递归设置文件的属性，只对目录有效，后面跟上<code>src</code>：被链接的源文件路径，只应用于<code>state=link</code>的情况</li>
+<li><code>dest</code>：被链接到的路径，只应用于<code>state=link</code>的情况</li>
+<li><code>state</code>：状态，有以下选项：<ul>
+<li><code>directory</code>：如果目录不存在，就创建目录</li>
+<li><code>file</code>：即使文件不存在，也不会被创建</li>
+<li><code>link</code>：创建软链接</li>
+<li><code>hard</code>：创建硬链接</li>
+<li><code>touch</code>：如果文件不存在，则会创建一个新的文件，如果文件或目录已存在，则更新其最后修改时间</li>
+<li><code>absent</code>：删除目录、文件或者取消链接文件</li>
+</ul>
+</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建目录</span></span><br><span class="line">ansible web -m file -a 'path=/data/app state=directory'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建链接文件</span></span><br><span class="line">ansible web -m file -a 'path=/data/bbb.jpg src=aaa.jpg state=link'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除文件</span></span><br><span class="line">ansible web -m file -a 'path=/data/a state=absent'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6）fetch-模块"><a href="#6）fetch-模块" class="headerlink" title="6）fetch 模块"></a>6）fetch 模块</h2><p>该模块用于从远程某主机获取（复制）文件到本地。<br>有两个选项：</p>
+<ul>
+<li><code>dest</code>：用来存放文件的目录</li>
+<li><code>src</code>：在远程拉取的文件，并且必须是一个file，不能是目录</li>
+</ul>
+<p>示例</p>
+<ul>
+<li><code>flat</code>：允许您覆盖将目标文件添加到主机名<code>/path/to/file</code>的默认行为。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible web -m fetch -a 'src=/data/hello dest=/data'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="7）cron-模块"><a href="#7）cron-模块" class="headerlink" title="7）cron 模块"></a>7）cron 模块</h2><p>该模块适用于管理<code>cron</code>计划任务的。<br>其使用的语法跟我们的<code>crontab</code>文件中的语法一致，同时，可以指定以下选项：</p>
+<ul>
+<li><code>day</code>：日应该运行的工作( 1-31, , /2, )</li>
+<li><code>hour</code>：小时 ( 0-23, , /2, )</li>
+<li><code>minute</code>：分钟( 0-59, , /2, )</li>
+<li><code>month</code>：月( 1-12, *, /2, )</li>
+<li><code>weekday</code>：周 ( 0-6 for Sunday-Saturday,, )</li>
+<li><code>job</code>：指明运行的命令是什么</li>
+<li><code>name</code>：定时任务描述</li>
+<li><code>reboot</code>： 任务在重启时运行，不建议使用，建议使用special_time</li>
+<li><code>special_time</code>：#特殊的时间范围，参数：reboot（重启时），annually（每年），monthly（每月），weekly（每周），daily（每天），hourly（每小时）</li>
+<li><code>state</code>：指定状态，present表示添加定时任务，也是默认设置，absent表示删除定时任务</li>
+<li><code>user</code>：以哪个用户的身份执行</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加计划任务</span></span><br><span class="line">ansible web -m cron -a 'name="ntp update every 5 min" minute=*/5 job="/sbin/ntpdate 172.17.0.1 &amp;&gt; /dev/null"'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看计划任务</span></span><br><span class="line">ansible web -m shell -a 'crontab -l'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除计划任务</span></span><br><span class="line">ansible web -m cron -a 'name="df everyday" hour=15 job="df -lh &gt;&gt; /tmp/disk_total &amp;&gt; /dev/null" state=absent'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="8）yum-模块"><a href="#8）yum-模块" class="headerlink" title="8）yum 模块"></a>8）yum 模块</h2><p>该模块主要用于软件的安装。<br>其选项如下：</p>
+<ul>
+<li><code>name</code>：所安装的包的名称</li>
+<li><code>state</code>：<code>present</code>—&gt;安装， <code>latest</code>—&gt;安装最新的, <code>absent</code>—&gt; 卸载软件。</li>
+<li><code>update_cache</code>：强制更新yum的缓存</li>
+<li><code>conf_file</code>：指定远程yum安装时所依赖的配置文件（安装本地已有的包）。</li>
+<li><code>disable_pgp_check</code>：是否禁止GPG checking，只用于<code>present</code>or <code>latest</code>。</li>
+<li><code>disablerepo</code>：临时禁止使用yum库。 只用于安装或更新时。</li>
+<li><code>enablerepo</code>：临时使用的yum库。只用于安装或更新时。</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible web -m yum -a 'name=htop state=present'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="9）service-模块"><a href="#9）service-模块" class="headerlink" title="9）service 模块"></a>9）service 模块</h2><p>该模块用于服务程序的管理。<br>其主要选项如下：</p>
+<ul>
+<li><code>arguments</code>：命令行提供额外的参数</li>
+<li><code>enabled</code>：设置开机启动。</li>
+<li><code>name</code>：服务名称</li>
+<li><code>runlevel</code>：开机启动的级别，一般不用指定。</li>
+<li><code>sleep</code>：在重启服务的过程中，是否等待。如在服务关闭以后等待2秒再启动。(定义在剧本中。)</li>
+<li><code>state</code>：有四种状态，分别为：<code>started</code>—&gt;启动服务， <code>stopped</code>—&gt;停止服务， <code>restarted</code>—&gt;重启服务， <code>reloaded</code>—&gt;重载配置</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开启服务并设置自启动</span></span><br><span class="line">ansible web -m service -a 'name=nginx state=started enabled=true' </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 关闭服务</span></span><br><span class="line">ansible web -m service -a 'name=nginx state=stopped'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查端口</span></span><br><span class="line">ansible web -m shell -a 'ss -ntl | grep 80'</span><br></pre></td></tr></table></figure>
+
+<h2 id="10）user-模块"><a href="#10）user-模块" class="headerlink" title="10）user 模块"></a>10）user 模块</h2><p>该模块主要是用来管理用户账号。<br>其主要选项如下：</p>
+<ul>
+<li><code>comment</code>：用户的描述信息</li>
+<li><code>createhome</code>：是否创建家目录</li>
+<li><code>force</code>：在使用state=absent时, 行为与userdel –force一致.</li>
+<li><code>group</code>：指定基本组</li>
+<li><code>groups</code>：指定附加组，如果指定为(groups=)表示删除所有组</li>
+<li><code>home</code>：指定用户家目录</li>
+<li><code>move_home</code>：如果设置为home=时, 试图将用户主目录移动到指定的目录</li>
+<li><code>name</code>：指定用户名</li>
+<li><code>non_unique</code>：该选项允许改变非唯一的用户ID值</li>
+<li><code>password</code>：指定用户密码</li>
+<li><code>remove</code>：在使用state=absent时, 行为是与userdel –remove一致</li>
+<li><code>shell</code>：指定默认shell</li>
+<li><code>state</code>：设置帐号状态，不指定为创建，指定值为absent表示删除</li>
+<li><code>system</code>：当创建一个用户，设置这个用户是系统用户。这个设置不能更改现有用户</li>
+<li><code>uid</code>：指定用户的uid</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加一个用户并指定其 uid</span></span><br><span class="line">ansible web -m user -a 'name=keer uid=11111'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除用户</span></span><br><span class="line">ansible web -m user -a 'name=keer state=absent'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查用户</span></span><br><span class="line">ansible web -m shell -a 'cat /etc/passwd |grep keer'</span><br></pre></td></tr></table></figure>
+
+<h2 id="11）group-模块"><a href="#11）group-模块" class="headerlink" title="11）group 模块"></a>11）group 模块</h2><p>该模块主要用于添加或删除组。<br>常用的选项如下：</p>
+<ul>
+<li><code>gid=</code>：设置组的GID号</li>
+<li><code>name</code>：指定组的名称</li>
+<li><code>state</code>：指定组的状态，默认为创建，设置值为<code>absent</code>为删除</li>
+<li><code>system</code>：设置值为<code>yes</code>，表示创建为系统组</li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建组</span></span><br><span class="line">ansible web -m group -a 'name=sanguo gid=12222'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除组</span></span><br><span class="line">ansible web -m group -a 'name=sanguo state=absent'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查组</span></span><br><span class="line">ansible web -m shell -a 'cat /etc/group | grep 12222'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="12）script-模块"><a href="#12）script-模块" class="headerlink" title="12）script 模块"></a>12）script 模块</h2><p>该模块用于将本机的脚本在被管理端的机器上运行。<br>该模块直接指定脚本的路径即可，我们通过例子来看一看到底如何使用的：<br>首先，我们写一个脚本，并给其加上执行权限：</p>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible web -m script -a '/tmp/df.sh'</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="13）setup-模块"><a href="#13）setup-模块" class="headerlink" title="13）setup 模块"></a>13）setup 模块</h2><p>该模块主要用于收集信息，是通过调用facts组件来实现的。<br>facts组件是Ansible用于采集被管机器设备信息的一个功能，我们可以使用setup模块查机器的所有facts信息，可以使用filter来查看指定信息。整个facts信息被包装在一个JSON格式的数据结构中，ansible_facts是最上层的值。</p>
+<p>facts就是变量，内建变量  。每个主机的各种信息，cpu颗数、内存大小等。会存在facts中的某个变量中。调用后返回很多对应主机的信息，在后面的操作中可以根据不同的信息来做不同的操作。如redhat系列用yum安装，而debian系列用apt来安装软件。</p>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看信息</span></span><br><span class="line">ansible web -m setup -a 'filter="*mem*"' #查看内存</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">保存信息</span></span><br><span class="line">ansible web -m setup -a 'filter="*mem*"' --tree /tmp/facts</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">查看一下内存的大小</span></span><br><span class="line">ansible web -m shell -a 'free -m'</span><br></pre></td></tr></table></figure>
+
+<h2 id="14）stat-模块"><a href="#14）stat-模块" class="headerlink" title="14）stat 模块"></a>14）stat 模块</h2><p>获取远程文件状态信息，atime/ctime/mtime/md5/uid/gid 等信息</p>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible Client -m stat -a "path=/etc/syctl.conf"</span><br></pre></td></tr></table></figure>
+
+<h2 id="15）get-url-模块"><a href="#15）get-url-模块" class="headerlink" title="15）get_url 模块"></a>15）get_url 模块</h2><p>实现在远程主机下载指定 URL 到本地，支持 sha256sum 文件校验，类似于wget</p>
+<ul>
+<li>sha256sum：下载完成后进行sha256 check； </li>
+<li>timeout：下载超时时间，默认10s </li>
+<li>url：下载的URL </li>
+<li>url_password、url_username：主要用于需要用户名密码进行验证的情况 </li>
+<li>dest：将文件下载到哪里的绝对路径。如果dest是目录，则使用服务器提供的文件名，或者如果没有提供，将使用远程服务器上的URL的基本名称。 </li>
+</ul>
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible Client -m get_url -a "url=http://www.baidu.com dest=/tmp/index.html mode=0440 force=yes"</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="16）-mount-模块"><a href="#16）-mount-模块" class="headerlink" title="16） mount 模块"></a>16） mount 模块</h2><p>远程主机分区挂载</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible Client -m mount -a "name=/mnt/data src=/dev/sd0 fstype=ext4 opts=ro state=present"</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="17）firewalld-模块"><a href="#17）firewalld-模块" class="headerlink" title="17）firewalld 模块"></a>17）firewalld 模块</h2><p>首先开启防火墙</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible db -m service -a 'name=firewalld state=started enabled=true'</span><br></pre></td></tr></table></figure>
+
+<p>把httpd服务加入防火墙白名单：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible db -m firewalld -a 'service=http state=enabled permanent=yes immediate</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="18）unarchive-模块"><a href="#18）unarchive-模块" class="headerlink" title="18）unarchive 模块"></a>18）unarchive 模块</h2><p>用于解压文件，模块包含如下选项： </p>
+<ul>
+<li>copy：在解压文件之前，是否先将文件复制到远程主机，默认为yes。若为no，则要求目标主机上压缩包必须存在。 </li>
+<li>creates：指定一个文件名，当该文件存在时，则解压指令不执行 </li>
+<li>dest：远程主机上的一个路径，即文件解压的绝对路径。 </li>
+<li>group：解压后的目录或文件的属组 </li>
+<li>list_files：如果为yes，则会列出压缩包里的文件，默认为no，2.0版本新增的选项 </li>
+<li>mode：解压后文件的权限 </li>
+<li>src：如果copy为yes，则需要指定压缩文件的源路径 </li>
+<li>owner：解压后文件或目录的属主</li>
+</ul>
+<h2 id="19）apt-模块"><a href="#19）apt-模块" class="headerlink" title="19）apt 模块"></a>19）apt 模块</h2><p>这个模块是ubuntu作为远端节点的OS的时候，用的最多的。Ubuntu/Debian的包管理工具。 </p>
+<ul>
+<li>deb： 用于安装远程机器上的.deb后缀的软件包（optional） </li>
+<li>install_recommends：这个参数可以控制远程电脑上是否只是下载软件包，还是下载后安装，默认参数为true,设置为false的时候只下载软件包，不安装 </li>
+<li>update_cache： 当这个参数为yes的时候等于apt-get update（optional） </li>
+<li>name： apt要下载的软件包名字，支持name=git=1.6 这种制定版本的模式 </li>
+<li>state：状态（present，absent，latest），表示是安装还卸载 <ul>
+<li>present:默认的，表示为安装 </li>
+<li>lastest: 安装为最新的版本 </li>
+<li>absent：表示删除</li>
+</ul>
+</li>
+</ul>
+<h2 id="20）raw-模块"><a href="#20）raw-模块" class="headerlink" title="20）raw 模块"></a>20）raw 模块</h2><p>模块 执行原始的命令，而不是通过模块子系统。在任何情况下，使用shell或命令模块是合适的。给定原始的参数直接通过配置的远程shell运行。可返回标准输出、错误输出和返回代码。此模块没有变更处理程序支持。<br>这个模块不需要远程系统上的Python，就像脚本模块一样。此模块也支持Windows目标。</p>
+<h2 id="shell、command、script、raw模块的区别"><a href="#shell、command、script、raw模块的区别" class="headerlink" title="shell、command、script、raw模块的区别"></a>shell、command、script、raw模块的区别</h2><ul>
+<li>command模块 [执行远程命令]</li>
+<li>script模块 [在远程主机执行主控端的shell/python脚本 ]  （使用相对路径）</li>
+<li>shell模块 [执行远程主机的shell/python脚本]</li>
+<li>raw模块 [类似于command模块、支持管道传递]</li>
+</ul>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/10/20/ansible-ansible/">http://wangyangyangisme.github.io/2019/10/20/ansible-ansible/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/10/20/ansible-playbook/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/ansible/0bda24c88202f092e2844d4f68b3a0c4.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">palybook详解</div></div></a></div><div class="next-post pull_right"><a href="/2019/10/18/nginx-Nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6nginx.conf%E8%AF%A6%E8%A7%A3/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/nginx/bd4fea7f62faf11871b700687d60ba14.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Nginx配置文件nginx.conf详解</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify: true,
+  verify: false,
+  appId: '49gEIIGN7uRbL6vHhieSpBzM-MdYXbMMI',
+  appKey: 'uqts0urLKwikYQ0fKmIkMHBE',
+  placeholder: '请留下你的脚印',
+  avatar: 'monsterid',
+  meta: guest_info,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: false,
+  serverURLs: ''
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wang YangYang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://wangyangyangisme.github.io/">blog</a>!</div><div class="icp"><a><img class="icp-icon" src="/img/icp.png"/><span></span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/third-party/click_heart.js"></script><script src="/js/search/algolia.js"></script></body></html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>常见的十种软件架构模式 | WangYangYang</title><meta name="description" content="常见的十种软件架构模式"><meta name="keywords" content="architecture"><meta name="author" content="Wang YangYang"><meta name="copyright" content="Wang YangYang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="常见的十种软件架构模式"><meta name="twitter:description" content="常见的十种软件架构模式"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/78fe3b26cc2d3e3e17f5dbfbe6287089.jpg"><meta property="og:type" content="article"><meta property="og:title" content="常见的十种软件架构模式"><meta property="og:url" content="http://wangyangyangisme.github.io/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%81%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/"><meta property="og:site_name" content="WangYangYang"><meta property="og:description" content="常见的十种软件架构模式"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/78fe3b26cc2d3e3e17f5dbfbe6287089.jpg"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      now = new Date();
+      hour = now.getHours();
+      isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://wangyangyangisme.github.io/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%81%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/"><link rel="prev" title="常见的五种软件架构" href="http://wangyangyangisme.github.io/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BA%94%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"><link rel="next" title="bind9实战" href="http://wangyangyangisme.github.io/2019/10/22/ubuntu-Bind9%E5%AE%9E%E6%88%98/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js" defer></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"C4QN4OTLJM","apiKey":"c2c026ba64eeb77abd2164975fa41f34","indexName":"wyy","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://wangyangyangisme.github.io","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: false,
+  isFontAwesomeV5: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false
+}</script></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#常见的十种软件架构模式"><span class="toc-text">常见的十种软件架构模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是架构模式？"><span class="toc-text">什么是架构模式？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-分层模式"><span class="toc-text">一. 分层模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-客户端-服务器模式"><span class="toc-text">二. 客户端-服务器模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-主从设备模式"><span class="toc-text">三. 主从设备模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-管道-过滤器模式"><span class="toc-text">四. 管道-过滤器模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-代理模式"><span class="toc-text">五. 代理模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-点对点模式"><span class="toc-text">六. 点对点模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七-事件总线模式"><span class="toc-text">七. 事件总线模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八-模型-视图-控制器模式"><span class="toc-text">八. 模型-视图-控制器模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九-黑板模式"><span class="toc-text">九. 黑板模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十-解释器模式"><span class="toc-text">十. 解释器模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#体系架构模式的比较"><span class="toc-text">体系架构模式的比较</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/78fe3b26cc2d3e3e17f5dbfbe6287089.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">常见的十种软件架构模式</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-10-25<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/architecture/">architecture</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">2.4k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 6 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%81%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%81%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><blockquote>
+<p>原文作者：<a href="https://medium.com/@vijinimallawaarachchi?source=post_header_lockup" target="_blank" rel="noopener">Vijini Mallawaarachchi</a><br>原文地址：<a href="https://medium.com/towards-data-science/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013" target="_blank" rel="noopener">10 Common Software Architectural Patterns in a nutshell</a> </p>
+</blockquote>
+<h1 id="常见的十种软件架构模式"><a href="#常见的十种软件架构模式" class="headerlink" title="常见的十种软件架构模式"></a>常见的十种软件架构模式</h1><p>有没有想过要设计多大的企业规模系统？在主要的软件开发开始之前，我们必须选择一个合适的体系结构，它将为我们提供所需的功能和质量属性。因此，在将它们应用到我们的设计之前，我们应该了解不同的体系结构。</p>
+<p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture8.png"></p>
+<h2 id="什么是架构模式？"><a href="#什么是架构模式？" class="headerlink" title="什么是架构模式？"></a>什么是架构模式？</h2><p>根据维基百科中的定义：</p>
+<blockquote>
+<p>架构模式是一个通用的、可重用的解决方案，用于在给定上下文中的软件体系结构中经常出现的问题。架构模式与软件设计模式类似，但具有更广泛的范围。</p>
+</blockquote>
+<p>在本文中，将简要地解释以下10种常见的体系架构模式，以及它们的用法、优缺点。</p>
+<ol>
+<li>分层模式</li>
+<li>客户端-服务器模式</li>
+<li>主从设备模式</li>
+<li>管道-过滤器模式</li>
+<li>代理模式</li>
+<li>点对点模式</li>
+<li>事件总线模式</li>
+<li>模型-视图-控制器模式</li>
+<li>黑板模式</li>
+<li>解释器模式</li>
+</ol>
+<hr>
+<h3 id="一-分层模式"><a href="#一-分层模式" class="headerlink" title="一. 分层模式"></a>一. 分层模式</h3><p>这种模式也称为多层体系架构模式。它可以用来构造可以分解为子任务组的程序，每个子任务都处于一个特定的抽象级别。每个层都为下一个提供更高层次服务。</p>
+<p>一般信息系统中最常见的是如下所列的4层。</p>
+<ul>
+<li>表示层(也称为UI层)</li>
+<li>应用层(也称为服务层)</li>
+<li>业务逻辑层(也称为领域层)</li>
+<li>数据访问层(也称为持久化层)</li>
+</ul>
+<p>使用场景：</p>
+<ul>
+<li>一般的桌面应用程序</li>
+<li>电子商务Web应用程序</li>
+</ul>
+<p><img src="/" alt="Layered pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture9.png"></p>
+<h3 id="二-客户端-服务器模式"><a href="#二-客户端-服务器模式" class="headerlink" title="二. 客户端-服务器模式"></a>二. 客户端-服务器模式</h3><p>这种模式由两部分组成：一个服务器和多个客户端。服务器组件将为多个客户端组件提供服务。客户端从服务器请求服务，服务器为这些客户端提供相关服务。此外，服务器持续侦听客户机请求。</p>
+<p>使用场景：</p>
+<ul>
+<li>电子邮件，文件共享和银行等在线应用程序</li>
+</ul>
+<p><img src="/" alt="Client-server pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture10.png"></p>
+<h3 id="三-主从设备模式"><a href="#三-主从设备模式" class="headerlink" title="三. 主从设备模式"></a>三. 主从设备模式</h3><p>这种模式由两方组成;主设备和从设备。主设备组件在相同的从设备组件中分配工作，并计算最终结果，这些结果是由从设备返回的结果。</p>
+<p>使用场景：</p>
+<ul>
+<li>在数据库复制中，主数据库被认为是权威的来源，并且要与之同步</li>
+<li>在计算机系统中与总线连接的外围设备(主和从驱动器)</li>
+</ul>
+<p><img src="/" alt="Master-slave pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture11.png"></p>
+<h3 id="四-管道-过滤器模式"><a href="#四-管道-过滤器模式" class="headerlink" title="四. 管道-过滤器模式"></a>四. 管道-过滤器模式</h3><p>此模式可用于构造生成和处理数据流的系统。每个处理步骤都封装在一个过滤器组件内。要处理的数据是通过管道传递的。这些管道可以用于缓冲或用于同步。</p>
+<p>使用场景：</p>
+<ul>
+<li>编译器。连续的过滤器执行词法分析、解析、语义分析和代码生成</li>
+<li>生物信息学的工作流</li>
+</ul>
+<p><img src="/" alt="Pipe-filter pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture12.png"></p>
+<h3 id="五-代理模式"><a href="#五-代理模式" class="headerlink" title="五. 代理模式"></a>五. 代理模式</h3><p>此模式用于构造具有解耦组件的分布式系统。这些组件可以通过远程服务调用彼此交互。代理组件负责组件之间的通信协调。</p>
+<p>服务器将其功能(服务和特征)发布给代理。客户端从代理请求服务，然后代理将客户端重定向到其注册中心的适当服务。</p>
+<p>使用场景：</p>
+<ul>
+<li>消息代理软件，如Apache ActiveMQ，Apache Kafka，RabbitMQ和JBoss Messaging</li>
+</ul>
+<p><img src="/" alt="Broker pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture13.png"></p>
+<h3 id="六-点对点模式"><a href="#六-点对点模式" class="headerlink" title="六. 点对点模式"></a>六. 点对点模式</h3><p>在这种模式中，单个组件被称为对等点。对等点可以作为客户端，从其他对等点请求服务，作为服务器，为其他对等点提供服务。对等点可以充当客户端或服务器或两者的角色，并且可以随时间动态地更改其角色。</p>
+<p>使用场景：</p>
+<ul>
+<li>像Gnutella和G2这样的文件共享网络</li>
+<li>多媒体协议，如P2PTV和PDTP</li>
+<li>像Spotify这样的专有多媒体应用程序</li>
+</ul>
+<p><img src="/" alt="Peer-to-peer pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture14.png"></p>
+<h3 id="七-事件总线模式"><a href="#七-事件总线模式" class="headerlink" title="七. 事件总线模式"></a>七. 事件总线模式</h3><p>这种模式主要是处理事件，包括4个主要组件：事件源、事件监听器、通道和事件总线。消息源将消息发布到事件总线上的特定通道上。侦听器订阅特定的通道。侦听器会被通知消息，这些消息被发布到它们之前订阅的一个通道上。</p>
+<p>使用场景：</p>
+<ul>
+<li>安卓开发</li>
+<li>通知服务</li>
+</ul>
+<p><img src="/" alt="Event-bus pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture15.png"></p>
+<h3 id="八-模型-视图-控制器模式"><a href="#八-模型-视图-控制器模式" class="headerlink" title="八. 模型-视图-控制器模式"></a>八. 模型-视图-控制器模式</h3><p>这种模式，也称为MVC模式，把一个交互式应用程序划分为3个部分，</p>
+<ul>
+<li>模型：包含核心功能和数据</li>
+<li>视图：将信息显示给用户(可以定义多个视图)</li>
+<li>控制器：处理用户输入的信息</li>
+</ul>
+<p>这样做是为了将信息的内部表示与信息的呈现方式分离开来，并接受用户的请求。它分离了组件，并允许有效的代码重用。</p>
+<p>使用场景：</p>
+<ul>
+<li>在主要编程语言中互联网应用程序的体系架构</li>
+<li>像Django和Rails这样的Web框架</li>
+</ul>
+<p><img src="/" alt="Model-view-controller pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture16.png"></p>
+<h3 id="九-黑板模式"><a href="#九-黑板模式" class="headerlink" title="九. 黑板模式"></a>九. 黑板模式</h3><p>这种模式对于没有确定解决方案策略的问题是有用的。黑板模式由3个主要组成部分组成。</p>
+<ul>
+<li>黑板——包含来自解决方案空间的对象的结构化全局内存</li>
+<li>知识源——专门的模块和它们自己的表示</li>
+<li>控制组件——选择、配置和执行模块</li>
+</ul>
+<p>所有的组件都可以访问黑板。组件可以生成添加到黑板上的新数据对象。组件在黑板上查找特定类型的数据，并通过与现有知识源的模式匹配来查找这些数据。</p>
+<p>使用场景：</p>
+<ul>
+<li>语音识别</li>
+<li>车辆识别和跟踪</li>
+<li>蛋白质结构识别</li>
+<li>声纳信号的解释</li>
+</ul>
+<p><img src="/" alt="Blackboard pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture17.png"></p>
+<h3 id="十-解释器模式"><a href="#十-解释器模式" class="headerlink" title="十. 解释器模式"></a>十. 解释器模式</h3><p>这个模式用于设计一个解释用专用语言编写的程序的组件。它主要指定如何评估程序的行数，即以特定的语言编写的句子或表达式。其基本思想是为每种语言的符号都有一个分类。</p>
+<p>使用场景：</p>
+<ul>
+<li>数据库查询语言，比如SQL</li>
+<li>用于描述通信协议的语言</li>
+</ul>
+<p><img src="/" alt="Interpreter pattern" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/architecture/architecture18.png"></p>
+<hr>
+<h2 id="体系架构模式的比较"><a href="#体系架构模式的比较" class="headerlink" title="体系架构模式的比较"></a>体系架构模式的比较</h2><p>下面给出的表格总结了每种体系架构模式的优缺点。</p>
+<table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">分层模式</td>
+<td align="left">一个较低的层可以被不同的层所使用。层使标准化更容易，因为我们可以清楚地定义级别。可以在层内进行更改，而不会影响其他层。</td>
+<td>不是普遍适用的。在某些情况下，某些层可能会被跳过。</td>
+</tr>
+<tr>
+<td align="left">客户端-服务器模式</td>
+<td align="left">很好地建立一组服务，用户可以请求他们的服务。</td>
+<td>请求通常在服务器上的单独线程中处理。由于不同的客户端具有不同的表示，进程间通信会导致额外开销。</td>
+</tr>
+<tr>
+<td align="left">主从设备模式</td>
+<td align="left">准确性——将服务的执行委托给不同的从设备，具有不同的实现。</td>
+<td>从设备是孤立的：没有共享的状态。主-从通信中的延迟可能是一个问题，例如在实时系统中。这种模式只能应用于可以分解的问题。</td>
+</tr>
+<tr>
+<td align="left">管道-过滤器模式</td>
+<td align="left">展示并发处理。当输入和输出由流组成时，过滤器在接收数据时开始计算。轻松添加过滤器，系统可以轻松扩展。过滤器可重复使用。 可以通过重新组合一组给定的过滤器来构建不同的管道。</td>
+<td>效率受到最慢的过滤过程的限制。从一个过滤器移动到另一个过滤器时的数据转换开销。</td>
+</tr>
+<tr>
+<td align="left">代理模式</td>
+<td align="left">允许动态更改、添加、删除和重新定位对象，这使开发人员的发布变得透明。</td>
+<td>要求对服务描述进行标准化。</td>
+</tr>
+<tr>
+<td align="left">点对点模式</td>
+<td align="left">支持分散式计算。对任何给定节点的故障处理具有强大的健壮性。在资源和计算能力方面具有很高的可扩展性。</td>
+<td>服务质量没有保证，因为节点是自愿合作的。安全是很难得到保证的。性能取决于节点的数量。</td>
+</tr>
+<tr>
+<td align="left">事件总线模式</td>
+<td align="left">新的发布者、订阅者和连接可以很容易地添加。对高度分布式的应用程序有效。</td>
+<td>可伸缩性可能是一个问题，因为所有消息都是通过同一事件总线进行的。</td>
+</tr>
+<tr>
+<td align="left">模型-视图-控制器模式</td>
+<td align="left">可以轻松地拥有同一个模型的多个视图，这些视图可以在运行时连接和断开。</td>
+<td>增加复杂性。可能导致许多不必要的用户操作更新。</td>
+</tr>
+<tr>
+<td align="left">黑板模式</td>
+<td align="left">很容易添加新的应用程序。扩展数据空间的结构很简单。</td>
+<td>修改数据空间的结构非常困难，因为所有应用程序都受到了影响。可能需要同步和访问控制。</td>
+</tr>
+<tr>
+<td align="left">解释器模式</td>
+<td align="left">高度动态的行为是可行的。对终端用户编程性提供好处。提高灵活性，因为替换一个解释程序很容易。</td>
+<td>由于解释语言通常比编译后的语言慢，因此性能可能是一个问题。</td>
+</tr>
+</tbody></table>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" target="_blank" rel="noopener">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%81%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/">http://wangyangyangisme.github.io/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E5%8D%81%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/architecture/">architecture</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/10/25/architecture-%E5%B8%B8%E8%A7%81%E7%9A%84%E4%BA%94%E7%A7%8D%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/30c79bc2b36136d52bd197a8c0752131.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">常见的五种软件架构</div></div></a></div><div class="next-post pull_right"><a href="/2019/10/22/ubuntu-Bind9%E5%AE%9E%E6%88%98/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/ubuntu/b959276d6daef1019cff5052696eadb8.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">bind9实战</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/10/27/architecture-软件设计的七大原则/" title="软件设计的七大原则"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/a8dea43b51983e0fc7f9c0e689c0e217.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-27</div><div class="relatedPosts_title">软件设计的七大原则</div></div></a></div><div class="relatedPosts_item"><a href="/2019/10/25/architecture-领域驱动设计/" title="领域驱动设计"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/31ce17fbd9dc0ee80bbe035015d399dd.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-25</div><div class="relatedPosts_title">领域驱动设计</div></div></a></div><div class="relatedPosts_item"><a href="/2019/10/25/architecture-CQRS模式/" title="CQRS模式"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/16ab95126bb92ad479a36b0e70a0cc69.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-25</div><div class="relatedPosts_title">CQRS模式</div></div></a></div><div class="relatedPosts_item"><a href="/2019/10/25/architecture-DCI架构/" title="DCI架构"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/adde6bf5e9380e7166faad612f669036.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-25</div><div class="relatedPosts_title">DCI架构</div></div></a></div><div class="relatedPosts_item"><a href="/2019/10/25/architecture-六边形架构/" title="六边形架构"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/24169e4e588622ff1207521678c89699.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-25</div><div class="relatedPosts_title">六边形架构</div></div></a></div><div class="relatedPosts_item"><a href="/2019/10/25/architecture-Clean架构/" title="Clean架构"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/architecture/c4bfdae0870cf61b60206d8521077d02.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-25</div><div class="relatedPosts_title">Clean架构</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify: true,
+  verify: false,
+  appId: '49gEIIGN7uRbL6vHhieSpBzM-MdYXbMMI',
+  appKey: 'uqts0urLKwikYQ0fKmIkMHBE',
+  placeholder: '请留下你的脚印',
+  avatar: 'monsterid',
+  meta: guest_info,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: false,
+  serverURLs: ''
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wang YangYang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://wangyangyangisme.github.io/">blog</a>!</div><div class="icp"><a><img class="icp-icon" src="/img/icp.png"/><span></span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/third-party/click_heart.js"></script><script src="/js/search/algolia.js"></script></body></html>
