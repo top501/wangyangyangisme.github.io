@@ -73,10 +73,8 @@ function activateLightMode(){
 }</script><script>var GLOBAL_CONFIG_SITE = { 
   isPost: true,
   isHome: false
-}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开始"><span class="toc-text"> 开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#快速开始"><span class="toc-text"> 快速开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#grpc-是什么"><span class="toc-text"> gRPC 是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-protocol-buffers"><span class="toc-text"> 使用 protocol buffers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#protocol-buffers-版本"><span class="toc-text"> Protocol buffers 版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你好-grpc"><span class="toc-text"> 你好 gRPC!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-text"> 准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-git"><span class="toc-text"> 安装 Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-grpc"><span class="toc-text"> 安装 gRPC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获得源码"><span class="toc-text"> 获得源码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义服务"><span class="toc-text"> 定义服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成-grpc-代码"><span class="toc-text"> 生成 gRPC 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写一个服务器"><span class="toc-text"> 写一个服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#服务实现"><span class="toc-text"> 服务实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务端实现"><span class="toc-text"> 服务端实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写一个客户端"><span class="toc-text"> 写一个客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#连接服务"><span class="toc-text"> 连接服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调用-rpc"><span class="toc-text"> 调用 RPC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#试一下"><span class="toc-text"> 试一下!</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/grpc/7bc4fd76db0afa170f9252f6e1bcc974.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">grpc-快速开始</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-09-27<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/grpc/">grpc</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">6.9k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 26 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/09/27/grpc-grpc-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/09/27/grpc-grpc-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="开始"><a class="markdownIt-Anchor" href="#开始"></a> 开始</h1>
-<p>欢迎进入 gRPC 的开发文档，gRPC 一开始由 google 开发，是一款语言中立、平台中立、开源的远程过程调用(RPC)系统。 本文档通过快速概述和一个简单的 Hello World 例子来向您介绍 gRPC 。你可以在本站发现更详细的教程和参考文档——文档将会越来越丰富。</p>
-<h2 id="快速开始"><a class="markdownIt-Anchor" href="#快速开始"></a> 快速开始</h2>
-<p>为了直观地着手运行 gRPC，可以从你所选择的语言对应的快速开始入手，里面包含创建这个列子的安装指导、快速上手指南等更多内容。</p>
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#开始"><span class="toc-text">开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#快速开始"><span class="toc-text">快速开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gRPC-是什么？"><span class="toc-text">gRPC 是什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-protocol-buffers"><span class="toc-text">使用 protocol buffers</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Protocol-buffers-版本"><span class="toc-text">Protocol buffers 版本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你好-gRPC"><span class="toc-text">你好 gRPC!</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备"><span class="toc-text">准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-Git"><span class="toc-text">安装 Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装-gRPC"><span class="toc-text">安装 gRPC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获得源码"><span class="toc-text">获得源码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义服务"><span class="toc-text">定义服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成-gRPC-代码"><span class="toc-text">生成 gRPC 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写一个服务器"><span class="toc-text">写一个服务器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#服务实现"><span class="toc-text">服务实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务端实现"><span class="toc-text">服务端实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写一个客户端"><span class="toc-text">写一个客户端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#连接服务"><span class="toc-text">连接服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#调用-RPC"><span class="toc-text">调用 RPC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#试一下"><span class="toc-text">试一下!</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/grpc/7bc4fd76db0afa170f9252f6e1bcc974.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">grpc-快速开始</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-09-27<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/grpc/">grpc</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">6.9k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 26 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/09/27/grpc-grpc-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/09/27/grpc-grpc-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><p>欢迎进入 gRPC 的开发文档，gRPC 一开始由 google 开发，是一款语言中立、平台中立、开源的远程过程调用(RPC)系统。 本文档通过快速概述和一个简单的 Hello World 例子来向您介绍 gRPC 。你可以在本站发现更详细的教程和参考文档——文档将会越来越丰富。</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>为了直观地着手运行 gRPC，可以从你所选择的语言对应的快速开始入手，里面包含创建这个列子的安装指导、快速上手指南等更多内容。</p>
 <ul>
 <li><a href="https://github.com/grpc/grpc/tree/master/examples/cpp" target="_blank" rel="noopener">C++</a></li>
 <li><a href="https://github.com/grpc/grpc-java/tree/master/examples" target="_blank" rel="noopener">Java</a></li>
@@ -90,126 +88,131 @@ function activateLightMode(){
 <li><a href="https://github.com/grpc/grpc/tree/master/examples/php" target="_blank" rel="noopener">PHP</a></li>
 </ul>
 <p>你可以从<a href="https://github.com/grpc/grpc" target="_blank" rel="noopener">这里</a>找到 gRPC 的源码库。我们大多数例子都在源码库 examples 目录下。</p>
-<h2 id="grpc-是什么"><a class="markdownIt-Anchor" href="#grpc-是什么"></a> gRPC 是什么？</h2>
-<p>在 gRPC 里<em>客户端</em>应用可以像调用本地对象一样直接调用另一台不同的机器上<em>服务端</em>应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个<em>服务</em>，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个<em>存根</em>能够像服务端一样的方法。</p>
-<p><img src="/" alt="图1" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/grpc/grpc_concept_diagram_00.png"></p>
+<h2 id="gRPC-是什么？"><a href="#gRPC-是什么？" class="headerlink" title="gRPC 是什么？"></a>gRPC 是什么？</h2><p>在 gRPC 里<em>客户端</em>应用可以像调用本地对象一样直接调用另一台不同的机器上<em>服务端</em>应用的方法，使得您能够更容易地创建分布式应用和服务。与许多 RPC 系统类似，gRPC 也是基于以下理念：定义一个<em>服务</em>，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 gRPC 服务器来处理客户端调用。在客户端拥有一个<em>存根</em>能够像服务端一样的方法。</p>
+<p><img src="/" alt="图1" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/grpc/grpc_concept_diagram_00.png"></p>
 <p>gRPC 客户端和服务端可以在多种环境中运行和交互 - 从 google 内部的服务器到你自己的笔记本，并且可以用任何 gRPC <a href="http://doc.oschina.net/grpc?t=58008#quickstart" target="_blank" rel="noopener">支持的语言</a>来编写。所以，你可以很容易地用 Java 创建一个 gRPC 服务端，用 Go、Python、Ruby 来创建客户端。此外，Google 最新 API 将有 gRPC 版本的接口，使你很容易地将 Google 的功能集成到你的应用里。</p>
-<h3 id="使用-protocol-buffers"><a class="markdownIt-Anchor" href="#使用-protocol-buffers"></a> 使用 protocol buffers</h3>
-<p>gRPC 默认使用 <em>protocol buffers</em>，这是 Google 开源的一套成熟的结构数据序列化机制（当然也可以使用其他数据格式如 JSON）。正如你将在下方例子里所看到的，你用 <em>proto files</em> 创建 gRPC 服务，用 protocol buffers 消息类型来定义方法参数和返回类型。你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//developers.google.com/protocol-buffers/docs/overview" target="_blank" rel="noopener">Protocol Buffers 文档</a>找到更多关于 Protocol Buffers 的资料。</p>
-<h4 id="protocol-buffers-版本"><a class="markdownIt-Anchor" href="#protocol-buffers-版本"></a> Protocol buffers 版本</h4>
-<p>尽管 protocol buffers 对于开源用户来说已经存在了一段时间，例子内使用的却一种名叫 proto3 的新风格的 protocol buffers，它拥有轻量简化的语法、一些有用的新功能，并且支持更多新语言。当前针对 Java 和 C++ 发布了 beta 版本，针对 JavaNano（即 Android Java）发布 alpha 版本，在<a href="http://doc.oschina.net/https%EF%BC%9A//github.com/google/protobuf/releases" target="_blank" rel="noopener">protocol buffers Github 源码库里</a>有 Ruby 支持， 在<a href="http://doc.oschina.net/https%EF%BC%9A//github.com/golang/protobuf" target="_blank" rel="noopener">golang/protobuf Github 源码库</a>里还有针对 Go 语言的生成器， 对更多语言的支持正在开发中。 你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//developers.google.com/protocol-buffers/docs/proto3" target="_blank" rel="noopener">proto3 语言指南</a>里找到更多内容， 在与当前默认版本的<a href="http://doc.oschina.net/https%EF%BC%9A//github.com/google/protobuf/releases" target="_blank" rel="noopener">发布说明</a>比较，看到两者的主要不同点。更多关于 proto3 的文档很快就会出现。虽然你<em>可以</em>使用 proto2 (当前默认的 protocol buffers 版本)， 我们通常建议你在 gRPC 里使用 proto3，因为这样你可以使用 gRPC 支持全部范围的的语言，并且能避免 proto2 客户端与 proto3 服务端交互时出现的兼容性问题，反之亦然。</p>
-<h2 id="你好-grpc"><a class="markdownIt-Anchor" href="#你好-grpc"></a> 你好 gRPC!</h2>
-<p>现在你已经对 gRPC 有所了解，了解其工作机制最简单的方法是看一个简单的例子。 Hello World 将带领你创建一个简单的客户端——服务端应用，向你展示：</p>
+<h3 id="使用-protocol-buffers"><a href="#使用-protocol-buffers" class="headerlink" title="使用 protocol buffers"></a>使用 protocol buffers</h3><p>gRPC 默认使用 <em>protocol buffers*，这是 Google 开源的一套成熟的结构数据序列化机制（当然也可以使用其他数据格式如 JSON）。正如你将在下方例子里所看到的，你用 *proto files</em> 创建 gRPC 服务，用 protocol buffers 消息类型来定义方法参数和返回类型。你可以在 <a href="http://doc.oschina.net/https：//developers.google.com/protocol-buffers/docs/overview" target="_blank" rel="noopener">Protocol Buffers 文档</a>找到更多关于 Protocol Buffers 的资料。</p>
+<h4 id="Protocol-buffers-版本"><a href="#Protocol-buffers-版本" class="headerlink" title="Protocol buffers 版本"></a>Protocol buffers 版本</h4><p>尽管 protocol buffers 对于开源用户来说已经存在了一段时间，例子内使用的却一种名叫 proto3 的新风格的 protocol buffers，它拥有轻量简化的语法、一些有用的新功能，并且支持更多新语言。当前针对 Java 和 C++ 发布了 beta 版本，针对 JavaNano（即 Android Java）发布 alpha 版本，在<a href="http://doc.oschina.net/https：//github.com/google/protobuf/releases" target="_blank" rel="noopener">protocol buffers Github 源码库里</a>有 Ruby 支持， 在<a href="http://doc.oschina.net/https：//github.com/golang/protobuf" target="_blank" rel="noopener">golang/protobuf Github 源码库</a>里还有针对 Go 语言的生成器， 对更多语言的支持正在开发中。 你可以在 <a href="http://doc.oschina.net/https：//developers.google.com/protocol-buffers/docs/proto3" target="_blank" rel="noopener">proto3 语言指南</a>里找到更多内容， 在与当前默认版本的<a href="http://doc.oschina.net/https：//github.com/google/protobuf/releases" target="_blank" rel="noopener">发布说明</a>比较，看到两者的主要不同点。更多关于 proto3 的文档很快就会出现。虽然你<em>可以</em>使用 proto2 (当前默认的 protocol buffers 版本)， 我们通常建议你在 gRPC 里使用 proto3，因为这样你可以使用 gRPC 支持全部范围的的语言，并且能避免 proto2 客户端与 proto3 服务端交互时出现的兼容性问题，反之亦然。</p>
+<h2 id="你好-gRPC"><a href="#你好-gRPC" class="headerlink" title="你好 gRPC!"></a>你好 gRPC!</h2><p>现在你已经对 gRPC 有所了解，了解其工作机制最简单的方法是看一个简单的例子。 Hello World 将带领你创建一个简单的客户端——服务端应用，向你展示：</p>
 <ul>
 <li>通过一个 protocol buffers 模式，定义一个简单的带有 Hello World 方法的 RPC 服务。</li>
 <li>用你最喜欢的语言(如果可用的话)来创建一个实现了这个接口的服务端。</li>
 <li>用你最喜欢的(或者其他你愿意的)语言来访问你的服务端。</li>
 </ul>
 <p>这个例子完整的代码在我们 GitHub 源码库的 <code>examples</code> 目录下。 我们使用 Git 版本系统来进行源码管理，但是除了如何安装和运行一些 Git 命令外，你没必要知道其他关于 Git 的任何事情。 需要注意的是，并不是所有 gRPC 支持的语言都可以编写我们例子的服务端代码，比如 PHP 和 Objective-C 仅支持创建客户端。 比起针对于特定语言的复杂教程，这更像是一个介绍性的例子。你可以在本站找到更有深度的教程，gRPC 支持的语言的参考文档很快就会全部开放。</p>
-<h3 id="准备"><a class="markdownIt-Anchor" href="#准备"></a> 准备</h3>
-<p>本节解释了如何在你本机上准备好例子代码的运行环境。如果你只是想读一下例子，你可以直接到下一步。</p>
-<h4 id="安装-git"><a class="markdownIt-Anchor" href="#安装-git"></a> 安装 Git</h4>
-<p>你可以从<a href="http://git-scm.com/download" target="_blank" rel="noopener">http://git-scm.com/download</a>下载和安装 Git。安装好 Git 后，你应该能访问 git 命令行工具。你需要的主要命令如下：</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>本节解释了如何在你本机上准备好例子代码的运行环境。如果你只是想读一下例子，你可以直接到下一步。</p>
+<h4 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h4><p>你可以从<a href="http://git-scm.com/download" target="_blank" rel="noopener">http://git-scm.com/download</a>下载和安装 Git。安装好 Git 后，你应该能访问 git 命令行工具。你需要的主要命令如下：</p>
 <ul>
 <li>git clone … ： 从远程代码库克隆一份到本机。</li>
 <li>git checkout … ： 检出一个特殊分支或一个标签版本的代码来改进。</li>
 </ul>
-<h4 id="安装-grpc"><a class="markdownIt-Anchor" href="#安装-grpc"></a> 安装 gRPC</h4>
-<p>针对你选择的语言构建和安装 gRPC 插件和相关工具，可以参照<a href="http://doc.oschina.net/grpc?t=58008#quickstart" target="_blank" rel="noopener">快速开始</a>。 Java gRPC 除了 JDK 外不需要其他工具。</p>
-<h4 id="获得源码"><a class="markdownIt-Anchor" href="#获得源码"></a> 获得源码</h4>
-<ul>
+<h4 id="安装-gRPC"><a href="#安装-gRPC" class="headerlink" title="安装 gRPC"></a>安装 gRPC</h4><p>针对你选择的语言构建和安装 gRPC 插件和相关工具，可以参照<a href="http://doc.oschina.net/grpc?t=58008#quickstart" target="_blank" rel="noopener">快速开始</a>。 Java gRPC 除了 JDK 外不需要其他工具。</p>
+<h4 id="获得源码"><a href="#获得源码" class="headerlink" title="获得源码"></a>获得源码</h4><ul>
 <li>Java</li>
 </ul>
 <p>Java 例子代码在 GitHub 源码库里。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https：//github.com/grpc/grpc-java.git</span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到<code>grpc-java/examples</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd grpc-java/examples</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>C++</li>
 </ul>
 <p>例子代码在 GitHub 源码库的 <code>examples</code> 目录。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https：//github.com/grpc/grpc.git</span></span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到 <code>examples/cpp/helloworld</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> examples/cpp/helloworld/</span></span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>Python</li>
+<li>Python </li>
 </ul>
 <p>例子代码在 GitHub 源码库的 <code>examples</code> 目录。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https://github.com/grpc/grpc.git</span></span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到 <code>examples/python/helloworld</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> examples/python/helloworld/</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>Go</li>
 </ul>
 <p>获取例子：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> go get -u github.com/grpc/grpc-go/examples/helloworld/greeter_client</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> go get -u github.com/grpc/grpc-go/examples/helloworld/greeter_server</span></span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到 <code>examples/helloworld</code></p>
 <ul>
-<li>Ruby</li>
+<li>Ruby </li>
 </ul>
 <p>例子代码在 GitHub 源码库的 <code>examples</code> 目录。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https：//github.com/grpc/grpc.git</span></span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到 <code>examples/ruby</code> ，然后使用 bundler 安装例子的包依赖：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> gem install bundler <span class="comment"># if you don't already have bundler available</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> bundle install</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>Node.js</li>
 </ul>
 <p>例子代码在 GitHub 源码库的 <code>examples</code> 目录。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https：//github.com/grpc/grpc.git</span></span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到 <code>examples/node</code> ， 接着安装包依赖：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> examples/node</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>C#</li>
 </ul>
 <p>例子代码在 GitHub 源码库的 <code>examples</code> 目录。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https：//github.com/grpc/grpc。git</span></span><br></pre></td></tr></table></figure>
+
 <p>从 Visual Studio (或 Linux 上的 Monodevelop ) 打开 <code>Greeter.sln</code>。可以从 <a href="http://doc.oschina.net/docs/installation/csharp.html" target="_blank" rel="noopener">C# Quickstart</a> 找到平台特定的设置步骤。</p>
 <ul>
 <li>Objective-C</li>
 </ul>
 <p>例子代码在 GitHub 源码库的 <code>examples</code> 目录。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https：//github.com/grpc/grpc.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> grpc</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git submodule update --init</span></span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到 <code>examples/objective-c/helloworld</code> 。</p>
 <ul>
 <li>PHP</li>
 </ul>
 <p>例子代码在 GitHub 源码库的 <code>examples</code> 目录。你可以运行如下命令克隆源码到本地：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> https：//github.com/grpc/grpc.git</span></span><br></pre></td></tr></table></figure>
+
 <p>切换当前目录到 <code>examples/php</code> 。 虽然我们大多数例子使用同一个 .proto 文件，但 PHP 的例子有自己的 <code>helloworld.proto</code> 文件，这是因为它依赖 proto2 语法。 PHP暂时没有针对 proto3 的支持。</p>
-<h3 id="定义服务"><a class="markdownIt-Anchor" href="#定义服务"></a> 定义服务</h3>
-<p>创建我们例子的第一步是定义一个<strong>务</strong>一个 RPC 服务通过参数和返回类型来指定可以远程调用的方法。就像你在 [概览](<a href="http://doc.oschina.net/grpc?t=58008#protocol" target="_blank" rel="noopener">http://doc.oschina.net/grpc?t=58008#protocol</a> buffers) 里所看到的， gRPC 通过 <a href="http://doc.oschina.net/https%EF%BC%9A//developers.google.com/protocol-buffers/docs/overview" target="_blank" rel="noopener">protocol buffers</a> 来实现。 我们使用 protocol buffers 接口定义语言来定义服务方法，用 protocol buffer 来定义参数和返回类型。客户端和服务端均使用服务定义生成的接口代码。 这里有我们服务定义的例子，在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-java/tree/master/examples/src/main/proto" target="_blank" rel="noopener">helloworld.proto</a> 里用 protocol buffers IDL 定义的。<code>Greeter</code> 服务有一个方法 <code>SayHello</code> ，可以让服务端从远程客户端接收一个包含用户名的 <code>HelloRequest</code> 消息后，在一个 <code>HelloReply</code> 里发送回一个 <code>Greeter</code>。这是你可以在 gRPC 里指定的最简单的 RPC - 你可以在教程里找到针对你选择的语言更多类型的例子。</p>
+<h3 id="定义服务"><a href="#定义服务" class="headerlink" title="定义服务"></a>定义服务</h3><p>创建我们例子的第一步是定义一个<strong>务</strong>一个 RPC 服务通过参数和返回类型来指定可以远程调用的方法。就像你在 [概览](<a href="http://doc.oschina.net/grpc?t=58008#protocol" target="_blank" rel="noopener">http://doc.oschina.net/grpc?t=58008#protocol</a> buffers) 里所看到的， gRPC 通过 <a href="http://doc.oschina.net/https：//developers.google.com/protocol-buffers/docs/overview" target="_blank" rel="noopener">protocol buffers</a> 来实现。 我们使用 protocol buffers 接口定义语言来定义服务方法，用 protocol buffer 来定义参数和返回类型。客户端和服务端均使用服务定义生成的接口代码。 这里有我们服务定义的例子，在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-java/tree/master/examples/src/main/proto" target="_blank" rel="noopener">helloworld.proto</a> 里用 protocol buffers IDL 定义的。<code>Greeter</code> 服务有一个方法 <code>SayHello</code> ，可以让服务端从远程客户端接收一个包含用户名的 <code>HelloRequest</code> 消息后，在一个 <code>HelloReply</code> 里发送回一个 <code>Greeter</code>。这是你可以在 gRPC 里指定的最简单的 RPC - 你可以在教程里找到针对你选择的语言更多类型的例子。</p>
 <figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">syntax = <span class="string">"proto3"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">option</span> java_package = <span class="string">"io.grpc.examples"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> helloworld;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The greeter service definition.</span></span><br><span class="line"><span class="class"><span class="keyword">service</span> <span class="title">Greeter</span> </span>&#123;</span><br><span class="line">  <span class="comment">// Sends a greeting</span></span><br><span class="line">  <span class="function"><span class="keyword">rpc</span> SayHello (HelloRequest) <span class="keyword">returns</span> (HelloReply) &#123;&#125;</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">// The request message containing the user's name.</span></span><br><span class="line"><span class="function">message HelloRequest &#123;</span></span><br><span class="line"><span class="function">  string name = 1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// The response message containing the greetings</span></span><br><span class="line"><span class="class"><span class="keyword">message</span> <span class="title">HelloReply</span> </span>&#123;</span><br><span class="line">  <span class="built_in">string</span> <span class="class"><span class="keyword">message</span> = 1;</span></span><br><span class="line"><span class="class">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="生成-grpc-代码"><a class="markdownIt-Anchor" href="#生成-grpc-代码"></a> 生成 gRPC 代码</h3>
-<p>一旦定义好服务，我们可以使用 protocol buffer 编译器 <code>protoc</code> 来生成创建应用所需的特定客户端和服务端的代码 - 你可以生成任意 gRPC 支持的语言的代码，当然 PHP 和 Objective-C 仅支持创建客户端代码。生成的代码同时包括客户端的存根和服务端要实现的抽象接口，均包含 <code>Greeter</code> 所定义的方法。</p>
+
+<h3 id="生成-gRPC-代码"><a href="#生成-gRPC-代码" class="headerlink" title="生成 gRPC 代码"></a>生成 gRPC 代码</h3><p>一旦定义好服务，我们可以使用 protocol buffer 编译器 <code>protoc</code> 来生成创建应用所需的特定客户端和服务端的代码 - 你可以生成任意 gRPC 支持的语言的代码，当然 PHP 和 Objective-C 仅支持创建客户端代码。生成的代码同时包括客户端的存根和服务端要实现的抽象接口，均包含 <code>Greeter</code> 所定义的方法。</p>
 <p>(假如你没有在系统里安装 gRPC 插件和 protoc ，并且仅仅是要看一下这个例子，你可以跳过这一步，直接到下一步来查看生成的代码。)</p>
 <ul>
-<li>
-<p>Java</p>
-<p>这个例子的构建系统也是 Java gRPC 本身构建的一部分 —— 为了简单起见，我们推荐使用我们事先生成的例子代码。你可以参考 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc%E2%80%94%E2%80%94java/blob/master/README.md" target="_blank" rel="noopener">README</a> 来看一下如何从你自己的 .proto 文件生成代码。</p>
-<p>这个例子事先生成的代码在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc%E2%80%94%E2%80%94java/tree/master/examples/src/generated/main" target="_blank" rel="noopener">src/generated/main</a>下。 以下类包含所有我们需要创建这个例子所有的代码：</p>
+<li><p>Java</p>
+<p>  这个例子的构建系统也是 Java gRPC 本身构建的一部分 —— 为了简单起见，我们推荐使用我们事先生成的例子代码。你可以参考 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc——java/blob/master/README.md" target="_blank" rel="noopener">README</a> 来看一下如何从你自己的 .proto 文件生成代码。</p>
+<p>  这个例子事先生成的代码在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc——java/tree/master/examples/src/generated/main" target="_blank" rel="noopener">src/generated/main</a>下。 以下类包含所有我们需要创建这个例子所有的代码：</p>
 <ul>
-<li>
-<p>HelloRequest.java， HelloResponse.java和其他文件包含所有 protocol buffer 用来填充、序列化和提取 <code>HelloRequest</code> 和 <code>HelloReply</code> 消息类型的代码。</p>
+<li><p>HelloRequest.java， HelloResponse.java和其他文件包含所有 protocol buffer 用来填充、序列化和提取 <code>HelloRequest</code> 和 <code>HelloReply</code> 消息类型的代码。</p>
 </li>
-<li>
-<p>GreeterGrpc.java， 包含 (还有其他有用的代码)：</p>
-<p><code>Greeter</code> 服务端需要实现的接口</p>
+<li><p>GreeterGrpc.java， 包含 (还有其他有用的代码)：</p>
+<p>  <code>Greeter</code> 服务端需要实现的接口</p>
 </li>
 </ul>
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">interface</span> <span class="title">Greeter</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(Helloworld.HelloRequest request,StreamObserver&lt;Helloworld.HelloReply&gt; responseObserver)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>客户端用来与 <code>Greeter</code> 服务端进行对话的 <code>存根</code> 类。就像你所看到的，异步存根也实现了 <code>Greeter</code> 接口。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">GreeterStub</span> <span class="keyword">extends</span> <span class="title">AbstractStub</span>&lt;<span class="title">GreeterStub</span>&gt;<span class="keyword">implements</span> <span class="title">Greeter</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>
-<p>C++</p>
-<p>生成客户端和服务端接口，运行：</p>
+<li><p>C++</p>
+<p>  生成客户端和服务端接口，运行：</p>
 </li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make helloworld.grpc.pb.cc helloworld.pb.cc</span><br></pre></td></tr></table></figure>
+
 <p>这从内部调用 protocol buffer 编译器：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> protoc -I ../../protos/ --grpc_out=. --plugin=protoc-gen-grpc=grpc_cpp_plugin ../../protos/helloworld.proto</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> protoc -I ../../protos/ --cpp_out=. ../../protos/helloworld.proto</span></span><br></pre></td></tr></table></figure>
+
 <p>生成：</p>
 <p><code>helloworld.pb.h</code> 声明了用于填充、序列化、提取 <code>HelloRequest</code> 和 <code>HelloResponse</code> 消息类型的类，并且还有它的实现 <code>helloworld.pb.cc</code> 。</p>
 <p><code>helloworld.grpc.pb.h</code>，声明了我们生成的服务类和它的实现 <code>helloworld.grpc.pb.cc</code> 。</p>
@@ -218,85 +221,86 @@ function activateLightMode(){
 </ul>
 <p>可以用如下命令生成客户端和服务端：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./run_codegen.sh</span></span><br></pre></td></tr></table></figure>
+
 <p>这内部调用 protocol buffer 编译器：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> protoc -I ../../protos --python_out=. --grpc_out=. --plugin=protoc-gen-grpc=`<span class="built_in">which</span> grpc_python_plugin` ../../protos/helloworld.proto</span></span><br></pre></td></tr></table></figure>
+
 <p>这生成了 <code>helloworld_pb2.py</code> ，包含我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 <code>HelloRequest</code> 和 <code>HelloResponse</code> 消息类型的类。</p>
 <ul>
 <li>Go</li>
 </ul>
 <p>为了生成客户端和服务端接口，运行 protocol buffer 编译器：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc -I ../protos ../protos/helloworld.proto --go_out=plugins=grpc：helloworld</span><br></pre></td></tr></table></figure>
+
 <p>这生成了 <code>helloworld.pb.go</code> ，包含了我们生成的客户端和服务端类，此外还有用于填充、序列化、提取 <code>HelloRequest</code> 和 <code>HelloResponse</code> 消息类型的类。</p>
 <ul>
 <li>Ruby</li>
 </ul>
 <p>为了生成客户端和服务端接口，运行 protocol buffer 编译器：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc -I ../protos --ruby_out=lib --grpc_out=lib --plugin=protoc-gen-grpc=`which grpc_ruby_plugin` ../protos/helloworld.proto</span><br></pre></td></tr></table></figure>
+
 <p>在 <code>lib</code> 目录下生成了如下文件：</p>
 <ul>
-<li>
-<p><code>lib/helloworld.rb</code> 定义了一个 <code>Helloworld</code> 模块， 这个模块提供了用于填充、序列化、提取请求、应答消息类型的所有 protocol buffer 代码。</p>
+<li><p><code>lib/helloworld.rb</code> 定义了一个 <code>Helloworld</code> 模块， 这个模块提供了用于填充、序列化、提取请求、应答消息类型的所有 protocol buffer 代码。</p>
 </li>
-<li>
-<p><code>lib/helloworld_services.rb</code> 用生成的客户端和服务端代码继承了 <code>Helloworld</code> 模块。</p>
+<li><p><code>lib/helloworld_services.rb</code> 用生成的客户端和服务端代码继承了 <code>Helloworld</code> 模块。</p>
 </li>
-<li>
-<p>Node.js</p>
+<li><p>Node.js</p>
 </li>
 </ul>
 <p>Node.js库从运行时加载的 .proto 文件动态生成服务描述和客户端存根的定义，所以使用此语言时没必要生成任何特殊代码。而是在例子客户端和服务端里，我们 <code>require</code> gRPC 库，然后用它的 <code>load()</code> 方法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> grpc = <span class="built_in">require</span>(<span class="string">'grpc'</span>);</span><br><span class="line"><span class="keyword">var</span> hello_proto = grpc.load(PROTO_PATH).helloworld;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>C#</li>
 <li>为了生成 Windows 上的代码，我们使用来自 <code>Google.Protobuf</code>  NuGet 包里的  <code>protoc.exe</code> 和来自 <code>Grpc.Tools</code>  NuGet 包里的 <code>Grpc.Tools</code> ，这两个文件都在 <code>tools</code> 目录下。 一般你需要自己把 <code>Grpc.Tools</code> 包添加到解决方案，但在这个教程里，这一步已经为你做好了。你应该在 <code>examples/csharp/helloworld</code> 下执行以下命令：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">packages\Google.Protobuf.3.0.0-alpha4\tools\protoc.exe -I../../protos --csharp_out Greeter --grpc_out Greeter --plugin=protoc-gen-grpc=packages\Grpc.Tools.0.7.0\tools\grpc_csharp_plugin.exe ../../protos/helloworld.proto</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>在 Linux 或 OS X ，我们依赖通过 Linuxbrew 或者 Homebrew 安装的 <code>protoc</code> 和 <code>grpc_csharp_plugin</code> 。请在 route_guide 目录下运行这个命令：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> protoc -I../../protos --csharp_out Greeter --grpc_out Greeter --plugin=protoc-gen-grpc=`<span class="built_in">which</span> grpc_csharp_plugin` ../../protos/helloworld.proto</span></span><br></pre></td></tr></table></figure>
+
 <p>根据你的 OS 运行合适的命令，在 Greeter 目录重新生成如下文件:</p>
 <ul>
-<li><code>Greeter/Helloworld.cs</code> 定义了命名空间 <code>Helloworld</code>  它包含了所有用来填充、序列化、提取请求和应答消息类型的 protocol buffer 代码。</li>
-<li><code>Greeter/HelloworldGrpc.cs</code>，提供了存根类和服务类，包括：
-<ul>
+<li><code>Greeter/Helloworld.cs</code> 定义了命名空间 <code>Helloworld</code>  它包含了所有用来填充、序列化、提取请求和应答消息类型的 protocol buffer 代码。 </li>
+<li><code>Greeter/HelloworldGrpc.cs</code>，提供了存根类和服务类，包括：<ul>
 <li>一个 <code>Greeter.IGreeter</code> 接口，可以在定义 RootGuide 服务实现的时候来继承它。</li>
 <li>一个 <code>Greeter.GreeterClient</code> 类，可用来访问远程的 RouteGuide 实例。</li>
 </ul>
 </li>
 <li>Objective-c</li>
 </ul>
-<p>为了简单，我们提供了一个 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/objective-c/helloworld/HelloWorld.podspec" target="_blank" rel="noopener">Podspec 文件</a>，用来使用适当的插件、输入、输出运行 protoc ，并描述如何编译生成的代码。你仅仅需要在 <code>examples/objective-c/route_guide</code> 下运行：</p>
+<p>为了简单，我们提供了一个 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/objective-c/helloworld/HelloWorld.podspec" target="_blank" rel="noopener">Podspec 文件</a>，用来使用适当的插件、输入、输出运行 protoc ，并描述如何编译生成的代码。你仅仅需要在 <code>examples/objective-c/route_guide</code> 下运行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pod install</span></span><br></pre></td></tr></table></figure>
+
 <p>然后你可以打开由 Cocoapods 创建的 XCode 工作空间，看一下生成的代码。运行命令生成：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- &#96;Helloworld.pbobjc.h&#96;， 定义生成的消息类的头文件。</span><br><span class="line">- &#96;Helloworld.pbobjc.m&#96;，包含消息类的实现。</span><br><span class="line">- &#96;Helloworld.pbrpc.h&#96;，定义生成的服务类的头文件。</span><br><span class="line">- &#96;Helloworld.pbrpc.m&#96;，包含服务类的实现。</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>
-<p>PHP</p>
-<p>gRPC PHP 使用 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/datto/protobuf-php" target="_blank" rel="noopener">protoc-gen-php</a> 工具来从 .proto 文件生成代码。你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/src/php" target="_blank" rel="noopener">PHP 快速开始</a>里找到如何安装它。为了生成 Greeter 服务的代码，运行：</p>
+<li><p>PHP</p>
+<p>  gRPC PHP 使用 <a href="http://doc.oschina.net/https：//github.com/datto/protobuf-php" target="_blank" rel="noopener">protoc-gen-php</a> 工具来从 .proto 文件生成代码。你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/src/php" target="_blank" rel="noopener">PHP 快速开始</a>里找到如何安装它。为了生成 Greeter 服务的代码，运行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc-gen-php -i . -o . ./helloworld.proto</span><br></pre></td></tr></table></figure>
-<p>生成 <code>helloworld.php</code> ，包含：</p>
+
+<p>  生成 <code>helloworld.php</code> ，包含：</p>
 <ul>
 <li>所有用来填充、序列化、提取请求和应答消息类型的 protocol buffer 代码.</li>
-<li><code>GreeterClient</code> 类，可以让客户端调用在 <code>Greeter</code> 服务里的方法。</li>
+<li><code>GreeterClient</code> 类，可以让客户端调用在 <code>Greeter</code> 服务里的方法。 </li>
 </ul>
 </li>
 </ul>
-<h3 id="写一个服务器"><a class="markdownIt-Anchor" href="#写一个服务器"></a> 写一个服务器</h3>
-<p>现在让我们写点代码！首先我们将创建一个服务应用来实现服务(你会记起来，我们可以是使用除了Objective-C and PHP 外的其他所有语言来实现)。在本节，我们不打算对如何创建一个服务端进行更深入地探讨 —— 更详细的信息可以在你选择语言对应的教程里找到。</p>
-<h4 id="服务实现"><a class="markdownIt-Anchor" href="#服务实现"></a> 服务实现</h4>
-<ul>
-<li>
-<p>Java</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-java/blob/master/examples/src/main/java/io/grpc/examples/helloworld/HelloWorldServer.java#L51" target="_blank" rel="noopener">GreeterImpl.java</a> 准确地实现了 <code>Greeter</code> 服务所需要的行为。   正如你所见，<code>GreeterImpl</code> 类通过实现 <code>sayHello</code> 方法，实现了从 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-java/tree/master/examples/src/main/proto" target="_blank" rel="noopener">IDL</a> 生成的<code>GreeterGrpc.Greeter</code> 接口 。</p>
+<h3 id="写一个服务器"><a href="#写一个服务器" class="headerlink" title="写一个服务器"></a>写一个服务器</h3><p>现在让我们写点代码！首先我们将创建一个服务应用来实现服务(你会记起来，我们可以是使用除了Objective-C and PHP 外的其他所有语言来实现)。在本节，我们不打算对如何创建一个服务端进行更深入地探讨 —— 更详细的信息可以在你选择语言对应的教程里找到。</p>
+<h4 id="服务实现"><a href="#服务实现" class="headerlink" title="服务实现"></a>服务实现</h4><ul>
+<li><p>Java</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-java/blob/master/examples/src/main/java/io/grpc/examples/helloworld/HelloWorldServer.java#L51" target="_blank" rel="noopener">GreeterImpl.java</a> 准确地实现了 <code>Greeter</code> 服务所需要的行为。   正如你所见，<code>GreeterImpl</code> 类通过实现 <code>sayHello</code> 方法，实现了从 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-java/tree/master/examples/src/main/proto" target="_blank" rel="noopener">IDL</a> 生成的<code>GreeterGrpc.Greeter</code> 接口 。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(HelloRequest req, StreamObserver&lt;HelloReply&gt; responseObserver)</span> </span>&#123;</span><br><span class="line">HelloReply reply = HelloReply.newBuilder().setMessage(<span class="string">"Hello "</span> + req.getName()).build();</span><br><span class="line">responseObserver.onNext(reply);</span><br><span class="line">responseObserver.onCompleted();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>sayHello</code> 有两个参数：</p>
+
+<p>  <code>sayHello</code> 有两个参数：</p>
 <ul>
-<li>
-<p><code>HelloRequest</code>，请求。</p>
+<li><p><code>HelloRequest</code>，请求。</p>
 </li>
-<li>
-<p><code>StreamObserver&lt;HelloReply&gt;</code>： 应答观察者，一个特殊的接口，服务器用应答来调用它。</p>
+<li><p><code>StreamObserver&lt;HelloReply&gt;</code>： 应答观察者，一个特殊的接口，服务器用应答来调用它。</p>
 <p>为了返回给客户端应答并且完成调用：</p>
 </li>
 </ul>
@@ -305,21 +309,18 @@ function activateLightMode(){
 <li>将 <code>HelloReply</code> 返回给客户端，然后表明我们已经完成了对 RPC 的处理。</li>
 </ol>
 </li>
-<li>
-<p>C++</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/cpp/helloworld/greeter_server.cc" target="_blank" rel="noopener">greeter_server.cc</a> 实现了 <code>Greeter</code> 服务所需要的行为。   正如你所见，<code>GreeterServiceImpl</code> 类通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>Greeter：：Service</code> 接口 。</p>
+<li><p>C++</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/cpp/helloworld/greeter_server.cc" target="_blank" rel="noopener">greeter_server.cc</a> 实现了 <code>Greeter</code> 服务所需要的行为。   正如你所见，<code>GreeterServiceImpl</code> 类通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>Greeter：：Service</code> 接口 。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GreeterServiceImpl</span> <span class="title">final</span> ： <span class="title">public</span> <span class="title">Greeter</span>：：<span class="title">Service</span> &#123;</span></span><br><span class="line"><span class="function">Status <span class="title">SayHello</span><span class="params">(ServerContext* context, <span class="keyword">const</span> HelloRequest* request,</span></span></span><br><span class="line"><span class="function"><span class="params">                HelloReply* reply)</span> override </span>&#123;</span><br><span class="line">  <span class="built_in">std</span>：：<span class="function"><span class="built_in">string</span> <span class="title">prefix</span><span class="params">(<span class="string">"Hello "</span>)</span></span>;</span><br><span class="line">  reply-&gt;set_message(prefix + request-&gt;name());</span><br><span class="line">  <span class="keyword">return</span> Status：：OK;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>在此我们实现同步版本的 <code>Greeter</code>，它提供了默认的 gRPC 服务行为（这里也有一个异步的接口，<code>Greeter：：AsyncService</code>）。</p>
-<p>sayHello 有三个参数：</p>
+<p>  sayHello 有三个参数：</p>
 <ul>
-<li>
-<p><code>ServerContext</code>： RPC上下文对象。</p>
+<li><p><code>ServerContext</code>： RPC上下文对象。</p>
 </li>
-<li>
-<p><code>HelloRequest</code> ： 请求。</p>
+<li><p><code>HelloRequest</code> ： 请求。</p>
 </li>
-<li>
-<p><code>HelloReply</code> ：应答。</p>
+<li><p><code>HelloReply</code> ：应答。</p>
 <p>为了返回给客户端应答并且完成调用：</p>
 </li>
 </ul>
@@ -328,42 +329,42 @@ function activateLightMode(){
 <li>将 <code>Status::OK</code> 返回给客户端，表明我们已经完成了对 RPC 的处理。</li>
 </ol>
 </li>
-<li>
-<p>Python</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/python/helloworld/greeter_server.py" target="_blank" rel="noopener">greeter_server.py</a> 实现了 <code>Greeter</code> 服务所需要的行为。   正如你所见，<code>Greeter</code> 类通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>helloworld_pb2.BetaGreeterServicer</code> 接口：</p>
+<li><p>Python</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/python/helloworld/greeter_server.py" target="_blank" rel="noopener">greeter_server.py</a> 实现了 <code>Greeter</code> 服务所需要的行为。   正如你所见，<code>Greeter</code> 类通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>helloworld_pb2.BetaGreeterServicer</code> 接口：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Greeter</span><span class="params">(helloworld_pb2.BetaGreeterServicer)</span>：</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">def</span> <span class="title">SayHello</span><span class="params">(self, request, context)</span>：</span></span><br><span class="line"><span class="class">  <span class="title">return</span> <span class="title">helloworld_pb2</span>.<span class="title">HelloReply</span><span class="params">(message=<span class="string">'Hello, %s!'</span> % request.name)</span></span></span><br></pre></td></tr></table></figure>
-<p>为了返回给客户端应答并且完成调用：</p>
+
+<p>  为了返回给客户端应答并且完成调用：</p>
 <ol>
 <li>用我们的激动人心的消息构建并填充一个在我们接口定义的 <code>HelloReply</code> 应答对象。</li>
 <li>将 <code>HelloReply</code> 返回给客户端。</li>
 </ol>
 </li>
-<li>
-<p>Go</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-go/blob/master/examples/helloworld/greeter_server/main.go" target="_blank" rel="noopener">greeter_server/main.go</a> 实现了 <code>Greeter</code> 服务所需要的行为。 正如你所见，服务器有一个 <code>server</code> 结构。它通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>GreeterServer</code> 接口：</p>
+<li><p>Go</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-go/blob/master/examples/helloworld/greeter_server/main.go" target="_blank" rel="noopener">greeter_server/main.go</a> 实现了 <code>Greeter</code> 服务所需要的行为。 正如你所见，服务器有一个 <code>server</code> 结构。它通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>GreeterServer</code> 接口：</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// server is used to implement helloworld.GreeterServer.</span></span><br><span class="line"><span class="keyword">type</span> server <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line"><span class="comment">// SayHello implements helloworld.GreeterServer</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *server)</span> <span class="title">SayHello</span><span class="params">(ctx context.Context, in *pb.HelloRequest)</span> <span class="params">(*pb.HelloReply, error)</span></span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &amp;pb.HelloReply&#123;Message： <span class="string">"Hello "</span> + in.Name&#125;, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>为了返回给客户端应答并且完成调用：</p>
+
+<p>  为了返回给客户端应答并且完成调用：</p>
 <ol>
 <li>用我们的激动人心的消息构建并填充一个在我们接口定义的 <code>HelloReply</code> 应答对象。</li>
 <li>将 <code>HelloReply</code> 返回给客户端。</li>
 </ol>
 </li>
-<li>
-<p>Ruby</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/ruby/greeter_server.rb" target="_blank" rel="noopener">greeter_server.rb</a> 实现了 <code>Greeter</code> 服务所需要的行为。   服务器有一个 <code>GreeterServer</code> 类，它通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>GreeterServer</code> 接口：</p>
+<li><p>Ruby</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/ruby/greeter_server.rb" target="_blank" rel="noopener">greeter_server.rb</a> 实现了 <code>Greeter</code> 服务所需要的行为。   服务器有一个 <code>GreeterServer</code> 类，它通过实现 <code>sayHello</code> 方法，实现了从 proto 服务定义生成的<code>GreeterServer</code> 接口：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GreeterServer</span> &lt; Helloworld：：<span class="title">Greeter</span>：：<span class="title">Service</span></span></span><br><span class="line"><span class="comment"># say_hello implements the SayHello rpc method.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">say_hello</span><span class="params">(hello_req, _unused_call)</span></span></span><br><span class="line">  Helloworld：：HelloReply.new(message： <span class="string">"Hello <span class="subst">#&#123;hello_req.name&#125;</span>"</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
 <p>为了返回给客户端应答并且完成调用：我们用激动人心的消息构建并填充一个在我们接口定义的 <code>HelloReply</code> 应答对象，然后返回它。</p>
 </li>
-<li>
-<p>Node.js</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/node/greeter_server.js" target="_blank" rel="noopener">greeter_server.js</a> 实现了 <code>Greeter</code> 服务所需要的行为。   服务器通过实现 <code>SayHello</code> 方法，实现了服务定义：</p>
+<li><p>Node.js</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/node/greeter_server.js" target="_blank" rel="noopener">greeter_server.js</a> 实现了 <code>Greeter</code> 服务所需要的行为。   服务器通过实现 <code>SayHello</code> 方法，实现了服务定义：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">call, callback</span>) </span>&#123;</span><br><span class="line">callback(<span class="literal">null</span>, &#123;message： <span class="string">'Hello '</span> + call.request.name&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>为了返回给客户端应答并完成调用，我们填充了应答并将其传递给一个已提供了的回调，用 null 作为第一个参数来表示没有出现错误。</p>
 </li>
-<li>
-<p>C#</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/csharp/helloworld/GreeterServer/Program.cs" target="_blank" rel="noopener">GreeterServer/Program.cs</a> 实现了 <code>Greeter</code> 服务所需要的行为。   服务器的 <code>GreeterImpl</code>类，通过实现 <code>sayHello</code> 方法，实现了生成的<code>IGreeter</code> 接口：</p>
+<li><p>C#</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/csharp/helloworld/GreeterServer/Program.cs" target="_blank" rel="noopener">GreeterServer/Program.cs</a> 实现了 <code>Greeter</code> 服务所需要的行为。   服务器的 <code>GreeterImpl</code>类，通过实现 <code>sayHello</code> 方法，实现了生成的<code>IGreeter</code> 接口：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class GreeterImpl ： Greeter.IGreeter</span><br><span class="line">&#123;</span><br><span class="line">  public Task&lt;HelloReply&gt; SayHello(HelloRequest request, ServerCallContext context)</span><br><span class="line">  &#123;</span><br><span class="line">      return Task.FromResult(new HelloReply &#123; Message &#x3D; &quot;Hello &quot; + request.Name &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>为了返回给客户端应答并完成以下调用：</p>
 <ol>
 <li>用我们的激动人心的消息构建并填充一个在我们接口定义的 <code>HelloReply</code> 应答对象。</li>
@@ -371,230 +372,197 @@ function activateLightMode(){
 </ol>
 </li>
 </ul>
-<h4 id="服务端实现"><a class="markdownIt-Anchor" href="#服务端实现"></a> 服务端实现</h4>
-<p>需要提供一个 gRPC 服务的另一个主要功能是让这个服务实在在网络上可用。</p>
+<h4 id="服务端实现"><a href="#服务端实现" class="headerlink" title="服务端实现"></a>服务端实现</h4><p>需要提供一个 gRPC 服务的另一个主要功能是让这个服务实在在网络上可用。</p>
 <ul>
-<li>
-<p>Java</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-java/blob/master/examples/src/main/java/io/grpc/examples/helloworld/HelloWorldServer.java" target="_blank" rel="noopener">HelloWorldServer.java</a> 提供了以下代码作为 Java 的例子。</p>
+<li><p>Java</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-java/blob/master/examples/src/main/java/io/grpc/examples/helloworld/HelloWorldServer.java" target="_blank" rel="noopener">HelloWorldServer.java</a> 提供了以下代码作为 Java 的例子。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* The port on which the server should run */</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> port = <span class="number">50051</span>;</span><br><span class="line"><span class="keyword">private</span> Server server;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">server = ServerBuilder.forPort(port)</span><br><span class="line">    .addService(GreeterGrpc.bindService(<span class="keyword">new</span> GreeterImpl()))</span><br><span class="line">    .build()</span><br><span class="line">    .start();</span><br><span class="line">logger.info(<span class="string">"Server started, listening on "</span> + port);</span><br><span class="line">Runtime.getRuntime().addShutdownHook(<span class="keyword">new</span> Thread() &#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Use stderr here since the logger may has been reset by its JVM shutdown hook.</span></span><br><span class="line">    System.err.println(<span class="string">"*** shutting down gRPC server since JVM is shutting down"</span>);</span><br><span class="line">    HelloWorldServer.<span class="keyword">this</span>.stop();</span><br><span class="line">    System.err.println(<span class="string">"*** server shut down"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>C++</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/cpp/helloworld/greeter_server.cc" target="_blank" rel="noopener">greeter_server.cc</a> 提供了以下代码作为 C++ 的例子。</p>
+<li><p>C++</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/cpp/helloworld/greeter_server.cc" target="_blank" rel="noopener">greeter_server.cc</a> 提供了以下代码作为 C++ 的例子。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">RunServer</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">std</span>：：<span class="function"><span class="built_in">string</span> <span class="title">server_address</span><span class="params">(<span class="string">"0.0.0.0：50051"</span>)</span></span>;</span><br><span class="line">GreeterServiceImpl service;</span><br><span class="line">ServerBuilder builder;</span><br><span class="line">builder.AddListeningPort(server_address, grpc：：InsecureServerCredentials());</span><br><span class="line">builder.RegisterService(&amp;service);</span><br><span class="line"><span class="built_in">std</span>：：<span class="built_in">unique_ptr</span>&lt;Server&gt; server(builder.BuildAndStart());</span><br><span class="line"><span class="built_in">std</span>：：<span class="built_in">cout</span> &lt;&lt; <span class="string">"Server listening on "</span> &lt;&lt; server_address &lt;&lt; <span class="built_in">std</span>：：<span class="built_in">endl</span>;</span><br><span class="line">server-&gt;Wait();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Python</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/python/helloworld/greeter_server.py" target="_blank" rel="noopener">greeter_server.py</a> 提供了以下代码作为 Python 的例子。</p>
+<li><p>Python</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/python/helloworld/greeter_server.py" target="_blank" rel="noopener">greeter_server.py</a> 提供了以下代码作为 Python 的例子。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server = helloworld_pb2.beta_create_Greeter_server(Greeter())</span><br><span class="line">server.add_insecure_port(<span class="string">'[：：]：50051'</span>)</span><br><span class="line">server.start()</span><br><span class="line"><span class="keyword">try</span>：</span><br><span class="line">  <span class="keyword">while</span> <span class="literal">True</span>：</span><br><span class="line">    time.sleep(_ONE_DAY_IN_SECONDS)</span><br><span class="line"><span class="keyword">except</span> KeyboardInterrupt：</span><br><span class="line">  server.stop()</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Go</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-go/blob/master/examples/helloworld/greeter_server/main.go" target="_blank" rel="noopener">greeter_server/main.go</a> 提供了以下代码作为 Go 的例子。</p>
+<li><p>Go</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-go/blob/master/examples/helloworld/greeter_server/main.go" target="_blank" rel="noopener">greeter_server/main.go</a> 提供了以下代码作为 Go 的例子。</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  port = <span class="string">"：50051"</span></span><br><span class="line">)</span><br><span class="line">...</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  lis, err ：= net.Listen(<span class="string">"tcp"</span>, port)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatalf(<span class="string">"failed to listen： %v"</span>, err)</span><br><span class="line">  &#125;</span><br><span class="line">  s ：= grpc.NewServer()</span><br><span class="line">  pb.RegisterGreeterServer(s, &amp;server&#123;&#125;)</span><br><span class="line">  s.Serve(lis)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Ruby</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/ruby/greeter_server.rb" target="_blank" rel="noopener">greeter_server.rb</a> 提供了以下代码作为 Ruby 的例子。</p>
+<li><p>Ruby</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/ruby/greeter_server.rb" target="_blank" rel="noopener">greeter_server.rb</a> 提供了以下代码作为 Ruby 的例子。</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span></span></span><br><span class="line">s = GRPC：：RpcServer.new</span><br><span class="line">s.add_http2_port(<span class="string">'0.0.0.0：50051'</span>)</span><br><span class="line">s.handle(GreeterServer)</span><br><span class="line">s.run</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Node.js</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/maser/examples/node/greeter_server.js" target="_blank" rel="noopener">greeter_server.js</a> 提供了以下代码作为 Ruby 的例子。</p>
+<li><p>Node.js</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/maser/examples/node/greeter_server.js" target="_blank" rel="noopener">greeter_server.js</a> 提供了以下代码作为 Ruby 的例子。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> server = <span class="keyword">new</span> Server(&#123;</span><br><span class="line">  <span class="string">"helloworld.Greeter"</span>： &#123;</span><br><span class="line">    sayHello： sayHello</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">server.bind(<span class="string">'0.0.0.0：50051'</span>);</span><br><span class="line">server.listen();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>C#</p>
-<p><a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/csharp/helloworld/GreeterServer/Program.cs" target="_blank" rel="noopener">GreeterServer/Program.cs</a> 提供了以下代码作为 C# 的例子。</p>
+<li><p>C#</p>
+<p>  <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/csharp/helloworld/GreeterServer/Program.cs" target="_blank" rel="noopener">GreeterServer/Program.cs</a> 提供了以下代码作为 C# 的例子。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Server server &#x3D; new Server</span><br><span class="line">&#123;</span><br><span class="line">  Services &#x3D; &#123; Greeter.BindService(new GreeterImpl()) &#125;,</span><br><span class="line">  Ports &#x3D; &#123; new ServerPort(&quot;localhost&quot;, 50051, ServerCredentials.Insecure) &#125;</span><br><span class="line">&#125;;</span><br><span class="line">server.Start();</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <p>在这里我们创建了合理的 gRPC 服务器，将我们实现的 <code>Greeter</code> 服务绑定到一个端口。然后我们启动服务器：服务器现在已准备好从 <code>Greeter</code> 服务客户端接收请求。我们将在具体语言对应的文档里更深入地了解这所有的工作是怎样进行的。</p>
-<h3 id="写一个客户端"><a class="markdownIt-Anchor" href="#写一个客户端"></a> 写一个客户端</h3>
-<p>客户端的 gRPC 非常简单。在这一步，我们将用生成的代码写一个简单的客户程序来访问我们在上一节里创建的 <code>Greeter</code> 服务器。 同样，我们也不打算对如何实现一个客户端程序深入更多，我们把这些内容放到教程里。</p>
-<h4 id="连接服务"><a class="markdownIt-Anchor" href="#连接服务"></a> 连接服务</h4>
-<p>首先我们看一下我们如何连接 <code>Greeter</code> 服务器。我们需要创建一个 gRPC 频道，指定我们要连接的主机名和服务器端口。然后我们用这个频道创建存根实例。</p>
+<h3 id="写一个客户端"><a href="#写一个客户端" class="headerlink" title="写一个客户端"></a>写一个客户端</h3><p>客户端的 gRPC 非常简单。在这一步，我们将用生成的代码写一个简单的客户程序来访问我们在上一节里创建的 <code>Greeter</code> 服务器。 同样，我们也不打算对如何实现一个客户端程序深入更多，我们把这些内容放到教程里。</p>
+<h4 id="连接服务"><a href="#连接服务" class="headerlink" title="连接服务"></a>连接服务</h4><p>首先我们看一下我们如何连接 <code>Greeter</code> 服务器。我们需要创建一个 gRPC 频道，指定我们要连接的主机名和服务器端口。然后我们用这个频道创建存根实例。</p>
 <ul>
-<li>
-<p>Java</p>
+<li><p>Java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ManagedChannel channel;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> GreeterGrpc.GreeterBlockingStub blockingStub;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HelloWorldClient</span><span class="params">(String host, <span class="keyword">int</span> port)</span> </span>&#123;</span><br><span class="line">channel = ManagedChannelBuilder.forAddress(host, port)</span><br><span class="line">    .usePlaintext(<span class="keyword">true</span>)</span><br><span class="line">    .build();</span><br><span class="line">blockingStub = GreeterGrpc.newBlockingStub(channel);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在这个例子里，我们创建了一个阻塞的存根。这意味着 RPC 调用要等待服务器应答，将会返回一个应答或抛出一个异常。 gRPC Java 还可以有其他种类的存根，可以向服务器发出非阻塞的调用，这种情况下应答是异步返回的。</p>
 </li>
-<li>
-<p>C++</p>
+<li><p>C++</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span> </span>&#123;</span><br><span class="line"><span class="function">GreeterClient <span class="title">greeter</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    grpc：：CreateChannel(<span class="string">"localhost：50051"</span>, grpc：：InsecureCredentials(),</span></span></span><br><span class="line"><span class="function"><span class="params">                        ChannelArguments()))</span></span>;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GreeterClient</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>：</span><br><span class="line">GreeterClient(<span class="built_in">std</span>：：<span class="built_in">shared_ptr</span>&lt;ChannelInterface&gt; channel)</span><br><span class="line">    ： stub_(Greeter：：NewStub(channel)) &#123;&#125;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">private</span>：</span><br><span class="line"><span class="built_in">std</span>：：<span class="built_in">unique_ptr</span>&lt;Greeter：：Stub&gt; stub_;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Python</p>
-<p>生成的 Python 代码有一个根据频道创建存根的帮助方法。</p>
+<li><p>Python</p>
+<p>  生成的 Python 代码有一个根据频道创建存根的帮助方法。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">channel = implementations.insecure_channel(<span class="string">'localhost'</span>, <span class="number">50051</span>)</span><br><span class="line">stub = helloworld_pb2.beta_create_Greeter_stub(channel)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Go</p>
+<li><p>Go</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">  address     = <span class="string">"localhost：50051"</span></span><br><span class="line">  defaultName = <span class="string">"world"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="comment">// Set up a connection to the server.</span></span><br><span class="line">  conn, err ：= grpc.Dial(address)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatalf(<span class="string">"did not connect： %v"</span>, err)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">defer</span> conn.Close()</span><br><span class="line">  c ：= pb.NewGreeterClient(conn)</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在 gRPC Go 你是使用一个特殊的 Dial() 方法来创建频道。</p>
 </li>
-<li>
-<p>Ruby</p>
-<p><code>stub = Helloworld：：Greeter：：Stub.new('localhost：50051')</code></p>
-<p>在 Ruby 里，我们可以在一个方法里调用从 .proto 文件里生成的存根类。</p>
+<li><p>Ruby</p>
+<p>  <code>stub = Helloworld：：Greeter：：Stub.new(&#39;localhost：50051&#39;)</code></p>
+<p>  在 Ruby 里，我们可以在一个方法里调用从 .proto 文件里生成的存根类。</p>
 </li>
-<li>
-<p>Node.js</p>
-<p><code>var client = new hello_proto.Greeter('localhost：50051');</code></p>
-<p>在 Node.js ，我们可以在一步调用 <code>Greeter</code> 存根构造器。</p>
+<li><p>Node.js</p>
+<p>  <code>var client = new hello_proto.Greeter(&#39;localhost：50051&#39;);</code></p>
+<p>  在 Node.js ，我们可以在一步调用 <code>Greeter</code> 存根构造器。</p>
 </li>
-<li>
-<p>C#</p>
+<li><p>C#</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Channel channel &#x3D; new Channel(&quot;127.0.0.1：50051&quot;, Credentials.Insecure);</span><br><span class="line">var client &#x3D; Greeter.NewClient(channel);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Objective-C</p>
-<p>在 Objective-C 里，我们可以用生成的 <code>HLWGreeter</code> 类指定的初始化方法完成，这个方法需要用<code>NSString *</code> 类型表示的服务器和端口作为参数。</p>
+<li><p>Objective-C</p>
+<p>  在 Objective-C 里，我们可以用生成的 <code>HLWGreeter</code> 类指定的初始化方法完成，这个方法需要用<code>NSString *</code> 类型表示的服务器和端口作为参数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;GRPCClient&#x2F;GRPCCall+Tests.h&gt;</span><br><span class="line">...</span><br><span class="line">static NSString * const kHostAddress &#x3D; @&quot;localhost：50051&quot;;</span><br><span class="line">...</span><br><span class="line">[GRPCCall useInsecureConnectionsForHost：kHostAddress];</span><br><span class="line">HLWGreeter *client &#x3D; [[HLWGreeter alloc] initWithHost：kHostAddress];</span><br></pre></td></tr></table></figure>
+
 <p>当用给定的 host：port 对通讯的时候，注意对 <code>useInsecureConnectionsForHost：</code> 的调用，要通知 gRPC 库使用明文 (而不是 TLS 加密的连接)。</p>
 </li>
-<li>
-<p>PHP</p>
+<li><p>PHP</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$client = <span class="keyword">new</span> helloworld\GreeterClient(</span><br><span class="line">    <span class="keyword">new</span> Grpc\BaseStub(<span class="string">'localhost：50051'</span>, []));</span><br></pre></td></tr></table></figure>
+
 <p>在 PHP 里，我们可以使用 <code>GreeterClient</code> 类的构造器一步完成。</p>
 </li>
 </ul>
-<h4 id="调用-rpc"><a class="markdownIt-Anchor" href="#调用-rpc"></a> 调用 RPC</h4>
-<p>现在我们可以联系服务并获得一个 greeting ：</p>
+<h4 id="调用-RPC"><a href="#调用-RPC" class="headerlink" title="调用 RPC"></a>调用 RPC</h4><p>现在我们可以联系服务并获得一个 greeting ：</p>
 <ol>
 <li>我们创建并填充一个 <code>HelloRequest</code> 发送给服务。</li>
 <li>我们用请求调用存根的 <code>SayHello()</code>，如果 RPC 成功，会得到一个填充的 <code>HelloReply</code> ，从其中我们可以获得 greeting。</li>
 </ol>
 <ul>
-<li>
-<p>Java</p>
+<li><p>Java</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HelloRequest req = HelloRequest.newBuilder().setName(name).build();</span><br><span class="line">HelloReply reply = blockingStub.sayHello(req);</span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-java/blob/master/examples/src/main/java/io/grpc/examples/helloworld/HelloWorldClient.java" target="_blank" rel="noopener">HelloWorldClient.java</a> 里查看完整的客户端代码。</p>
+
+<p>你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-java/blob/master/examples/src/main/java/io/grpc/examples/helloworld/HelloWorldClient.java" target="_blank" rel="noopener">HelloWorldClient.java</a> 里查看完整的客户端代码。</p>
 </li>
-<li>
-<p>C++</p>
+<li><p>C++</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>：：<span class="function"><span class="built_in">string</span> <span class="title">SayHello</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>：：<span class="built_in">string</span>&amp; user)</span> </span>&#123;</span><br><span class="line">  HelloRequest request;</span><br><span class="line">  request.set_name(user);</span><br><span class="line">  HelloReply reply;</span><br><span class="line">  ClientContext context;</span><br><span class="line">  Status status = stub_-&gt;SayHello(&amp;context, request, &amp;reply);</span><br><span class="line">  <span class="keyword">if</span> (status.ok()) &#123;</span><br><span class="line">    <span class="keyword">return</span> reply.message();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Rpc failed"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/cpp/helloworld/greeter_client.cc" target="_blank" rel="noopener">greeter_client.cc</a> 里查看完整的客户端代码。</p>
+
+<p>你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/cpp/helloworld/greeter_client.cc" target="_blank" rel="noopener">greeter_client.cc</a> 里查看完整的客户端代码。</p>
 </li>
-<li>
-<p>Python</p>
+<li><p>Python</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">response = stub.SayHello(helloworld_pb2.HelloRequest(name=<span class="string">'you'</span>), _TIMEOUT_SECONDS)</span><br><span class="line"><span class="keyword">print</span> <span class="string">"Greeter client received： "</span> + response.message</span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/python/helloworld/greeter_client.py" target="_blank" rel="noopener">greeter_client.py</a> 里查看完整的客户端代码。</p>
+
+<p>你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/python/helloworld/greeter_client.py" target="_blank" rel="noopener">greeter_client.py</a> 里查看完整的客户端代码。</p>
 </li>
-<li>
-<p>Go</p>
+<li><p>Go</p>
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">r, err ：= c.SayHello(context.Background(), &amp;pb.HelloRequest&#123;Name： name&#125;)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      log.Fatalf(<span class="string">"could not greet： %v"</span>, err)</span><br><span class="line">&#125;</span><br><span class="line">log.Printf(<span class="string">"Greeting： %s"</span>, r.Message)</span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc-go/blob/master/examples/helloworld/greeter_client/main.go" target="_blank" rel="noopener">greeter_client/main.go</a> 里查看完整的客户端代码。</p>
+
+<p>你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc-go/blob/master/examples/helloworld/greeter_client/main.go" target="_blank" rel="noopener">greeter_client/main.go</a> 里查看完整的客户端代码。</p>
 </li>
-<li>
-<p>Ruby</p>
+<li><p>Ruby</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = stub.say_hello(Helloworld：：HelloRequest.new(name： user)).message</span><br><span class="line">p <span class="string">"Greeting： <span class="subst">#&#123;message&#125;</span>"</span></span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/ruby/greeter_client.rb" target="_blank" rel="noopener">greeter_client.rb</a> 里查看完整的客户端代码。</p>
+
+<p>你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/ruby/greeter_client.rb" target="_blank" rel="noopener">greeter_client.rb</a> 里查看完整的客户端代码。</p>
 </li>
-<li>
-<p>Node.js</p>
+<li><p>Node.js</p>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">client.sayHello(&#123;name： user&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err, response</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Greeting：'</span>, response.message);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/node/greeter_client.js" target="_blank" rel="noopener">/examples/node/greeter_client.js</a> 里查看完整的客户端代码。</p>
+
+<p> 你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/node/greeter_client.js" target="_blank" rel="noopener">/examples/node/greeter_client.js</a> 里查看完整的客户端代码。 </p>
 </li>
-<li>
-<p>C#</p>
+<li><p>C#</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var reply = client.SayHello(new HelloRequest &#123; Name = user &#125;);</span><br><span class="line">Console.WriteLine("Greeting： " + reply.Message);</span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/csharp/helloworld/GreeterClient/Program.cs" target="_blank" rel="noopener">GreeterClient/Program.cs</a> 里查看完整的客户端代码。</p>
+
+<p>你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/csharp/helloworld/GreeterClient/Program.cs" target="_blank" rel="noopener">GreeterClient/Program.cs</a> 里查看完整的客户端代码。</p>
 </li>
-<li>
-<p>Objective-C</p>
+<li><p>Objective-C</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HLWHelloRequest *request = [HLWHelloRequest message];</span><br><span class="line">request.name = @"Objective-C";</span><br><span class="line">[client sayHelloWithRequest：request handler：^(HLWHelloReply *response, NSError *error) &#123;</span><br><span class="line">NSLog(@"%@", response.message);</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
-<p>你可以在 <a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/tree/master/examples/objective-c/helloworld" target="_blank" rel="noopener">examples/objective-c/helloworld</a> 里查看完整的客户端代码。</p>
+
+<p>你可以在 <a href="http://doc.oschina.net/https：//github.com/grpc/grpc/tree/master/examples/objective-c/helloworld" target="_blank" rel="noopener">examples/objective-c/helloworld</a> 里查看完整的客户端代码。</p>
 </li>
-<li>
-<p>PHP</p>
+<li><p>PHP</p>
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">request = new helloworld\HelloRequest();</span></span><br><span class="line"><span class="meta">$</span><span class="bash">request-&gt;setName(<span class="variable">$name</span>);</span></span><br><span class="line"><span class="meta">list($</span><span class="bash">reply, <span class="variable">$status</span>) = <span class="variable">$client</span>-&gt;SayHello(<span class="variable">$request</span>)-&gt;<span class="built_in">wait</span>();</span></span><br><span class="line"><span class="meta">$</span><span class="bash">message = <span class="variable">$reply</span>-&gt;getMessage();</span></span><br></pre></td></tr></table></figure>
-<p>你可以在<a href="http://doc.oschina.net/https%EF%BC%9A//github.com/grpc/grpc/blob/master/examples/php/greeter_client.php" target="_blank" rel="noopener">greeter_client.php</a> 里查看完整的客户端代码。</p>
+
+<p> 你可以在<a href="http://doc.oschina.net/https：//github.com/grpc/grpc/blob/master/examples/php/greeter_client.php" target="_blank" rel="noopener">greeter_client.php</a> 里查看完整的客户端代码。</p>
 </li>
 </ul>
-<h3 id="试一下"><a class="markdownIt-Anchor" href="#试一下"></a> 试一下!</h3>
-<p>你可以尝试用同一个语言在客户端和服务端构建并运行例子。或者你可以尝试 gRPC 最有用的一个功能 - 不同的语言间的互操作性，即在不同的语言运行客户端和服务端。每个服务端和客户端使用从同一过 proto 文件生成的接口代码，则意味着任何 <code>Greeter</code> 客户端可以与任何 <code>Greeter</code> 服务端对话。</p>
+<h3 id="试一下"><a href="#试一下" class="headerlink" title="试一下!"></a>试一下!</h3><p>你可以尝试用同一个语言在客户端和服务端构建并运行例子。或者你可以尝试 gRPC 最有用的一个功能 - 不同的语言间的互操作性，即在不同的语言运行客户端和服务端。每个服务端和客户端使用从同一过 proto 文件生成的接口代码，则意味着任何 <code>Greeter</code> 客户端可以与任何 <code>Greeter</code> 服务端对话。</p>
 <ul>
-<li>
-<p>Java   首先运行服务端：</p>
-<p>你可以从 <code>examples</code> 目录构建并运行服务端。首先构建客户端和服务端：</p>
-<p><code>$ ../gradlew -PskipCodegen=true installDist</code><br />
-然后运行服务端，服务端将监听 50051 ：     <code>$ ./build/install/grpc-examples/bin/hello-world-server</code></p>
+<li><p>Java   首先运行服务端：</p>
+<p>  你可以从 <code>examples</code> 目录构建并运行服务端。首先构建客户端和服务端：</p>
+<p>  <code>$ ../gradlew -PskipCodegen=true installDist</code><br>  然后运行服务端，服务端将监听 50051 ：     <code>$ ./build/install/grpc-examples/bin/hello-world-server</code></p>
 </li>
-<li>
-<p>C++</p>
-<p>你可以从 <code>examples/cpp/helloworld</code> 目录下构建并运行服务端。首先构建客户端和服务端：</p>
-<p><code>$ make</code></p>
-<p>然后运行服务端，服务端将监听 50051 ：</p>
-<p><code>$ ./greeter_server</code></p>
+<li><p>C++</p>
+<p>  你可以从 <code>examples/cpp/helloworld</code> 目录下构建并运行服务端。首先构建客户端和服务端：</p>
+<p>  <code>$ make</code></p>
+<p>  然后运行服务端，服务端将监听 50051 ：</p>
+<p>  <code>$ ./greeter_server</code></p>
 </li>
-<li>
-<p>Python   你可以用如下命令到 <code>examples/python/helloworld</code> 下运行服务端：</p>
-<p><code>$ ./run_server.sh</code></p>
+<li><p>Python   你可以用如下命令到 <code>examples/python/helloworld</code> 下运行服务端：</p>
+<p>  <code>$ ./run_server.sh</code></p>
 </li>
-<li>
-<p>Go</p>
-<p>你可以用如下命令到 <code>examples/helloworld</code> 下运行服务端：</p>
-<p><code>$ greeter_server &amp;</code></p>
+<li><p>Go</p>
+<p>  你可以用如下命令到 <code>examples/helloworld</code> 下运行服务端：</p>
+<p>  <code>$ greeter_server &amp;</code></p>
 </li>
-<li>
-<p>Ruby</p>
-<p>你可以用如下命令到 <code>examples/ruby</code> 下运行服务端：</p>
-<p><code>$ bundle exec ./greeter_server.rb &amp;</code></p>
+<li><p>Ruby</p>
+<p>  你可以用如下命令到 <code>examples/ruby</code> 下运行服务端：</p>
+<p>  <code>$ bundle exec ./greeter_server.rb &amp;</code></p>
 </li>
-<li>
-<p>Node.js   你可以用如下命令到 <code>examples/node</code> 下运行服务端：</p>
-<p><code>$ node ./greeter_server.js &amp;</code></p>
+<li><p>Node.js   你可以用如下命令到 <code>examples/node</code> 下运行服务端：</p>
+<p>  <code>$ node ./greeter_server.js &amp;</code></p>
 </li>
-<li>
-<p>C#   构建解决方案，然后到 <code>examples/csharp</code> ：</p>
+<li><p>C#   构建解决方案，然后到 <code>examples/csharp</code> ：</p>
   <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd GreeterServer/bin/Debug</span><br><span class="line">GreeterServer.exe</span><br></pre></td></tr></table></figure>
-<p>一旦服务器在运行，在其他的终端窗口运行客户端并确认它收到一个消息。</p>
+
+<p>  一旦服务器在运行，在其他的终端窗口运行客户端并确认它收到一个消息。</p>
 </li>
-<li>
-<p>Java</p>
-<p>你可以在 <code>examples</code> 目录下构建并运行客户端。假如你还没有构建客户端，可以使用如下命令：</p>
-<p><code>$ ../gradlew -PskipCodegen=true installDist</code></p>
-<p>然后运行客户端：     <code>$ ./build/install/grpc-examples/bin/hello-world-client</code></p>
+<li><p>Java</p>
+<p>  你可以在 <code>examples</code> 目录下构建并运行客户端。假如你还没有构建客户端，可以使用如下命令：</p>
+<p>  <code>$ ../gradlew -PskipCodegen=true installDist</code></p>
+<p>  然后运行客户端：     <code>$ ./build/install/grpc-examples/bin/hello-world-client</code></p>
 </li>
-<li>
-<p>C++<br />
-你可以在 <code>examples/cpp/helloworld</code> 目录下构建并运行客户端。假如你还没有构建客户端，可以使用如下命令：<br />
-<code>$ make</code>  然后运行客户端：   <code>$ ./greeter_client</code></p>
+<li><p>C++<br>  你可以在 <code>examples/cpp/helloworld</code> 目录下构建并运行客户端。假如你还没有构建客户端，可以使用如下命令：<br>  <code>$ make</code>  然后运行客户端：   <code>$ ./greeter_client</code></p>
 </li>
-<li>
-<p>Python</p>
-<p>你可以从<code>examples/python/helloworld</code>目录下用如下命令运行客户端：   <code>$ ./run_client.sh</code></p>
+<li><p>Python</p>
+<p>  你可以从<code>examples/python/helloworld</code>目录下用如下命令运行客户端：   <code>$ ./run_client.sh</code></p>
 </li>
-<li>
-<p>Go</p>
-<p>你可以从<code>examples/helloworld</code>目录下用如下命令运行客户端：</p>
-<p><code>$ greeter_client</code></p>
+<li><p>Go</p>
+<p>  你可以从<code>examples/helloworld</code>目录下用如下命令运行客户端：</p>
+<p>  <code>$ greeter_client</code></p>
 </li>
-<li>
-<p>Ruby</p>
-<p>你可以从<code>examples/node</code>目录下用如下命令运行客户端：   <code>$ bundle exec ./greeter_client.rb</code></p>
+<li><p>Ruby</p>
+<p>  你可以从<code>examples/node</code>目录下用如下命令运行客户端：   <code>$ bundle exec ./greeter_client.rb</code></p>
 </li>
-<li>
-<p>Node.js</p>
-<p>你可以从<code>examples/node</code>目录下用如下命令运行客户端：</p>
-<p><code>$ node ./greeter_client.js</code></p>
+<li><p>Node.js</p>
+<p>  你可以从<code>examples/node</code>目录下用如下命令运行客户端：</p>
+<p>  <code>$ node ./greeter_client.js</code></p>
 </li>
-<li>
-<p>C#</p>
+<li><p>C#</p>
 <p>构建解决方案，然后从 <code>examples/csharp</code> 目录：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd GreeterClient/bin/Debug</span><br><span class="line">GreeterClient.exe</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>Objective-C</p>
-<p>打开由Cocoapods 创建的 XCode 工作空间，运行应用，你可以在 XCode 的控制台日志里看到结果。</p>
+<li><p>Objective-C</p>
+<p>  打开由Cocoapods 创建的 XCode 工作空间，运行应用，你可以在 XCode 的控制台日志里看到结果。</p>
 </li>
-<li>
-<p>PHP</p>
+<li><p>PHP</p>
 <p>你可以从 <code>examples/php</code> 目录运行客户端 ：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./run_greeter_client.sh</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 </div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/09/27/grpc-grpc-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/">http://wangyangyangisme.github.io/2019/09/27/grpc-grpc-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/09/27/grpc-grpc-%E6%A6%82%E5%BF%B5/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/grpc/69a889d02bd1240d25ce8ba4d8ea084a.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">grpc-概念</div></div></a></div><div class="next-post pull_right"><a href="/2019/09/27/grpc-grpc%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/grpc/6a61340d7c09b563340877a5d57dbae9.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">grpc学习资料</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];

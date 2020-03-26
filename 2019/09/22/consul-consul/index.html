@@ -73,132 +73,121 @@ function activateLightMode(){
 }</script><script>var GLOBAL_CONFIG_SITE = { 
   isPost: true,
   isHome: false
-}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#consul常用命令"><span class="toc-text"> Consul常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#consul-agent-命令详解"><span class="toc-text"> Consul agent 命令详解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#consul搭建集群"><span class="toc-text"> consul搭建集群</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#consul-启动"><span class="toc-text"> Consul 启动</span></a></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/consul/19e8db84b9cccfc9a8f4636230c25cc6.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">consul</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-09-22<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/consul/">consul</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">1.2k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 4 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/09/22/consul-consul/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/09/22/consul-consul/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="consul常用命令"><a class="markdownIt-Anchor" href="#consul常用命令"></a> Consul常用命令</h1>
-<ul>
-<li>
-<p>agent 运行一个consul agent</p>
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Consul常用命令"><span class="toc-text">Consul常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Consul-agent-命令详解"><span class="toc-text">Consul agent 命令详解</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#consul搭建集群"><span class="toc-text">consul搭建集群</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Consul-启动"><span class="toc-text">Consul 启动</span></a></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/consul/19e8db84b9cccfc9a8f4636230c25cc6.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">consul</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-09-22<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/consul/">consul</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">1.2k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 4 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/09/22/consul-consul/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/09/22/consul-consul/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="Consul常用命令"><a href="#Consul常用命令" class="headerlink" title="Consul常用命令"></a>Consul常用命令</h1><ul>
+<li><p>agent 运行一个consul agent</p>
 <p><code>consul agent -dev</code></p>
 </li>
-<li>
-<p>join 将agent加入到consul集群</p>
+<li><p>join 将agent加入到consul集群</p>
 <p><code>consul join IP</code></p>
 </li>
-<li>
-<p>members 列出consul cluster集群中的members</p>
+<li><p>members 列出consul cluster集群中的members</p>
 <p><code>consul members</code></p>
 </li>
-<li>
-<p>leave 将节点移除所在集群</p>
+<li><p>leave 将节点移除所在集群</p>
 <p><code>consul leave</code></p>
 </li>
 </ul>
-<h1 id="consul-agent-命令详解"><a class="markdownIt-Anchor" href="#consul-agent-命令详解"></a> Consul agent 命令详解</h1>
-<p>输入<code>consul agent --help</code> ，可以看到<code>consul agent</code> 的选项</p>
+<h1 id="Consul-agent-命令详解"><a href="#Consul-agent-命令详解" class="headerlink" title="Consul agent 命令详解"></a>Consul agent 命令详解</h1><p>输入<code>consul agent --help</code> ，可以看到<code>consul agent</code> 的选项</p>
 <p><code>consul agent</code> 命令的常用选项，如下：</p>
 <ul>
-<li>-data-dir
-<ul>
+<li>-data-dir<ul>
 <li>作用：指定agent储存状态的数据目录</li>
 <li>这是所有agent都必须的</li>
 <li>对于server尤其重要，因为他们必须持久化集群的状态</li>
 </ul>
 </li>
-<li>-config-dir
-<ul>
+<li>-config-dir<ul>
 <li>作用：指定service的配置文件和检查定义所在的位置</li>
 <li>通常会指定为”某一个路径/consul.d”（通常情况下，.d表示一系列配置文件存放的目录）</li>
 </ul>
 </li>
-<li>-config-file
-<ul>
+<li>-config-file<ul>
 <li>作用：指定一个要装载的配置文件</li>
 <li>该选项可以配置多次，进而配置多个配置文件（后边的会合并前边的，相同的值覆盖）</li>
 </ul>
 </li>
-<li>-dev
-<ul>
+<li>-dev<ul>
 <li>作用：创建一个开发环境下的server节点</li>
 <li>该参数配置下，不会有任何持久化操作，即不会有任何数据写入到磁盘</li>
 <li>这种模式不能用于生产环境（因为第二条）</li>
 </ul>
 </li>
-<li>-bootstrap-expect
-<ul>
+<li>-bootstrap-expect<ul>
 <li>作用：该命令通知consul server我们现在准备加入的server节点个数，该参数是为了延迟日志复制的启动直到我们指定数量的server节点成功的加入后启动。</li>
 </ul>
 </li>
-<li>-node
-<ul>
+<li>-node<ul>
 <li>作用：指定节点在集群中的名称</li>
 <li>该名称在集群中必须是唯一的（默认采用机器的host）</li>
 <li>推荐：直接采用机器的IP</li>
 </ul>
 </li>
-<li>-bind
-<ul>
+<li>-bind<ul>
 <li>作用：指明节点的IP地址</li>
 <li>有时候不指定绑定IP，会报<code>Failed to get advertise address: Multiple private IPs found. Please configure one.</code> 的异常</li>
 </ul>
 </li>
-<li>-server
-<ul>
+<li>-server<ul>
 <li>作用：指定节点为server</li>
 <li>每个数据中心（DC）的server数推荐至少为1，至多为5</li>
 <li>所有的server都采用raft一致性算法来确保事务的一致性和线性化，事务修改了集群的状态，且集群的状态保存在每一台server上保证可用性</li>
 <li>server也是与其他DC交互的门面（gateway）</li>
 </ul>
 </li>
-<li>-client
-<ul>
+<li>-client<ul>
 <li>作用：指定节点为client，指定客户端接口的绑定地址，包括：HTTP、DNS、RPC</li>
 <li>默认是127.0.0.1，只允许回环接口访问</li>
 <li>若不指定为-server，其实就是-client</li>
 </ul>
 </li>
-<li>-join
-<ul>
+<li>-join<ul>
 <li>作用：将节点加入到集群</li>
 </ul>
 </li>
-<li>-datacenter（老版本叫-dc，-dc已经失效）
-<ul>
+<li>-datacenter（老版本叫-dc，-dc已经失效）<ul>
 <li>作用：指定机器加入到哪一个数据中心中</li>
 </ul>
 </li>
 </ul>
 <p>使用-client 参数可指定允许客户端使用什么ip去访问，例如-client 192.168.11.143 表示可以使用<a href="https://link.jianshu.com?t=http%3A%2F%2F192.168.11.143%3A8500%2Fui" target="_blank" rel="noopener">http://192.168.11.143:8500/ui</a> 去访问。</p>
-<h1 id="consul搭建集群"><a class="markdownIt-Anchor" href="#consul搭建集群"></a> consul搭建集群</h1>
-<ul>
+<h1 id="consul搭建集群"><a href="#consul搭建集群" class="headerlink" title="consul搭建集群"></a>consul搭建集群</h1><ul>
 <li>启动node0机器上的Consul（node0机器上执行）：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consul agent -data-dir /tmp/node0 -node=node0 -bind=192.168.11.143 -datacenter=dc1 -ui -client=192.168.11.143 -server -bootstrap-expect 1</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>启动node1机器上的Consul（node1机器上执行）：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consul agent -data-dir /tmp/node1 -node=node1 -bind=192.168.11.144 -datacenter=dc1 -ui</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>启动node2机器上的Consul（node2机器上执行）：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consul agent -data-dir /tmp/node2 -node=node2 -bind=192.168.11.145 -datacenter=dc1 -ui -client=192.168.11.145</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>将node1节点加入到node0上（node1机器上执行）：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consul join 192.168.11.143</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>将node2节点加入到node0上（node2机器上执行）：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consul join -rpc-addr=192.168.11.145:8400  192.168.11.143</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>这样一个简单的Consul集群就搭建完成了，在node1上查看当前集群节点：</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consul members -rpc-addr=192.168.11.143:8400</span><br></pre></td></tr></table></figure>
+
 <p>结果如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Node   Address              Status  Type    Build  Protocol  DC</span><br><span class="line">node0  192.168.11.143:8301  alive   server  0.7.0  2         dc1</span><br><span class="line">node1  192.168.11.144:8301  alive   client  0.7.0  2         dc1</span><br><span class="line">node2  192.168.11.145:8301  alive   client  0.7.0  2         dc1</span><br></pre></td></tr></table></figure>
+
 <p>说明集群已经搭建成功了。</p>
 <p>我们分析一下，为什么第5步和第6步需要加<code>-rpc-addr</code> 选项，而第4步不需要加任何选项呢？原因是<code>-client</code> 指定了客户端接口的绑定地址，包括：HTTP、DNS、RPC，而<code>consul join</code> 、<code>consul members</code> 都是通过RPC与Consul交互的。</p>
 <p>我们三个节点都加了<code>-ui</code> 参数启动了内建的界面。我们可以通过：<code>http://192.168.11.143:8500/ui/</code> 或者<code>http://192.168.11.145:8500/ui/</code>进行访问，也可以在node1机器上通过<code>http://127.0.0.1:8500/ui/</code> 进行访问，原因是node1没有开启远程访问</p>
-<h1 id="consul-启动"><a class="markdownIt-Anchor" href="#consul-启动"></a> Consul 启动</h1>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -dev表示开发模式运行，另外还有-server表示服务模式运行</span></span><br><span class="line">./consul agent -dev</span><br></pre></td></tr></table></figure>
+<h1 id="Consul-启动"><a href="#Consul-启动" class="headerlink" title="Consul 启动"></a>Consul 启动</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -dev表示开发模式运行，另外还有-server表示服务模式运行</span></span><br><span class="line">./consul agent -dev</span><br></pre></td></tr></table></figure>
+
 <p>-dev（该节点的启动不能用于生产环境，因为该模式下不会持久化任何状态），该启动模式仅仅是为了快速便捷的启动单节点consul，该节点处于server模式，该节点是leader，该节点是一个健康节点</p>
 <ul>
 <li>Address：节点地址</li>

@@ -78,178 +78,146 @@ function activateLightMode(){
 </blockquote>
 <p>Compose和Docker兼容性：Compose 文件格式有3个版本,分别为1, 2.x 和 3.x。目前主流的为 3.x 其支持 docker 1.13.0 及其以上的版本</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#系统变量</span></span><br><span class="line"><span class="string">$PWD</span> <span class="string">：</span> <span class="string">当前目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#注意：YAML布尔值（true，false，yes，no，on，off）必须用引号括起来，以便解析器将它们解释为字符串。</span></span><br><span class="line"><span class="comment">#字典时</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="attr">SHOW:</span> <span class="string">'true'</span></span><br><span class="line"> <span class="string">数组时</span>   </span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">SHOW=true</span></span><br></pre></td></tr></table></figure>
+
 <p>常用参数：</p>
 <ul>
-<li>
-<p>version   # 指定 compose 文件的版本</p>
+<li><p>version   # 指定 compose 文件的版本</p>
 </li>
-<li>
-<p>services  # 定义所有的 service 信息, services 下面的第一级别的 key 既是一个 service 的名称</p>
+<li><p>services  # 定义所有的 service 信息, services 下面的第一级别的 key 既是一个 service 的名称</p>
 </li>
-<li>
-<p>build     # 指定包含构建上下文的路径, 或作为一个对象，该对象具有 context 和指定的 dockerfile 文件以及 args 参数值</p>
+<li><p>build     # 指定包含构建上下文的路径, 或作为一个对象，该对象具有 context 和指定的 dockerfile 文件以及 args 参数值</p>
 <ul>
 <li>context     # context: 指定 Dockerfile 文件所在的路径</li>
 <li>dockerfile  # dockerfile: 指定 context 指定的目录下面的 Dockerfile 的名称(默认为 Dockerfile)</li>
-<li>args        # args: Dockerfile 在 build 过程中需要的参数 (等同于 docker container build --build-arg 的作用)</li>
-<li>cache_from  # v3.2中新增的参数, 指定缓存的镜像列表 (等同于 docker container build --cache_from 的作用)</li>
-<li>labels      # v3.3中新增的参数, 设置镜像的元数据 (等同于 docker container build --labels 的作用)</li>
-<li>shm_size    # v3.5中新增的参数, 设置容器 /dev/shm 分区的大小 (等同于 docker container build --shm-size 的作用)</li>
+<li>args        # args: Dockerfile 在 build 过程中需要的参数 (等同于 docker container build –build-arg 的作用)</li>
+<li>cache_from  # v3.2中新增的参数, 指定缓存的镜像列表 (等同于 docker container build –cache_from 的作用)</li>
+<li>labels      # v3.3中新增的参数, 设置镜像的元数据 (等同于 docker container build –labels 的作用)</li>
+<li>shm_size    # v3.5中新增的参数, 设置容器 /dev/shm 分区的大小 (等同于 docker container build –shm-size 的作用)</li>
 </ul>
 </li>
-<li>
-<p>command         # 覆盖容器启动后默认执行的命令, 支持 shell 格式和 [] 格式</p>
+<li><p>command         # 覆盖容器启动后默认执行的命令, 支持 shell 格式和 [] 格式</p>
 </li>
-<li>
-<p>configs         # 不知道怎么用</p>
+<li><p>configs         # 不知道怎么用</p>
 </li>
-<li>
-<p>cgroup_parent   # 不知道怎么用</p>
+<li><p>cgroup_parent   # 不知道怎么用</p>
 </li>
-<li>
-<p>container_name  # 指定容器的名称 (等同于 docker run --name 的作用)</p>
+<li><p>container_name  # 指定容器的名称 (等同于 docker run –name 的作用)</p>
 </li>
-<li>
-<p>credential_spec # 不知道怎么用</p>
+<li><p>credential_spec # 不知道怎么用</p>
 </li>
-<li>
-<p>deploy          # v3 版本以上, 指定与部署和运行服务相关的配置, deploy 部分是 docker stack 使用的, docker stack 依赖 docker swarm<br />
-endpoint_mode    # v3.3 版本中新增的功能, 指定服务暴露的方式<br />
-vip          # Docker 为该服务分配了一个虚拟 IP(VIP), 作为客户端的访问服务的地址<br />
-dnsrr        # DNS轮询, Docker 为该服务设置 DNS 条目, 使得服务名称的 DNS 查询返回一个 IP 地址列表, 客户端直接访问其中的一个地址<br />
-labels           # 指定服务的标签，这些标签仅在服务上设置<br />
-mode             # 指定 deploy 的模式<br />
-global       # 每个集群节点都只有一个容器<br />
-replicated   # 用户可以指定集群中容器的数量(默认)<br />
-placement        # 不知道怎么用<br />
-replicas         # deploy 的 mode 为 replicated 时, 指定容器副本的数量<br />
-resources        # 资源限制<br />
-limits       # 设置容器的资源限制<br />
-cpus: “0.5”   # 设置该容器最多只能使用 50% 的 CPU<br />
-memory: 50M   # 设置该容器最多只能使用 50M 的内存空间<br />
-reservations      # 设置为容器预留的系统资源(随时可用)<br />
-cpus: “0.2”   # 为该容器保留 20% 的 CPU<br />
-memory: 20M   # 为该容器保留 20M 的内存空间<br />
-restart_policy        # 定义容器重启策略, 用于代替 restart 参数<br />
-condition         # 定义容器重启策略(接受三个参数)<br />
-none          # 不尝试重启<br />
-on-failure    # 只有当容器内部应用程序出现问题才会重启<br />
-any           # 无论如何都会尝试重启(默认)<br />
-delay             # 尝试重启的间隔时间(默认为 0s)<br />
-max_attempts      # 尝试重启次数(默认一直尝试重启)<br />
-window            # 检查重启是否成功之前的等待时间(即如果容器启动了, 隔多少秒之后去检测容器是否正常, 默认 0s)<br />
-update_config         # 用于配置滚动更新配置<br />
-parallelism       # 一次性更新的容器数量<br />
-delay             # 更新一组容器之间的间隔时间<br />
-failure_action    # 定义更新失败的策略<br />
-continue      # 继续更新<br />
-rollback      # 回滚更新<br />
-pause         # 暂停更新(默认)<br />
-monitor           # 每次更新后的持续时间以监视更新是否失败(单位: ns|us|ms|s|m|h) (默认为0)<br />
-max_failure_ratio # 回滚期间容忍的失败率(默认值为0)<br />
-order             # v3.4 版本中新增的参数, 回滚期间的操作顺序<br />
-stop-first    #旧任务在启动新任务之前停止(默认)<br />
-start-first   #首先启动新任务, 并且正在运行的任务暂时重叠<br />
-rollback_config       # v3.7 版本中新增的参数, 用于定义在 update_config 更新失败的回滚策略<br />
-parallelism       # 一次回滚的容器数, 如果设置为0, 则所有容器同时回滚<br />
-delay             # 每个组回滚之间的时间间隔(默认为0)<br />
-failure_action    # 定义回滚失败的策略<br />
-continue      # 继续回滚<br />
-pause         # 暂停回滚<br />
-monitor           # 每次回滚任务后的持续时间以监视失败(单位: ns|us|ms|s|m|h) (默认为0)<br />
-max_failure_ratio # 回滚期间容忍的失败率(默认值0)<br />
-order             # 回滚期间的操作顺序<br />
-stop-first    # 旧任务在启动新任务之前停止(默认)<br />
-start-first   # 首先启动新任务, 并且正在运行的任务暂时重叠</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：</span></span><br><span class="line"><span class="comment"># 支持 docker-compose up 和 docker-compose run 但不支持 docker stack deploy 的子选项</span></span><br><span class="line"><span class="comment"># security_opt  container_name  devices  tmpfs  stop_signal  links    cgroup_parent</span></span><br><span class="line"><span class="comment"># network_mode  external_links  restart  build  userns_mode  sysctls</span></span><br></pre></td></tr></table></figure>
+<li><p>deploy          # v3 版本以上, 指定与部署和运行服务相关的配置, deploy 部分是 docker stack 使用的, docker stack 依赖 docker swarm</p>
+<pre><code>endpoint_mode    # v3.3 版本中新增的功能, 指定服务暴露的方式
+    vip          # Docker 为该服务分配了一个虚拟 IP(VIP), 作为客户端的访问服务的地址
+    dnsrr        # DNS轮询, Docker 为该服务设置 DNS 条目, 使得服务名称的 DNS 查询返回一个 IP 地址列表, 客户端直接访问其中的一个地址
+labels           # 指定服务的标签，这些标签仅在服务上设置
+mode             # 指定 deploy 的模式
+    global       # 每个集群节点都只有一个容器
+    replicated   # 用户可以指定集群中容器的数量(默认)
+placement        # 不知道怎么用
+replicas         # deploy 的 mode 为 replicated 时, 指定容器副本的数量
+resources        # 资源限制
+    limits       # 设置容器的资源限制
+        cpus: &quot;0.5&quot;   # 设置该容器最多只能使用 50% 的 CPU 
+        memory: 50M   # 设置该容器最多只能使用 50M 的内存空间 
+    reservations      # 设置为容器预留的系统资源(随时可用)
+        cpus: &quot;0.2&quot;   # 为该容器保留 20% 的 CPU
+        memory: 20M   # 为该容器保留 20M 的内存空间
+restart_policy        # 定义容器重启策略, 用于代替 restart 参数
+    condition         # 定义容器重启策略(接受三个参数)
+        none          # 不尝试重启
+        on-failure    # 只有当容器内部应用程序出现问题才会重启
+        any           # 无论如何都会尝试重启(默认)
+    delay             # 尝试重启的间隔时间(默认为 0s)
+    max_attempts      # 尝试重启次数(默认一直尝试重启)
+    window            # 检查重启是否成功之前的等待时间(即如果容器启动了, 隔多少秒之后去检测容器是否正常, 默认 0s)
+update_config         # 用于配置滚动更新配置
+    parallelism       # 一次性更新的容器数量
+    delay             # 更新一组容器之间的间隔时间
+    failure_action    # 定义更新失败的策略
+        continue      # 继续更新
+        rollback      # 回滚更新
+        pause         # 暂停更新(默认)
+    monitor           # 每次更新后的持续时间以监视更新是否失败(单位: ns|us|ms|s|m|h) (默认为0)
+    max_failure_ratio # 回滚期间容忍的失败率(默认值为0)
+    order             # v3.4 版本中新增的参数, 回滚期间的操作顺序
+        stop-first    #旧任务在启动新任务之前停止(默认)
+        start-first   #首先启动新任务, 并且正在运行的任务暂时重叠
+rollback_config       # v3.7 版本中新增的参数, 用于定义在 update_config 更新失败的回滚策略
+    parallelism       # 一次回滚的容器数, 如果设置为0, 则所有容器同时回滚
+    delay             # 每个组回滚之间的时间间隔(默认为0)
+    failure_action    # 定义回滚失败的策略
+        continue      # 继续回滚
+        pause         # 暂停回滚
+    monitor           # 每次回滚任务后的持续时间以监视失败(单位: ns|us|ms|s|m|h) (默认为0)
+    max_failure_ratio # 回滚期间容忍的失败率(默认值0)
+    order             # 回滚期间的操作顺序
+        stop-first    # 旧任务在启动新任务之前停止(默认)
+        start-first   # 首先启动新任务, 并且正在运行的任务暂时重叠</code></pre><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意：</span></span><br><span class="line"><span class="comment"># 支持 docker-compose up 和 docker-compose run 但不支持 docker stack deploy 的子选项</span></span><br><span class="line"><span class="comment"># security_opt  container_name  devices  tmpfs  stop_signal  links    cgroup_parent</span></span><br><span class="line"><span class="comment"># network_mode  external_links  restart  build  userns_mode  sysctls</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>devices      # 指定设备映射列表 (等同于 docker run --device 的作用)</p>
+<li><p>devices      # 指定设备映射列表 (等同于 docker run –device 的作用)</p>
 </li>
-<li>
-<p>depends_on   # 定义容器启动顺序 (此选项解决了容器之间的依赖关系， 此选项在 v3 版本中 使用 swarm 部署时将忽略该选项)</p>
+<li><p>depends_on   # 定义容器启动顺序 (此选项解决了容器之间的依赖关系， 此选项在 v3 版本中 使用 swarm 部署时将忽略该选项)</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例：</span></span><br><span class="line"><span class="comment"># docker-compose up 以依赖顺序启动服务，下面例子中 redis 和 db 服务在 web 启动前启动</span></span><br><span class="line"><span class="comment"># 默认情况下使用 docker-compose up web 这样的方式启动 web 服务时，也会启动 redis 和 db 两个服务，因为在配置文件中定义了依赖关系</span></span><br><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">web:</span></span><br><span class="line">    <span class="attr">build:</span> <span class="string">.</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">db</span>      </span><br><span class="line">      <span class="bullet">-</span> <span class="string">redis</span>  </span><br><span class="line">  <span class="attr">redis:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">redis</span></span><br><span class="line">  <span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">postgres</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>dns                   # 设置 DNS 地址(等同于 docker run --dns 的作用)</p>
+<li><p>dns                   # 设置 DNS 地址(等同于 docker run –dns 的作用)</p>
 </li>
-<li>
-<p>dns_search            # 设置 DNS 搜索域(等同于 docker run --dns-search 的作用)</p>
+<li><p>dns_search            # 设置 DNS 搜索域(等同于 docker run –dns-search 的作用)</p>
 </li>
-<li>
-<p>tmpfs                 # v2 版本以上, 挂载目录到容器中, 作为容器的临时文件系统(等同于 docker run --tmpfs 的作用, 在使</p>
+<li><p>tmpfs                 # v2 版本以上, 挂载目录到容器中, 作为容器的临时文件系统(等同于 docker run –tmpfs 的作用, 在使</p>
 </li>
-<li>
-<p>用 swarm 部署时将忽略该选项)</p>
+<li><p>用 swarm 部署时将忽略该选项)</p>
 </li>
-<li>
-<p>entrypoint            # 覆盖容器的默认 entrypoint 指令 (等同于 docker run --entrypoint 的作用)</p>
+<li><p>entrypoint            # 覆盖容器的默认 entrypoint 指令 (等同于 docker run –entrypoint 的作用)</p>
 </li>
-<li>
-<p>env_file              # 从指定文件中读取变量设置为容器中的环境变量, 可以是单个值或者一个文件列表, 如果多个文件中的变量重名则后面的变量覆盖前面的变量, environment 的值覆盖 env_file 的值</p>
+<li><p>env_file              # 从指定文件中读取变量设置为容器中的环境变量, 可以是单个值或者一个文件列表, 如果多个文件中的变量重名则后面的变量覆盖前面的变量, environment 的值覆盖 env_file 的值</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 文件格式：</span></span><br><span class="line">RACK_ENV=development</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>environment           # 设置环境变量， environment 的值可以覆盖 env_file 的值 (等同于 docker run --env 的作用)</p>
+<li><p>environment           # 设置环境变量， environment 的值可以覆盖 env_file 的值 (等同于 docker run –env 的作用)</p>
 </li>
-<li>
-<p>expose                # 暴露端口, 但是不能和宿主机建立映射关系, 类似于 Dockerfile 的 EXPOSE 指令</p>
+<li><p>expose                # 暴露端口, 但是不能和宿主机建立映射关系, 类似于 Dockerfile 的 EXPOSE 指令</p>
 </li>
-<li>
-<p>external_links        # 连接不在 docker-compose.yml 中定义的容器或者不在 compose 管理的容器(docker run 启动的容器, 在 v3 版本中使用 swarm 部署时将忽略该选项)</p>
+<li><p>external_links        # 连接不在 docker-compose.yml 中定义的容器或者不在 compose 管理的容器(docker run 启动的容器, 在 v3 版本中使用 swarm 部署时将忽略该选项)</p>
 </li>
-<li>
-<p>extra_hosts           # 添加 host 记录到容器中的 /etc/hosts 中 (等同于 docker run --add-host 的作用)</p>
+<li><p>extra_hosts           # 添加 host 记录到容器中的 /etc/hosts 中 (等同于 docker run –add-host 的作用)</p>
 </li>
-<li>
-<p>healthcheck           # v2.1 以上版本, 定义容器健康状态检查, 类似于 Dockerfile 的 HEALTHCHECK 指令</p>
+<li><p>healthcheck           # v2.1 以上版本, 定义容器健康状态检查, 类似于 Dockerfile 的 HEALTHCHECK 指令</p>
 <ul>
-<li>test          # 检查容器检查状态的命令, 该选项必须是一个字符串或者列表, 第一项必须是 NONE, CMD 或 CMD-SHELL, 如果其是一个字符串则相当于 CMD-SHELL 加该字符串
-<ul>
+<li>test          # 检查容器检查状态的命令, 该选项必须是一个字符串或者列表, 第一项必须是 NONE, CMD 或 CMD-SHELL, 如果其是一个字符串则相当于 CMD-SHELL 加该字符串<ul>
 <li>NONE              # 禁用容器的健康状态检测</li>
-<li>CMD                # test: [“CMD”, “curl”, “-f”, “<a href="http://localhost" target="_blank" rel="noopener">http://localhost</a>”]</li>
+<li>CMD                # test: [“CMD”, “curl”, “-f”, “<a href="http://localhost&quot;]">http://localhost&quot;]</a></li>
 <li>CMD-SHELL   # test: [“CMD-SHELL”, “curl -f <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a> || exit 1”] 或者　test: curl -f <a href="https://localhost" target="_blank" rel="noopener">https://localhost</a> || exit 1</li>
 </ul>
 </li>
 <li>interval: 1m30s       # 每次检查之间的间隔时间</li>
-<li>timeout: 10s          # 运行命令的超时时间</li>
+<li>timeout: 10s          # 运行命令的超时时间    </li>
 <li>retries: 3            # 重试次数</li>
 <li>start_period: 40s     # v3.4 以上新增的选项, 定义容器启动时间间隔</li>
 <li>disable: true         # true 或 false, 表示是否禁用健康状态检测和　test: NONE 相同</li>
 </ul>
 </li>
-<li>
-<p>image                 # 指定 docker 镜像, 可以是远程仓库镜像、本地镜像</p>
+<li><p>image                 # 指定 docker 镜像, 可以是远程仓库镜像、本地镜像</p>
 </li>
-<li>
-<p>init                  # v3.7 中新增的参数, true 或 false 表示是否在容器中运行一个 init, 它接收信号并传递给进程</p>
+<li><p>init                  # v3.7 中新增的参数, true 或 false 表示是否在容器中运行一个 init, 它接收信号并传递给进程</p>
 </li>
-<li>
-<p>isolation             # 隔离容器技术, 在 Linux 中仅支持 default 值</p>
+<li><p>isolation             # 隔离容器技术, 在 Linux 中仅支持 default 值</p>
 </li>
-<li>
-<p>labels                # 使用 Docker 标签将元数据添加到容器, 与 Dockerfile 中的 LABELS 类似</p>
+<li><p>labels                # 使用 Docker 标签将元数据添加到容器, 与 Dockerfile 中的 LABELS 类似</p>
 </li>
-<li>
-<p>links                 # 链接到其它服务中的容器, 该选项是 docker 历史遗留的选项, 目前已被用户自定义网络名称空间取代, 最终有可能被废弃 (在使用 swarm 部署时将忽略该选项)</p>
+<li><p>links                 # 链接到其它服务中的容器, 该选项是 docker 历史遗留的选项, 目前已被用户自定义网络名称空间取代, 最终有可能被废弃 (在使用 swarm 部署时将忽略该选项)</p>
 </li>
-<li>
-<p>logging               # 设置容器日志服务</p>
+<li><p>logging               # 设置容器日志服务</p>
 <ul>
-<li>driver                # 指定日志记录驱动程序, 默认 json-file (等同于 docker run --log-driver 的作用)</li>
-<li>options               # 指定日志的相关参数 (等同于 docker run --log-opt 的作用)
-<ul>
+<li>driver                # 指定日志记录驱动程序, 默认 json-file (等同于 docker run –log-driver 的作用)</li>
+<li>options               # 指定日志的相关参数 (等同于 docker run –log-opt 的作用)<ul>
 <li>max-size              # 设置单个日志文件的大小, 当到达这个值后会进行日志滚动操作</li>
 <li>max-file              # 日志文件保留的数量</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>network_mode          # 指定网络模式 (等同于 docker run --net 的作用, 在使用 swarm 部署时将忽略该选项)</p>
+<li><p>network_mode          # 指定网络模式 (等同于 docker run –net 的作用, 在使用 swarm 部署时将忽略该选项)   </p>
 </li>
-<li>
-<p>networks              # 将容器加入指定网络 (等同于 docker network connect 的作用), networks 可以位于 compose 文件顶级键和 services 键的二级键</p>
+<li><p>networks              # 将容器加入指定网络 (等同于 docker network connect 的作用), networks 可以位于 compose 文件顶级键和 services 键的二级键</p>
 <ul>
 <li>aliases               # 同一网络上的容器可以使用服务名称或别名连接到其中一个服务的容器</li>
 <li>ipv4_address      # IP V4 格式</li>
@@ -257,76 +225,69 @@ start-first   # 首先启动新任务, 并且正在运行的任务暂时重叠</
 </ul>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 示例:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="string">'3.7'</span></span><br><span class="line"><span class="attr">services:</span> </span><br><span class="line">  <span class="attr">test:</span> </span><br><span class="line">    <span class="attr">image:</span> <span class="string">nginx:1.14-alpine</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">mynginx</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">ifconfig</span></span><br><span class="line">    <span class="attr">networks:</span> </span><br><span class="line">      <span class="attr">app_net:</span>        <span class="comment"># 调用下面 networks 定义的 app_net 网络</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">172.16</span><span class="number">.238</span><span class="number">.10</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">app_net:</span></span><br><span class="line">  <span class="attr">driver:</span> <span class="string">bridge</span></span><br><span class="line">  <span class="attr">ipam:</span></span><br><span class="line">   <span class="attr">driver:</span> <span class="string">default</span></span><br><span class="line">   <span class="attr">config:</span></span><br><span class="line">   <span class="bullet">-</span> <span class="attr">subnet:</span> <span class="number">172.16</span><span class="number">.238</span><span class="number">.0</span><span class="string">/24</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>pid: ‘host’           # 共享宿主机的 进程空间(PID)</p>
+<li><p>pid: ‘host’           # 共享宿主机的 进程空间(PID)</p>
 </li>
-<li>
-<p>ports                 # 建立宿主机和容器之间的端口映射关系, ports 支持两种语法格式</p>
+<li><p>ports                 # 建立宿主机和容器之间的端口映射关系, ports 支持两种语法格式 </p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SHORT 语法格式示例:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">"3000"</span>             <span class="comment"># 暴露容器的 3000 端口, 宿主机的端口由 docker 随机映射一个没有被占用的端口</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">"3000-3005"</span>        <span class="comment"># 暴露容器的 3000 到 3005 端口, 宿主机的端口由 docker 随机映射没有被占用的端口</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">"8000:8000"</span>                       <span class="comment"># 容器的 8000 端口和宿主机的 8000 端口建立映射关系</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">"9090-9091:8080-8081"</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">"127.0.0.1:8001:8001"</span>             <span class="comment"># 指定映射宿主机的指定地址的</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">"127.0.0.1:5000-5010:5000-5010"</span>   </span><br><span class="line"><span class="bullet">-</span> <span class="string">"6060:6060/udp"</span>                   <span class="comment"># 指定协议</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#LONG 语法格式示例:(v3.2 新增的语法格式)</span></span><br><span class="line"><span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">target:</span> <span class="number">80</span>       <span class="comment"># 容器端口</span></span><br><span class="line">    <span class="attr">published:</span> <span class="number">8080</span>  <span class="comment"># 宿主机端口</span></span><br><span class="line">    <span class="attr">protocol:</span> <span class="string">tcp</span>    <span class="comment"># 协议类型</span></span><br><span class="line">    <span class="attr">mode:</span> <span class="string">host</span>       <span class="comment"># host 在每个节点上发布主机端口,  ingress 对于群模式端口进行负载均衡</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>secrets               # 不知道怎么用</p>
+<li><p>secrets               # 不知道怎么用</p>
 </li>
-<li>
-<p>security_opt          # 为每个容器覆盖默认的标签 (在使用 swarm 部署时将忽略该选项)</p>
+<li><p>security_opt          # 为每个容器覆盖默认的标签 (在使用 swarm 部署时将忽略该选项)</p>
 </li>
-<li>
-<p>stop_grace_period     # 指定在发送了 SIGTERM 信号之后, 容器等待多少秒之后退出(默认 10s)</p>
+<li><p>stop_grace_period     # 指定在发送了 SIGTERM 信号之后, 容器等待多少秒之后退出(默认 10s)</p>
 </li>
-<li>
-<p>stop_signal           # 指定停止容器发送的信号 (默认为 SIGTERM 相当于 kill PID; SIGKILL 相当于 kill -9 PID; 在使用 swarm 部署时将忽略该选项)</p>
+<li><p>stop_signal           # 指定停止容器发送的信号 (默认为 SIGTERM 相当于 kill PID; SIGKILL 相当于 kill -9 PID; 在使用 swarm 部署时将忽略该选项)</p>
 </li>
-<li>
-<p>sysctls               # 设置容器中的内核参数 (在使用 swarm 部署时将忽略该选项)</p>
+<li><p>sysctls               # 设置容器中的内核参数 (在使用 swarm 部署时将忽略该选项)</p>
 </li>
-<li>
-<p>ulimits               # 设置容器的 limit</p>
+<li><p>ulimits               # 设置容器的 limit</p>
 </li>
-<li>
-<p>userns_mode           # 如果Docker守护程序配置了用户名称空间, 则禁用此服务的用户名称空间 (在使用 swarm 部署时将忽略该选项)</p>
+<li><p>userns_mode           # 如果Docker守护程序配置了用户名称空间, 则禁用此服务的用户名称空间 (在使用 swarm 部署时将忽略该选项)</p>
 </li>
-<li>
-<p>volumes        # 定义容器和宿主机的卷映射关系, 其和 networks 一样可以位于 services 键的二级键和 compose 顶级键, 如果需要跨服务间使用则在顶级键定义, 在 services 中引用</p>
+<li><p>volumes        # 定义容器和宿主机的卷映射关系, 其和 networks 一样可以位于 services 键的二级键和 compose 顶级键, 如果需要跨服务间使用则在顶级键定义, 在 services 中引用</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#SHORT 语法格式示例:</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/var/lib/mysql</span>                <span class="comment"># 映射容器内的 /var/lib/mysql 到宿主机的一个随机目录中</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">/opt/data:/var/lib/mysql</span>      <span class="comment"># 映射容器内的 /var/lib/mysql 到宿主机的 /opt/data</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">./cache:/tmp/cache</span>            <span class="comment"># 映射容器内的 /var/lib/mysql 到宿主机 compose 文件所在的位置</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">~/configs:/etc/configs/:ro</span>    <span class="comment"># 映射容器宿主机的目录到容器中去, 权限只读</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">datavolume:/var/lib/mysql</span>     <span class="comment"># datavolume 为 volumes 顶级键定义的目录, 在此处直接调用</span></span><br></pre></td></tr></table></figure>
+
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># LONG 语法格式示例:(v3.2 新增的语法格式)</span></span><br><span class="line"><span class="attr">version:</span> <span class="string">"3.2"</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">web:</span></span><br><span class="line">  <span class="attr">image:</span> <span class="string">nginx:alpine</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">"80:80"</span></span><br><span class="line">  <span class="attr">volumes:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">volume</span>                <span class="comment"># mount 的类型, 必须是 bind、volume 或 tmpfs</span></span><br><span class="line">      <span class="attr">source:</span> <span class="string">mydata</span>              <span class="comment"># 宿主机目录</span></span><br><span class="line">      <span class="attr">target:</span> <span class="string">/data</span>               <span class="comment"># 容器目录</span></span><br><span class="line">        <span class="attr">volume:</span>                   <span class="comment"># 配置额外的选项, 其 key 必须和 type 的值相同</span></span><br><span class="line">          <span class="attr">nocopy:</span> <span class="literal">true</span>            <span class="comment"># volume 额外的选项, 在创建卷时禁用从容器复制数据</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">bind</span>                  <span class="comment"># volume 模式只指定容器路径即可, 宿主机路径随机生成; bind 需要指定容器和数据机的映射路径</span></span><br><span class="line">      <span class="attr">source:</span> <span class="string">./static</span></span><br><span class="line">      <span class="attr">target:</span> <span class="string">/opt/app/static</span></span><br><span class="line">      <span class="attr">read_only:</span> <span class="literal">true</span>             <span class="comment"># 设置文件系统为只读文件系统</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">mydata:</span>                         <span class="comment"># 定义在 volume, 可在所有服务中调用</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>restart               # 定义容器重启策略(在使用 swarm 部署时将忽略该选项, 在 swarm 使用 restart_policy 代替 restart)</p>
+<li><p>restart               # 定义容器重启策略(在使用 swarm 部署时将忽略该选项, 在 swarm 使用 restart_policy 代替 restart)</p>
 <ul>
 <li>no              # 禁止自动重启容器(默认)</li>
 <li>always        # 无论如何容器都会重启</li>
 <li>on-failure    # 当出现 on-failure 报错时, 容器重新启动</li>
 </ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">其他选项：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> domainname, hostname, ipc, mac_address, privileged, read_only, shm_size, stdin_open, tty, user, working_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 上面这些选项都只接受单个值和 docker run 的对应参数类似</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">对于值为时间的可接受的值：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.5s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 10s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1m30s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2h32m</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5h34m56s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 时间单位: us, ms, s, m， h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">对于值为大小的可接受的值：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2b</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1024kb</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2048k</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 300m</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1gb</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 单位: b, k, m, g 或者 kb, mb, gb</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">其他选项：</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> domainname, hostname, ipc, mac_address, privileged, read_only, shm_size, stdin_open, tty, user, working_dir</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 上面这些选项都只接受单个值和 docker run 的对应参数类似</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">对于值为时间的可接受的值：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.5s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 10s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1m30s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2h32m</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5h34m56s</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 时间单位: us, ms, s, m， h</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">对于值为大小的可接受的值：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2b</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1024kb</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2048k</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 300m</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1gb</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 单位: b, k, m, g 或者 kb, mb, gb</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>networks          # 定义 networks 信息</li>
-<li>driver                # 指定网络模式, 大多数情况下, 它 bridge 于单个主机和 overlay Swarm 上
+<li><p>networks          # 定义 networks 信息</p>
+</li>
+<li><p>driver                # 指定网络模式, 大多数情况下, 它 bridge 于单个主机和 overlay Swarm 上</p>
 <ul>
 <li>bridge                # Docker 默认使用 bridge 连接单个主机上的网络</li>
 <li>overlay               # overlay 驱动程序创建一个跨多个节点命名的网络</li>
-<li>host                  # 共享主机网络名称空间(等同于 docker run --net=host)</li>
-<li>none                  # 等同于 docker run --net=none</li>
+<li>host                  # 共享主机网络名称空间(等同于 docker run –net=host)</li>
+<li>none                  # 等同于 docker run –net=none</li>
 </ul>
 </li>
-<li>driver_opts           # v3.2以上版本, 传递给驱动程序的参数, 这些参数取决于驱动程序</li>
-<li>attachable            # driver 为 overlay 时使用, 如果设置为 true 则除了服务之外，独立容器也可以附加到该网络; 如果独立容器连接到该网络，则它可以与其他 Docker 守护进程连接到的该网络的服务和独立容器进行通信</li>
-<li>ipam                  # 自定义 IPAM 配置. 这是一个具有多个属性的对象, 每个属性都是可选的
+<li><p>driver_opts           # v3.2以上版本, 传递给驱动程序的参数, 这些参数取决于驱动程序</p>
+</li>
+<li><p>attachable            # driver 为 overlay 时使用, 如果设置为 true 则除了服务之外，独立容器也可以附加到该网络; 如果独立容器连接到该网络，则它可以与其他 Docker 守护进程连接到的该网络的服务和独立容器进行通信</p>
+</li>
+<li><p>ipam                  # 自定义 IPAM 配置. 这是一个具有多个属性的对象, 每个属性都是可选的</p>
 <ul>
 <li>driver                # IPAM 驱动程序, bridge 或者 default</li>
-<li>config                # 配置项
-<ul>
+<li>config                # 配置项<ul>
 <li>subnet                # CIDR格式的子网，表示该网络的网段</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>external              # 外部网络, 如果设置为 true 则 docker-compose up 不会尝试创建它, 如果它不存在则引发错误</li>
-<li>name                  # v3.5 以上版本, 为此网络设置名称</li>
+<li><p>external              # 外部网络, 如果设置为 true 则 docker-compose up 不会尝试创建它, 如果它不存在则引发错误</p>
+</li>
+<li><p>name                  # v3.5 以上版本, 为此网络设置名称</p>
+</li>
 </ul>
-</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/10/11/docker-docker_compose_yaml%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">http://wangyangyangisme.github.io/2019/10/11/docker-docker_compose_yaml%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker/">docker</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/10/14/docker-docker%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/c38765c6716b20d094b144d9523f5c77.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">docker网络模式</div></div></a></div><div class="next-post pull_right"><a href="/2019/10/11/docker-docker%E9%83%A8%E7%BD%B2gogs%E3%80%81gitea/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/36898a8a7bef92e00cf86d39463cbc62.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">docker部署gogs/gitea</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/10/14/CICD-Jenkins+Gogs搭建自动化部署平台/" title="Jenkins+Gogs搭建自动化部署平台"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/jenkins/a417502fb456faa4905da180b5f3df8d.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-14</div><div class="relatedPosts_title">Jenkins+Gogs搭建自动化部署平台</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker快速入门—Docker-Compose/" title="Docker快速入门—Docker-Compose"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/45134e544eb1ce316c5b8d3c9dedc071.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker快速入门—Docker-Compose</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Dockerfile定制镜像/" title="Dockerfile定制镜像"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/e280494352cc40c8b1b010cb45cfd680.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Dockerfile定制镜像</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker快速入门—Docker常用命令/" title="Docker快速入门—Docker常用命令"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/ee1ded40feabaf19c288aff809173def.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker快速入门—Docker常用命令</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker命令大全/" title="Docker命令大全"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/d019595c13487c8175ee6a24abcd0f65.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker命令大全</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker快速入门—Docker简介/" title="Docker快速入门—Docker简介"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/6e095b47470a0367b08394320d8dc2d4.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker快速入门—Docker简介</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/10/11/docker-docker_compose_yaml%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">http://wangyangyangisme.github.io/2019/10/11/docker-docker_compose_yaml%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/docker/">docker</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/10/14/docker-docker%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%BC%8F/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/c38765c6716b20d094b144d9523f5c77.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">docker网络模式</div></div></a></div><div class="next-post pull_right"><a href="/2019/10/11/docker-docker%E9%83%A8%E7%BD%B2gogs%E3%80%81gitea/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/36898a8a7bef92e00cf86d39463cbc62.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">docker部署gogs/gitea</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/10/14/CICD-Jenkins+Gogs搭建自动化部署平台/" title="Jenkins+Gogs搭建自动化部署平台"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/jenkins/a417502fb456faa4905da180b5f3df8d.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-10-14</div><div class="relatedPosts_title">Jenkins+Gogs搭建自动化部署平台</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker快速入门—Docker-Compose/" title="Docker快速入门—Docker-Compose"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/45134e544eb1ce316c5b8d3c9dedc071.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker快速入门—Docker-Compose</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker快速入门—Docker常用命令/" title="Docker快速入门—Docker常用命令"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/ee1ded40feabaf19c288aff809173def.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker快速入门—Docker常用命令</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Dockerfile定制镜像/" title="Dockerfile定制镜像"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/e280494352cc40c8b1b010cb45cfd680.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Dockerfile定制镜像</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker快速入门—Docker简介/" title="Docker快速入门—Docker简介"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/6e095b47470a0367b08394320d8dc2d4.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker快速入门—Docker简介</div></div></a></div><div class="relatedPosts_item"><a href="/2019/09/27/docker-Docker命令大全/" title="Docker命令大全"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/d019595c13487c8175ee6a24abcd0f65.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-09-27</div><div class="relatedPosts_title">Docker命令大全</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
 var guest_info = 'nick,mail,link'.split(',').filter(function(item){
   return GUEST_INFO.indexOf(item) > -1
 });

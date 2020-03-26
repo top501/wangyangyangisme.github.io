@@ -73,12 +73,10 @@ function activateLightMode(){
 }</script><script>var GLOBAL_CONFIG_SITE = { 
   isPost: true,
   isHome: false
-}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5种分布式事务解决方案优缺点对比"><span class="toc-text"> 5种分布式事务解决方案优缺点对比</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text"> 背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-text"> 解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-两阶段提交2pc"><span class="toc-text"> 01 两阶段提交（2PC）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题"><span class="toc-text"> 问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02-三阶段提交3pc"><span class="toc-text"> 02 三阶段提交（3PC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-补偿事务tcc"><span class="toc-text"> 03 补偿事务（TCC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04-本地消息表消息队列"><span class="toc-text"> 04 本地消息表（消息队列）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05-sagas事务模型最终一致性"><span class="toc-text"> 05 Sagas事务模型（最终一致性）</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/microservice/Nature_wood_grass_plants_macro_1280x800.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">5种分布式事务解决方案优缺点对比</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-12-09<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-12-10</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/microservice/">microservice</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">4k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 11 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/12/09/microservice-5%E7%A7%8D%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/12/09/microservice-5%E7%A7%8D%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="5种分布式事务解决方案优缺点对比"><a class="markdownIt-Anchor" href="#5种分布式事务解决方案优缺点对比"></a> 5种分布式事务解决方案优缺点对比</h1>
-<blockquote>
-<p><a href="https://www.toutiao.com/a6717432946736759299/?app=news_article_lite&amp;is_hit_share_recommend=0&amp;tt_from=copy_link&amp;utm_source=copy_link&amp;utm_medium=toutiao_ios&amp;utm_campaign=client_share" target="_blank" rel="noopener">原文</a></p>
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5种分布式事务解决方案优缺点对比"><span class="toc-text">5种分布式事务解决方案优缺点对比</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01-两阶段提交（2PC）"><span class="toc-text">01 两阶段提交（2PC）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#问题"><span class="toc-text">问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02-三阶段提交（3PC）"><span class="toc-text">02 三阶段提交（3PC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03-补偿事务（TCC）"><span class="toc-text">03 补偿事务（TCC）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04-本地消息表（消息队列）"><span class="toc-text">04 本地消息表（消息队列）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05-Sagas事务模型（最终一致性）"><span class="toc-text">05 Sagas事务模型（最终一致性）</span></a></li></ol></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/microservice/Nature_wood_grass_plants_macro_1280x800.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">5种分布式事务解决方案优缺点对比</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-12-09<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-12-10</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/microservice/">microservice</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">4k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 11 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/12/09/microservice-5%E7%A7%8D%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/12/09/microservice-5%E7%A7%8D%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="5种分布式事务解决方案优缺点对比"><a href="#5种分布式事务解决方案优缺点对比" class="headerlink" title="5种分布式事务解决方案优缺点对比"></a>5种分布式事务解决方案优缺点对比</h1><blockquote>
+<p><a href="https://www.toutiao.com/a6717432946736759299/?app=news_article_lite&is_hit_share_recommend=0&tt_from=copy_link&utm_source=copy_link&utm_medium=toutiao_ios&utm_campaign=client_share" target="_blank" rel="noopener">原文</a></p>
 </blockquote>
-<h2 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> <strong>背景</strong></h2>
-<p>分布式事务是企业集成中的一个技术难点，也是每一个分布式系统架构中都会涉及到的一个东西，特别是在微服务架构中，几乎可以说是无法避免。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a><strong>背景</strong></h2><p>分布式事务是企业集成中的一个技术难点，也是每一个分布式系统架构中都会涉及到的一个东西，特别是在微服务架构中，几乎可以说是无法避免。</p>
 <p><strong>ACID</strong></p>
 <p>指数据库事务正确执行的四个基本要素：</p>
 <ol>
@@ -101,154 +99,118 @@ function activateLightMode(){
 <li>Soft state（软状态）</li>
 <li>Eventually consistent（最终一致性）</li>
 </ul>
-<h2 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h2>
-<h3 id="01-两阶段提交2pc"><a class="markdownIt-Anchor" href="#01-两阶段提交2pc"></a> 01 两阶段提交（2PC）</h3>
-<p>两阶段提交2PC是分布式事务中最强大的事务类型之一，两段提交就是分两个阶段提交，第一阶段询问各个事务数据源是否准备好，第二阶段才真正将数据提交给事务数据源。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="01-两阶段提交（2PC）"><a href="#01-两阶段提交（2PC）" class="headerlink" title="01 两阶段提交（2PC）"></a>01 两阶段提交（2PC）</h3><p>两阶段提交2PC是分布式事务中最强大的事务类型之一，两段提交就是分两个阶段提交，第一阶段询问各个事务数据源是否准备好，第二阶段才真正将数据提交给事务数据源。</p>
 <p>为了保证该事务可以满足ACID，就要引入一个协调者（Cooradinator）。其他的节点被称为参与者（Participant）。协调者负责调度参与者的行为，并最终决定这些参与者是否要把事务进行提交。处理流程如下：</p>
-<p><img src="/" alt="5种分布式事务解决方案优缺点对比" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-20180329151901481.png"></p>
+<p><img src="/" alt="5种分布式事务解决方案优缺点对比" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-20180329151901481.png"></p>
 <p><strong>阶段一</strong></p>
 <ol>
-<li>
-<p>协调者向所有参与者发送事务内容，询问是否可以提交事务，并等待答复。</p>
+<li><p>协调者向所有参与者发送事务内容，询问是否可以提交事务，并等待答复。</p>
 </li>
-<li>
-<p>各参与者执行事务操作，将 undo 和 redo 信息记入事务日志中（但不提交事务）。</p>
+<li><p>各参与者执行事务操作，将 undo 和 redo 信息记入事务日志中（但不提交事务）。</p>
 </li>
-<li>
-<p>如参与者执行成功，给协调者反馈 yes，否则反馈 no。</p>
+<li><p>如参与者执行成功，给协调者反馈 yes，否则反馈 no。</p>
 </li>
 </ol>
 <p><strong>阶段二</strong></p>
 <p>如果协调者收到了参与者的失败消息或者超时，直接给每个参与者发送回滚(rollback)消息；否则，发送提交(commit)消息。两种情况处理如下：</p>
-<p>**情况1：**当所有参与者均反馈 yes，提交事务</p>
+<p><strong>情况1：</strong>当所有参与者均反馈 yes，提交事务</p>
 <ol>
-<li>
-<p>协调者向所有参与者发出正式提交事务的请求（即 commit 请求）。</p>
+<li><p>协调者向所有参与者发出正式提交事务的请求（即 commit 请求）。</p>
 </li>
-<li>
-<p>参与者执行 commit 请求，并释放整个事务期间占用的资源。</p>
+<li><p>参与者执行 commit 请求，并释放整个事务期间占用的资源。</p>
 </li>
-<li>
-<p>各参与者向协调者反馈 ack(应答)完成的消息。</p>
+<li><p>各参与者向协调者反馈 ack(应答)完成的消息。</p>
 </li>
-<li>
-<p>协调者收到所有参与者反馈的 ack 消息后，即完成事务提交。</p>
+<li><p>协调者收到所有参与者反馈的 ack 消息后，即完成事务提交。</p>
 </li>
 </ol>
-<p>**情况2：**当有一个参与者反馈 no，回滚事务</p>
+<p><strong>情况2：</strong>当有一个参与者反馈 no，回滚事务</p>
 <ol>
-<li>
-<p>协调者向所有参与者发出回滚请求（即 rollback 请求）。</p>
+<li><p>协调者向所有参与者发出回滚请求（即 rollback 请求）。</p>
 </li>
-<li>
-<p>参与者使用阶段 1 中的 undo 信息执行回滚操作，并释放整个事务期间占用的资源。</p>
+<li><p>参与者使用阶段 1 中的 undo 信息执行回滚操作，并释放整个事务期间占用的资源。</p>
 </li>
-<li>
-<p>各参与者向协调者反馈 ack 完成的消息。</p>
+<li><p>各参与者向协调者反馈 ack 完成的消息。</p>
 </li>
-<li>
-<p>协调者收到所有参与者反馈的 ack 消息后，即完成事务。</p>
+<li><p>协调者收到所有参与者反馈的 ack 消息后，即完成事务。</p>
 </li>
 </ol>
-<h4 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h4>
-<p><strong>1) 性能问题</strong>：所有参与者在事务提交阶段处于同步阻塞状态，占用系统资源，容易导致性能瓶颈。</p>
-<p>**2) 可靠性问题：**如果协调者存在单点故障问题，或出现故障，提供者将一直处于锁定状态。</p>
-<p>**3) 数据一致性问题：**在阶段 2 中，如果出现协调者和参与者都挂了的情况，有可能导致数据不一致。</p>
-<p>**优点：**尽量保证了数据的强一致，适合对数据强一致要求很高的关键领域。（其实也不能100%保证强一致）。</p>
-<p>**缺点：**实现复杂，牺牲了可用性，对性能影响较大，不适合高并发高性能场景。</p>
-<h3 id="02-三阶段提交3pc"><a class="markdownIt-Anchor" href="#02-三阶段提交3pc"></a> 02 三阶段提交（3PC）</h3>
-<p>三阶段提交是在二阶段提交上的改进版本，3PC最关键要解决的就是协调者和参与者同时挂掉的问题，所以3PC把2PC的准备阶段再次一分为二，这样三阶段提交。处理流程如下：</p>
-<p><img src="/" alt="5种分布式事务解决方案优缺点对比" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-20180329152240845.png"></p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p><strong>1) 性能问题</strong>：所有参与者在事务提交阶段处于同步阻塞状态，占用系统资源，容易导致性能瓶颈。</p>
+<p><strong>2) 可靠性问题：</strong>如果协调者存在单点故障问题，或出现故障，提供者将一直处于锁定状态。</p>
+<p><strong>3) 数据一致性问题：</strong>在阶段 2 中，如果出现协调者和参与者都挂了的情况，有可能导致数据不一致。</p>
+<p><strong>优点：</strong>尽量保证了数据的强一致，适合对数据强一致要求很高的关键领域。（其实也不能100%保证强一致）。</p>
+<p><strong>缺点：</strong>实现复杂，牺牲了可用性，对性能影响较大，不适合高并发高性能场景。</p>
+<h3 id="02-三阶段提交（3PC）"><a href="#02-三阶段提交（3PC）" class="headerlink" title="02 三阶段提交（3PC）"></a>02 三阶段提交（3PC）</h3><p>三阶段提交是在二阶段提交上的改进版本，3PC最关键要解决的就是协调者和参与者同时挂掉的问题，所以3PC把2PC的准备阶段再次一分为二，这样三阶段提交。处理流程如下：</p>
+<p><img src="/" alt="5种分布式事务解决方案优缺点对比" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-20180329152240845.png"></p>
 <p><strong>阶段一</strong></p>
 <ol>
-<li>
-<p>协调者向所有参与者发出包含事务内容的 canCommit 请求，询问是否可以提交事务，并等待所有参与者答复。</p>
+<li><p>协调者向所有参与者发出包含事务内容的 canCommit 请求，询问是否可以提交事务，并等待所有参与者答复。</p>
 </li>
-<li>
-<p>参与者收到 canCommit 请求后，如果认为可以执行事务操作，则反馈 yes 并进入预备状态，否则反馈 no。</p>
+<li><p>参与者收到 canCommit 请求后，如果认为可以执行事务操作，则反馈 yes 并进入预备状态，否则反馈 no。</p>
 </li>
 </ol>
 <p><strong>阶段二</strong></p>
 <p>协调者根据参与者响应情况，有以下两种可能。</p>
-<p>**情况1：**所有参与者均反馈 yes，协调者预执行事务</p>
+<p><strong>情况1：</strong>所有参与者均反馈 yes，协调者预执行事务</p>
 <ol>
-<li>
-<p>协调者向所有参与者发出 preCommit 请求，进入准备阶段。</p>
+<li><p>协调者向所有参与者发出 preCommit 请求，进入准备阶段。</p>
 </li>
-<li>
-<p>参与者收到 preCommit 请求后，执行事务操作，将 undo 和 redo 信息记入事务日志中（但不提交事务）。</p>
+<li><p>参与者收到 preCommit 请求后，执行事务操作，将 undo 和 redo 信息记入事务日志中（但不提交事务）。</p>
 </li>
-<li>
-<p>各参与者向协调者反馈 ack 响应或 no 响应，并等待最终指令。</p>
+<li><p>各参与者向协调者反馈 ack 响应或 no 响应，并等待最终指令。</p>
 </li>
 </ol>
-<p>**情况2：**只要有一个参与者反馈 no，或者等待超时后协调者尚无法收到所有提供者的反馈，即中断事务</p>
+<p><strong>情况2：</strong>只要有一个参与者反馈 no，或者等待超时后协调者尚无法收到所有提供者的反馈，即中断事务</p>
 <ol>
-<li>
-<p>协调者向所有参与者发出 abort 请求。</p>
+<li><p>协调者向所有参与者发出 abort 请求。</p>
 </li>
-<li>
-<p>无论收到协调者发出的 abort 请求，或者在等待协调者请求过程中出现超时，参与者均会中断事务。</p>
+<li><p>无论收到协调者发出的 abort 请求，或者在等待协调者请求过程中出现超时，参与者均会中断事务。</p>
 </li>
 </ol>
 <p><strong>阶段三</strong></p>
 <p>该阶段进行真正的事务提交，也可以分为以下两种情况。</p>
-<p>**情况 1：**所有参与者均反馈 ack 响应，执行真正的事务提交</p>
+<p><strong>情况 1：</strong>所有参与者均反馈 ack 响应，执行真正的事务提交</p>
 <ol>
-<li>
-<p>如果协调者处于工作状态，则向所有参与者发出 do Commit 请求。</p>
+<li><p>如果协调者处于工作状态，则向所有参与者发出 do Commit 请求。</p>
 </li>
-<li>
-<p>参与者收到 do Commit 请求后，会正式执行事务提交，并释放整个事务期间占用的资源。</p>
+<li><p>参与者收到 do Commit 请求后，会正式执行事务提交，并释放整个事务期间占用的资源。</p>
 </li>
-<li>
-<p>各参与者向协调者反馈 ack 完成的消息。</p>
+<li><p>各参与者向协调者反馈 ack 完成的消息。</p>
 </li>
-<li>
-<p>协调者收到所有参与者反馈的 ack 消息后，即完成事务提交。</p>
+<li><p>协调者收到所有参与者反馈的 ack 消息后，即完成事务提交。</p>
 </li>
 </ol>
-<p>**情况2：**只要有一个参与者反馈 no，或者等待超时后协调组尚无法收到所有提供者的反馈，即回滚事务。</p>
+<p><strong>情况2：</strong>只要有一个参与者反馈 no，或者等待超时后协调组尚无法收到所有提供者的反馈，即回滚事务。</p>
 <ol>
-<li>
-<p>如果协调者处于工作状态，向所有参与者发出 rollback 请求。</p>
+<li><p>如果协调者处于工作状态，向所有参与者发出 rollback 请求。</p>
 </li>
-<li>
-<p>参与者使用阶段 1 中的 undo 信息执行回滚操作，并释放整个事务期间占用的资源。</p>
+<li><p>参与者使用阶段 1 中的 undo 信息执行回滚操作，并释放整个事务期间占用的资源。</p>
 </li>
-<li>
-<p>各参与者向协调组反馈 ack 完成的消息。</p>
+<li><p>各参与者向协调组反馈 ack 完成的消息。</p>
 </li>
-<li>
-<p>协调组收到所有参与者反馈的 ack 消息后，即完成事务回滚。</p>
+<li><p>协调组收到所有参与者反馈的 ack 消息后，即完成事务回滚。</p>
 </li>
 </ol>
-<p>**优点：**相比二阶段提交，三阶段提交降低了阻塞范围，在等待超时后协调者或参与者会中断事务。避免了协调者单点问题。阶段 3 中协调者出现问题时，参与者会继续提交事务。</p>
-<p>**缺点：**数据不一致问题依然存在，当在参与者收到 preCommit 请求后等待 do commite 指令时，此时如果协调者请求中断事务，而协调者无法与参与者正常通信，会导致参与者继续提交事务，造成数据不一致。</p>
-<h3 id="03-补偿事务tcc"><a class="markdownIt-Anchor" href="#03-补偿事务tcc"></a> 03 补偿事务（TCC）</h3>
-<p>TCC 是服务化的二阶段编程模型，采用的补偿机制：</p>
-<p><img src="/" alt="5种分布式事务解决方案优缺点对比" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-f81a815047d761053273ff2e5f33b9e603e4f713.png"></p>
+<p><strong>优点：</strong>相比二阶段提交，三阶段提交降低了阻塞范围，在等待超时后协调者或参与者会中断事务。避免了协调者单点问题。阶段 3 中协调者出现问题时，参与者会继续提交事务。</p>
+<p><strong>缺点：</strong>数据不一致问题依然存在，当在参与者收到 preCommit 请求后等待 do commite 指令时，此时如果协调者请求中断事务，而协调者无法与参与者正常通信，会导致参与者继续提交事务，造成数据不一致。</p>
+<h3 id="03-补偿事务（TCC）"><a href="#03-补偿事务（TCC）" class="headerlink" title="03 补偿事务（TCC）"></a>03 补偿事务（TCC）</h3><p>TCC 是服务化的二阶段编程模型，采用的补偿机制：</p>
+<p><img src="/" alt="5种分布式事务解决方案优缺点对比" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-f81a815047d761053273ff2e5f33b9e603e4f713.png"></p>
 <p><strong>条件：</strong></p>
 <ol>
-<li>
-<p>需要实现确认和补偿逻辑</p>
+<li><p>需要实现确认和补偿逻辑</p>
 </li>
-<li>
-<p>需要支持幂等</p>
+<li><p>需要支持幂等</p>
 </li>
 </ol>
 <p><strong>处理流程：</strong></p>
 <p>a) Try 阶段主要是对业务系统做检测及资源预留。</p>
 <p>这个阶段主要完成：</p>
 <ol>
-<li>
-<p>完成所有业务检查( 一致性 ) 。</p>
+<li><p>完成所有业务检查( 一致性 ) 。</p>
 </li>
-<li>
-<p>预留必须业务资源( 准隔离性 ) 。</p>
+<li><p>预留必须业务资源( 准隔离性 ) 。</p>
 </li>
-<li>
-<p>Try 尝试执行业务。</p>
+<li><p>Try 尝试执行业务。</p>
 </li>
 </ol>
 <p>b) Confirm 阶段主要是对业务系统做确认提交。</p>
@@ -258,146 +220,113 @@ function activateLightMode(){
 <p>性能提升：具体业务来实现控制资源锁的粒度变小，不会锁定整个资源。</p>
 <p>数据最终一致性：基于 Confirm 和 Cancel 的幂等性，保证事务最终完成确认或者取消，保证数据的一致性。</p>
 <p>可靠性：解决了 XA 协议的协调者单点故障问题，由主业务方发起并控制整个业务活动，业务活动管理器也变成多点，引入集群。</p>
-<p>**缺点：**TCC 的 Try、Confirm 和 Cancel 操作功能要按具体业务来实现，业务耦合度较高，提高了开发成本。</p>
-<h3 id="04-本地消息表消息队列"><a class="markdownIt-Anchor" href="#04-本地消息表消息队列"></a> 04 本地消息表（消息队列）</h3>
-<p>其核心思想是将分布式事务拆分成本地事务进行处理。</p>
+<p><strong>缺点：</strong>TCC 的 Try、Confirm 和 Cancel 操作功能要按具体业务来实现，业务耦合度较高，提高了开发成本。</p>
+<h3 id="04-本地消息表（消息队列）"><a href="#04-本地消息表（消息队列）" class="headerlink" title="04 本地消息表（消息队列）"></a>04 本地消息表（消息队列）</h3><p>其核心思想是将分布式事务拆分成本地事务进行处理。</p>
 <p>方案通过在消费者额外新建事务消息表，消费者处理业务和记录事务消息在本地事务中完成，轮询事务消息表的数据发送事务消息，提供者基于消息中间件消费事务消息表中的事务。</p>
-<p><img src="/" alt="5种分布式事务解决方案优缺点对比" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-2160494-d06389d3ce54636f.png"></p>
+<p><img src="/" alt="5种分布式事务解决方案优缺点对比" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-2160494-d06389d3ce54636f.png"></p>
 <p><strong>条件：</strong></p>
 <ol>
-<li>
-<p>服务消费者需要创建一张消息表，用来记录消息状态。</p>
+<li><p>服务消费者需要创建一张消息表，用来记录消息状态。</p>
 </li>
-<li>
-<p>服务消费者和提供者需要支持幂等。</p>
+<li><p>服务消费者和提供者需要支持幂等。</p>
 </li>
-<li>
-<p>需要补偿逻辑。</p>
+<li><p>需要补偿逻辑。</p>
 </li>
-<li>
-<p>每个节点上起定时线程，检查未处理完成或发出失败的消息，重新发出消息，即重试机制和幂等性机制。</p>
+<li><p>每个节点上起定时线程，检查未处理完成或发出失败的消息，重新发出消息，即重试机制和幂等性机制。</p>
 </li>
 </ol>
 <p><strong>处理流程：</strong></p>
 <ol>
-<li>
-<p>服务消费者把业务数据和消息一同提交，发起事务。</p>
+<li><p>服务消费者把业务数据和消息一同提交，发起事务。</p>
 </li>
-<li>
-<p>消息经过MQ发送到服务提供方，服务消费者等待处理结果。</p>
+<li><p>消息经过MQ发送到服务提供方，服务消费者等待处理结果。</p>
 </li>
-<li>
-<p>服务提供方接收消息，完成业务逻辑并通知消费者已处理的消息。</p>
+<li><p>服务提供方接收消息，完成业务逻辑并通知消费者已处理的消息。</p>
 </li>
 </ol>
 <p>容错处理情况如下：</p>
 <ol>
-<li>
-<p>当步骤1处理出错，事务回滚，相当于什么都没有发生。</p>
+<li><p>当步骤1处理出错，事务回滚，相当于什么都没有发生。</p>
 </li>
-<li>
-<p>当步骤2、3处理出错，由于消息保存在消费者表中，可以重新发送到MQ进行重试。</p>
+<li><p>当步骤2、3处理出错，由于消息保存在消费者表中，可以重新发送到MQ进行重试。</p>
 </li>
-<li>
-<p>如果步骤3处理出错，且是业务上的失败，服务提供者发送消息通知消费者事务失败，且此时变为消费者发起回滚事务进行回滚逻辑。</p>
+<li><p>如果步骤3处理出错，且是业务上的失败，服务提供者发送消息通知消费者事务失败，且此时变为消费者发起回滚事务进行回滚逻辑。</p>
 </li>
 </ol>
-<p>**优点：**从应用设计开发的角度实现了消息数据的可靠性，消息数据的可靠性不依赖于消息中间件，弱化了对 MQ 中间件特性的依赖。</p>
-<p>**缺点：**与具体的业务场景绑定，耦合性强，不可公用。消息数据与业务数据同库，占用业务系统资源。业务系统在使用关系型数据库的情况下，消息服务性能会受到关系型数据库并发性能的局限。</p>
+<p><strong>优点：</strong>从应用设计开发的角度实现了消息数据的可靠性，消息数据的可靠性不依赖于消息中间件，弱化了对 MQ 中间件特性的依赖。</p>
+<p><strong>缺点：</strong>与具体的业务场景绑定，耦合性强，不可公用。消息数据与业务数据同库，占用业务系统资源。业务系统在使用关系型数据库的情况下，消息服务性能会受到关系型数据库并发性能的局限。</p>
 <p><strong>MQ事务消息（最终一致性）</strong></p>
 <p>支持事务消息的MQ，其支持事务消息的方式采用类似于二阶段提交。</p>
 <p>基于 MQ 的分布式事务方案其实是对本地消息表的封装，将本地消息表基于 MQ 内部，其他方面的协议基本与本地消息表一致。</p>
-<p><img src="/" alt="5种分布式事务解决方案优缺点对比" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-8122772-de509c1c96632cd5.jpg"></p>
+<p><img src="/" alt="5种分布式事务解决方案优缺点对比" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-8122772-de509c1c96632cd5.jpg"></p>
 <p><strong>条件：</strong></p>
 <ol>
-<li>
-<p>需要补偿逻辑</p>
+<li><p>需要补偿逻辑</p>
 </li>
-<li>
-<p>业务处理逻辑需要幂等</p>
+<li><p>业务处理逻辑需要幂等</p>
 </li>
 </ol>
 <p><strong>处理流程：</strong></p>
 <ol>
-<li>
-<p>消费者向MQ发送half消息。</p>
+<li><p>消费者向MQ发送half消息。</p>
 </li>
-<li>
-<p>MQ Server将消息持久化后，向发送方ack确认消息发送成功。</p>
+<li><p>MQ Server将消息持久化后，向发送方ack确认消息发送成功。</p>
 </li>
-<li>
-<p>消费者开始执行事务逻辑。</p>
+<li><p>消费者开始执行事务逻辑。</p>
 </li>
-<li>
-<p>消费者根据本地事务执行结果向MQ Server提交二次确认或者回滚。</p>
+<li><p>消费者根据本地事务执行结果向MQ Server提交二次确认或者回滚。</p>
 </li>
-<li>
-<p>MQ Server收到commit状态则将half消息标记可投递状态。</p>
+<li><p>MQ Server收到commit状态则将half消息标记可投递状态。</p>
 </li>
-<li>
-<p>服务提供者收到该消息，执行本地业务逻辑。返回处理结果。</p>
+<li><p>服务提供者收到该消息，执行本地业务逻辑。返回处理结果。</p>
 </li>
 </ol>
 <p><strong>优点：</strong></p>
 <ol>
-<li>
-<p>消息数据独立存储，降低业务系统与消息系统之间的耦合。</p>
+<li><p>消息数据独立存储，降低业务系统与消息系统之间的耦合。</p>
 </li>
-<li>
-<p>吞吐量优于本地消息表方案。</p>
+<li><p>吞吐量优于本地消息表方案。</p>
 </li>
 </ol>
 <p><strong>缺点：</strong></p>
 <ol>
-<li>
-<p>一次消息发送需要两次网络请求(half消息 + commit/rollback)。</p>
+<li><p>一次消息发送需要两次网络请求(half消息 + commit/rollback)。</p>
 </li>
-<li>
-<p>需要实现消息回查接口。</p>
+<li><p>需要实现消息回查接口。</p>
 </li>
 </ol>
-<h3 id="05-sagas事务模型最终一致性"><a class="markdownIt-Anchor" href="#05-sagas事务模型最终一致性"></a> 05 Sagas事务模型（最终一致性）</h3>
-<p>Saga模式是一种分布式异步事务，一种最终一致性事务，是一种柔性事务，有两种不同的方式来实现saga事务，最流行的两种方式是：</p>
+<h3 id="05-Sagas事务模型（最终一致性）"><a href="#05-Sagas事务模型（最终一致性）" class="headerlink" title="05 Sagas事务模型（最终一致性）"></a>05 Sagas事务模型（最终一致性）</h3><p>Saga模式是一种分布式异步事务，一种最终一致性事务，是一种柔性事务，有两种不同的方式来实现saga事务，最流行的两种方式是：</p>
 <p><strong>一、 事件/编排Choreography：没有中央协调器（没有单点风险）时，每个服务产生并聆听其他服务的事件，并决定是否应采取行动。</strong></p>
 <p>该实现第一个服务执行一个事务，然后发布一个事件。该事件被一个或多个服务进行监听，这些服务再执行本地事务并发布（或不发布）新的事件，当最后一个服务执行本地事务并且不发布任何事件时，意味着分布式事务结束，或者它发布的事件没有被任何Saga参与者听到都意味着事务结束。</p>
-<p><img src="/" alt="5种分布式事务解决方案优缺点对比" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-d1ad58c0a8934e1a85b754238818f73d.jpg"></p>
+<p><img src="/" alt="5种分布式事务解决方案优缺点对比" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-d1ad58c0a8934e1a85b754238818f73d.jpg"></p>
 <p><strong>处理流程：</strong></p>
 <ol>
-<li>
-<p>订单服务保存新订单，将状态设置为pengding挂起状态，并发布名为ORDER_CREATED_EVENT的事件。</p>
+<li><p>订单服务保存新订单，将状态设置为pengding挂起状态，并发布名为ORDER_CREATED_EVENT的事件。</p>
 </li>
-<li>
-<p>支付服务监听ORDER_CREATED_EVENT，并公布事件BILLED_ORDER_EVENT。</p>
+<li><p>支付服务监听ORDER_CREATED_EVENT，并公布事件BILLED_ORDER_EVENT。</p>
 </li>
-<li>
-<p>库存服务监听BILLED_ORDER_EVENT，更新库存，并发布ORDER_PREPARED_EVENT。</p>
+<li><p>库存服务监听BILLED_ORDER_EVENT，更新库存，并发布ORDER_PREPARED_EVENT。</p>
 </li>
-<li>
-<p>货运服务监听ORDER_PREPARED_EVENT，然后交付产品。最后，它发布ORDER_DELIVERED_EVENT。</p>
+<li><p>货运服务监听ORDER_PREPARED_EVENT，然后交付产品。最后，它发布ORDER_DELIVERED_EVENT。</p>
 </li>
-<li>
-<p>最后，订单服务侦听ORDER_DELIVERED_EVENT并设置订单的状态为concluded完成。</p>
+<li><p>最后，订单服务侦听ORDER_DELIVERED_EVENT并设置订单的状态为concluded完成。</p>
 </li>
-<li>
-<p>假设库存服务在事务过程中失败了。进行回滚：</p>
+<li><p>假设库存服务在事务过程中失败了。进行回滚：</p>
 </li>
-<li>
-<p>库存服务产生PRODUCT_OUT_OF_STOCK_EVENT</p>
+<li><p>库存服务产生PRODUCT_OUT_OF_STOCK_EVENT</p>
 </li>
 </ol>
 <p>订购服务和支付服务会监听到上面库存服务的这一事件：</p>
 <ol>
-<li>
-<p>支付服务会退款给客户。</p>
+<li><p>支付服务会退款给客户。</p>
 </li>
-<li>
-<p>订单服务将订单状态设置为失败。</p>
+<li><p>订单服务将订单状态设置为失败。</p>
 </li>
 </ol>
-<p>**优点：**事件/编排是实现Saga模式的自然方式; 它很简单，容易理解，不需要太多的努力来构建，所有参与者都是松散耦合的，因为他们彼此之间没有直接的耦合。如果您的事务涉及2至4个步骤，则可能是非常合适的。</p>
+<p><strong>优点：</strong>事件/编排是实现Saga模式的自然方式; 它很简单，容易理解，不需要太多的努力来构建，所有参与者都是松散耦合的，因为他们彼此之间没有直接的耦合。如果您的事务涉及2至4个步骤，则可能是非常合适的。</p>
 <p><strong>二、 命令/协调orchestrator：中央协调器负责集中处理事件的决策和业务逻辑排序。</strong></p>
 <p>saga协调器orchestrator以命令/回复的方式与每项服务进行通信，告诉他们应该执行哪些操作。</p>
-<p><img src="/" alt="5种分布式事务解决方案优缺点对比" / class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-06bda4b6bdca4a9ea857dd91e53cebc1.jpg"></p>
+<p><img src="/" alt="5种分布式事务解决方案优缺点对比" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/microserive/tx-06bda4b6bdca4a9ea857dd91e53cebc1.jpg"></p>
 <p>订单服务保存pending状态，并要求订单Saga协调器（简称OSO）开始启动订单事务。</p>
 <p>OSO向收款服务发送执行收款命令，收款服务回复Payment Executed消息。</p>
 <p>OSO向库存服务发送准备订单命令，库存服务将回复OrderPrepared消息。</p>
@@ -405,20 +334,15 @@ function activateLightMode(){
 <p>OSO订单Saga协调器必须事先知道执行“创建订单”事务所需的流程(通过读取BPM业务流程XML配置获得)。如果有任何失败，它还负责通过向每个参与者发送命令来撤销之前的操作来协调分布式的回滚。当你有一个中央协调器协调一切时，回滚要容易得多，因为协调器默认是执行正向流程，回滚时只要执行反向流程即可。</p>
 <p><strong>优点：</strong></p>
 <ol>
-<li>
-<p>避免服务之间的循环依赖关系，因为saga协调器会调用saga参与者，但参与者不会调用协调器。</p>
+<li><p>避免服务之间的循环依赖关系，因为saga协调器会调用saga参与者，但参与者不会调用协调器。</p>
 </li>
-<li>
-<p>集中分布式事务的编排。</p>
+<li><p>集中分布式事务的编排。</p>
 </li>
-<li>
-<p>只需要执行命令/回复(其实回复消息也是一种事件消息)，降低参与者的复杂性。</p>
+<li><p>只需要执行命令/回复(其实回复消息也是一种事件消息)，降低参与者的复杂性。</p>
 </li>
-<li>
-<p>在添加新步骤时，事务复杂性保持线性，回滚更容易管理。</p>
+<li><p>在添加新步骤时，事务复杂性保持线性，回滚更容易管理。</p>
 </li>
-<li>
-<p>如果在第一笔交易还没有执行完，想改变有第二笔事务的目标对象，则可以轻松地将其暂停在协调器上，直到第一笔交易结束。</p>
+<li><p>如果在第一笔交易还没有执行完，想改变有第二笔事务的目标对象，则可以轻松地将其暂停在协调器上，直到第一笔交易结束。</p>
 </li>
 </ol>
 </div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/12/09/microservice-5%E7%A7%8D%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94/">http://wangyangyangisme.github.io/2019/12/09/microservice-5%E7%A7%8D%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%BC%98%E7%BC%BA%E7%82%B9%E5%AF%B9%E6%AF%94/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/12/17/docker-docker%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/docker/4d51cecf7d26dfa720682ee0425872d5.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">docker管理工具</div></div></a></div><div class="next-post pull_right"><a href="/2019/12/07/README-CC++/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">cc++</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];

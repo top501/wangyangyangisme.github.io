@@ -73,116 +73,104 @@ function activateLightMode(){
 }</script><script>var GLOBAL_CONFIG_SITE = { 
   isPost: true,
   isHome: false
-}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多个-git-账户免密码登录配置"><span class="toc-text"> 多个 Git 账户免密码登录配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-text"> 摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速预览"><span class="toc-text"> 快速预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景模拟"><span class="toc-text"> 场景模拟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法详解"><span class="toc-text"> 方法详解</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/git/29dd35296a9db9223e6b5db917deeb7c.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">多个Git账户免密码登录配置</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-09-27<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/git/">git</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">2.2k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 8 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/09/27/git-%E5%A4%9A%E4%B8%AAGit%E8%B4%A6%E6%88%B7%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/09/27/git-%E5%A4%9A%E4%B8%AAGit%E8%B4%A6%E6%88%B7%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="多个-git-账户免密码登录配置"><a class="markdownIt-Anchor" href="#多个-git-账户免密码登录配置"></a> 多个 Git 账户免密码登录配置</h1>
-<h2 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h2>
-<p>目前使用 git 作为文件版本控制工具的开发者越来越多，同时一个开发者可以拥有多个不同 git 服务器的帐号或者同一个 git 服务器的不同帐号。<br />
-  例如，小明在公司有个公司搭建的 git 服务器帐号用于工作开发，同时在目前流行的 github 和 bitbucket  上也有帐号，在业余时间 fork 一些项目，然后做一些 contributes. 这时小明就会遇到一个问题，账户这么多，如果每次使用 git  软件在终端进行 add, commit 后，需要 push 到本地仓库对应的远程服务器时，如果没有事先配置好 ssh  免密码登录或是其他密钥管理方法, 每次都需要输入对应的服务器账户密码来进行安全认证。<br />
-  有没有什么方法可以一劳永逸地解决这个多 git 账户自动匹配免密码登录问题呢?<br />
-本文描述了在 Terminal 环境下使用 ssh 协议的多个不同 git 服务器帐号的 git 仓库如何自动匹配免密码登录的方法。</p>
-<h2 id="快速预览"><a class="markdownIt-Anchor" href="#快速预览"></a> 快速预览</h2>
-<p>主要解决两个问题，<strong>免密码登录</strong> 和 <strong>多账户自动匹配</strong>，前者可以使用 ssh 公私钥对解决，后者通过编辑 ssh 配置文件解决。</p>
-<h3 id="场景模拟"><a class="markdownIt-Anchor" href="#场景模拟"></a> 场景模拟</h3>
-<p>小明目前有 3 个 git 服务器账户，账户信息分别如下:</p>
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多个-Git-账户免密码登录配置"><span class="toc-text">多个 Git 账户免密码登录配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#摘要"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快速预览"><span class="toc-text">快速预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景模拟"><span class="toc-text">场景模拟</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法详解"><span class="toc-text">方法详解</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/git/29dd35296a9db9223e6b5db917deeb7c.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">多个Git账户免密码登录配置</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-09-27<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-11-06</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/git/">git</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">2.2k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 8 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/09/27/git-%E5%A4%9A%E4%B8%AAGit%E8%B4%A6%E6%88%B7%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/09/27/git-%E5%A4%9A%E4%B8%AAGit%E8%B4%A6%E6%88%B7%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95%E9%85%8D%E7%BD%AE/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="多个-Git-账户免密码登录配置"><a href="#多个-Git-账户免密码登录配置" class="headerlink" title="多个 Git 账户免密码登录配置"></a>多个 Git 账户免密码登录配置</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>目前使用 git 作为文件版本控制工具的开发者越来越多，同时一个开发者可以拥有多个不同 git 服务器的帐号或者同一个 git 服务器的不同帐号。<br>   例如，小明在公司有个公司搭建的 git 服务器帐号用于工作开发，同时在目前流行的 github 和 bitbucket  上也有帐号，在业余时间 fork 一些项目，然后做一些 contributes. 这时小明就会遇到一个问题，账户这么多，如果每次使用 git  软件在终端进行 add, commit 后，需要 push 到本地仓库对应的远程服务器时，如果没有事先配置好 ssh  免密码登录或是其他密钥管理方法, 每次都需要输入对应的服务器账户密码来进行安全认证。<br>   有没有什么方法可以一劳永逸地解决这个多 git 账户自动匹配免密码登录问题呢?<br> 本文描述了在 Terminal 环境下使用 ssh 协议的多个不同 git 服务器帐号的 git 仓库如何自动匹配免密码登录的方法。</p>
+<h2 id="快速预览"><a href="#快速预览" class="headerlink" title="快速预览"></a>快速预览</h2><p>主要解决两个问题，<strong>免密码登录</strong> 和 <strong>多账户自动匹配</strong>，前者可以使用 ssh 公私钥对解决，后者通过编辑 ssh 配置文件解决。</p>
+<h3 id="场景模拟"><a href="#场景模拟" class="headerlink" title="场景模拟"></a>场景模拟</h3><p>小明目前有 3 个 git 服务器账户，账户信息分别如下:</p>
 <ul>
-<li>第 1 个是公司购买的 bitbucket 付费账户，用于日常工作开发, 其账户名为 <code>xiaoming</code>, 关联邮箱为 <code>xiaoming@test.com</code>,<br />
-目前工作项目的仓库地址为 <code>git@bitbucket.org:xiaoming/testFly.git</code>.</li>
-<li>第 2 个是自己私人申请的免费 bitbucket 账户, 用于管理和保存私人的配置文件等或者 fork 一些项目研究做些贡献，其账户名为 <code>superming</code>，关联邮箱为<br />
-<code>superming@gmail.com</code>, 目前关注的项目仓库地址是 <code>git@bitbucket.org:superming/superman.git</code>.</li>
-<li>第 3 个账户也是自己私人申请的免费 github 账户，这里是开源的天堂，小明经常在此 star, watch, fork 项目等，其账户名为 <code>mingh</code>, 关联邮箱为<br />
-<code>mingh@gmail.com</code>.</li>
+<li>第 1 个是公司购买的 bitbucket 付费账户，用于日常工作开发, 其账户名为 <code>xiaoming</code>, 关联邮箱为 <code>xiaoming@test.com</code>,<br> 目前工作项目的仓库地址为 <code>git@bitbucket.org:xiaoming/testFly.git</code>.</li>
+<li>第 2 个是自己私人申请的免费 bitbucket 账户, 用于管理和保存私人的配置文件等或者 fork 一些项目研究做些贡献，其账户名为 <code>superming</code>，关联邮箱为<br> <code>superming@gmail.com</code>, 目前关注的项目仓库地址是 <code>git@bitbucket.org:superming/superman.git</code>.</li>
+<li>第 3 个账户也是自己私人申请的免费 github 账户，这里是开源的天堂，小明经常在此 star, watch, fork 项目等，其账户名为 <code>mingh</code>, 关联邮箱为<br> <code>mingh@gmail.com</code>.</li>
 </ul>
 <p>为了实现这 3 个账户自动匹配免密码登录，小明首先依次生成了三对密钥文件：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 生成第 1 个名为 xiaoming 账户的密钥对</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ssh-keygen -t rsa -f ~/.ssh/id_rsa_xiaoming -C <span class="string">"xiaoming@test.com"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 生成第 2 个名为 superming 账户的密钥对</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ssh-keygen -t rsa -f ~/.ssh/id_rsa_superming -C <span class="string">"superming@gmail.com"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 生成第 3 个名为 mingh 账户的密钥对</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ssh-keygen -t rsa -f ~/.ssh/id_rsa_mingh -C <span class="string">"mingh@gmail.com"</span></span></span><br></pre></td></tr></table></figure>
+
 <p>接着手动添加了这 3 对密钥对的私钥文件到 <code>ssh-agent</code> 会话用于自动认证 <code>ssh</code> 会话连接：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">ssh-add ~/.ssh/id_rsa_xiaoming</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ssh-add ~/.ssh/id_rsa_superming</span></span><br><span class="line"><span class="meta">$</span><span class="bash">ssh-add ~/.ssh/id_rsa_mingh</span></span><br></pre></td></tr></table></figure>
+
 <p>由于 <code>ssh-agent</code> 会话是一个临时的会话，在终端退出后也随之结束，为了每次启动终端时都能自动添加私钥文件：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">echo</span> <span class="string">"ssh-add ~/.ssh/id_rsa_xiaoming &gt;/dev/null 2&gt;&amp;1"</span> &gt;&gt; ~/.bashrc</span></span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">echo</span> <span class="string">"ssh-add ~/.ssh/id_rsa_superming &gt;/dev/null 2&gt;&amp;1"</span> &gt;&gt; ~/.bashrc</span></span><br><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">echo</span> <span class="string">"ssh-add ~/.ssh/id_rsa_mingh &gt;/dev/null 2&gt;&amp;1"</span> &gt;&gt; ~/.bashrc</span></span><br></pre></td></tr></table></figure>
+
 <p>由于小明用的是 <code>zshell</code>, 需要把 <code>~/.bashrc</code> 改成 <code>~/.zshrc</code>.</p>
 <p>接下来就要配置 <code>~/.ssh/config</code> 配置文件实现账户自动匹配：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第 1 个 xiaoming bitbucket 工作账户</span></span><br><span class="line"> host xiaoming_work</span><br><span class="line">    hostname bitbucket.org</span><br><span class="line">    Port 22</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile "~/.ssh/id_rsa_xiaoming"</span><br><span class="line">    </span><br><span class="line"> <span class="comment"># 第 2 个 superming bitbucket 私人账户</span></span><br><span class="line"> host bitbucket.org</span><br><span class="line">    hostname bitbucket.org</span><br><span class="line">    Port 22</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile "~/.ssh/id_rsa_superming"</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第 3 个 mingh github 私人账户</span></span><br><span class="line"> host github.com</span><br><span class="line">    hostname github.com</span><br><span class="line">    Port 22</span><br><span class="line">    User git</span><br><span class="line">    IdentityFile "~/.ssh/id_rsa_mingh"</span><br></pre></td></tr></table></figure>
+
 <p>由于工作账户新项目创建不频繁，所以使用了 <code>xiaoming_work</code> 作为 <code>host</code>, 但同时需要到当前工作的项目的根目录修改远程服务器地址：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 原远程服务器 origin 地址为 git@bitbucket:xiaoming/testFly.git</span></span><br><span class="line"><span class="meta">$</span><span class="bash">git remote remove origin</span></span><br><span class="line"><span class="meta">$</span><span class="bash">git remote add origin xiaoming_work:xiaoming/testFly.git</span></span><br></pre></td></tr></table></figure>
+
 <p>而 <code>host</code> 与 <code>hostname</code> 一致的两个常用账户则不需要修改远程服务器地址了。</p>
-<p>为了保证对应账户下的 git 仓库使用对应的账户名和邮箱进行 <code>commit</code>, <code>push</code> 等，<br />
-还需要进行每个 git 仓库设置对应的 <code>user.name</code> 和 <code>user.email</code>:</p>
+<p>为了保证对应账户下的 git 仓库使用对应的账户名和邮箱进行 <code>commit</code>, <code>push</code> 等，<br> 还需要进行每个 git 仓库设置对应的 <code>user.name</code> 和 <code>user.email</code>:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"><span class="built_in">cd</span> &lt;testFly 仓库根目录&gt;</span></span><br><span class="line"><span class="meta">$</span><span class="bash">git config --<span class="built_in">local</span> user.name <span class="string">"xiaoming"</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash">git config --<span class="built_in">local</span> user.email <span class="string">"xiaoming@test.com"</span></span></span><br><span class="line">...</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 其他仓库类似配置</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="方法详解"><a class="markdownIt-Anchor" href="#方法详解"></a> 方法详解</h2>
-<ol>
+
+<h2 id="方法详解"><a href="#方法详解" class="headerlink" title="方法详解"></a>方法详解</h2><ol>
 <li>为指定 git 账户生成 ssh 密钥文件实现免密码登录</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa_work -C "work@163.com"`</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>-t rsa</code> 指定生成密钥类型(type)为 rsa 非对称加密；</li>
-<li><code>-f ~/.ssh/id_rsa_work</code> 指定生成密钥存放文件(file)为 <code>~/.ssh/id_rsa_work</code>, 该文件名可以由用户自己命名,<br />
-建议该文件统一放在 <code>~/.ssh/</code> 目录下以便于管理；</li>
-<li><code>-C &quot;work@163.com&quot;</code> 给该密钥添加注释（comment）,一般使用关联该 git 账户的 email.<br />
-执行此命令后需要你输入要生成的密钥文件的口令(密码)和重复输入口令，连按回车键即可设置密钥文件口令为空从而实现免密码登录。<br />
-然后你就会在 <code>~/.ssh</code> 目录下找到新生成的密钥文件分别为 <code>id_rsa_work</code> 和 <code>id_rsa_work.pub</code>, 前者为私钥文件，本地私人使用，后者为公钥文件，<br />
-可以公开使用。</li>
+<li><code>-f ~/.ssh/id_rsa_work</code> 指定生成密钥存放文件(file)为 <code>~/.ssh/id_rsa_work</code>, 该文件名可以由用户自己命名,<br>建议该文件统一放在 <code>~/.ssh/</code> 目录下以便于管理；</li>
+<li><code>-C &quot;work@163.com&quot;</code> 给该密钥添加注释（comment）,一般使用关联该 git 账户的 email.<br>执行此命令后需要你输入要生成的密钥文件的口令(密码)和重复输入口令，连按回车键即可设置密钥文件口令为空从而实现免密码登录。<br>然后你就会在 <code>~/.ssh</code> 目录下找到新生成的密钥文件分别为 <code>id_rsa_work</code> 和 <code>id_rsa_work.pub</code>, 前者为私钥文件，本地私人使用，后者为公钥文件，<br>可以公开使用。</li>
 </ul>
 <ol start="2">
 <li>添加上述私钥文件到当前 ssh-agent 会话用于认证 ssh 会话</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_rsa_work</span><br></pre></td></tr></table></figure>
+
 <ol start="3">
 <li>查看当前会话已添加的 ssh 私钥</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add -L</span><br></pre></td></tr></table></figure>
+
 <ol start="4">
 <li>每次启动终端时都自动添加指定私钥到当前 ssh-agent 会话中</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "ssh-add ~/.ssh/id_rsa_work  &gt;/dev/null 2&gt;&amp;1" &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+
 <p>如果使用 zshell</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo "ssh-add ~/.ssh/id_rsa_work  &gt;/dev/null 2&gt;&amp;1" &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
 <ol start="5">
-<li>配置 <code>~/.ssh/config</code> 文件实现多 git 账户自动匹配认证登录<br />
-编辑 <code>~/.ssh/config</code> ssh 配置文件（如果没有该文件就手动新建，<code>touch ~/.ssh/config</code>）,<br />
-以 bitbucket 帐户为例，例如账户 <code>work</code> 下的一个 git 仓库地址为：<code>git@bitbucket.org:work/test.git</code>, 从仓库地址可以看出此仓库的<br />
-用户名（<code>User</code>）为 <code>git</code>, 主机名（<code>hostname</code>）为 <code>bitbucket.org</code>, 通信端口号(<code>Port</code>)一般为 <code>22</code>.所以其配置为：</li>
+<li>配置 <code>~/.ssh/config</code> 文件实现多 git 账户自动匹配认证登录<br> 编辑 <code>~/.ssh/config</code> ssh 配置文件（如果没有该文件就手动新建，<code>touch ~/.ssh/config</code>）,<br> 以 bitbucket 帐户为例，例如账户 <code>work</code> 下的一个 git 仓库地址为：<code>git@bitbucket.org:work/test.git</code>, 从仓库地址可以看出此仓库的<br> 用户名（<code>User</code>）为 <code>git</code>, 主机名（<code>hostname</code>）为 <code>bitbucket.org</code>, 通信端口号(<code>Port</code>)一般为 <code>22</code>.所以其配置为：</li>
 </ol>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 此处演示 bitbucket 下注册的账户名为 work 的账户的 ssh 配置</span></span><br><span class="line">host git@bitbucket.org # 主机别名，用户自定义，具有唯一性</span><br><span class="line">hostname bitbucket.org # git 远程服务器主机名</span><br><span class="line">Port 22 # git 服务器端口号，一般默认为 22</span><br><span class="line">User git # git 仓库地址中 @ 符号前的用户名，常见为 git, 注意与你在该服务器上申请的账户名区分</span><br><span class="line">IdentityFile "~/.ssh/id_rsa_work" # 刚开始生成的密钥文件存放位置</span><br></pre></td></tr></table></figure>
-<p>其中 <code>hostname</code>, <code>User</code>, <code>Port</code> 对应于 git 仓库地址里的信息，而 <code>host</code> 可以认为是一个别名，表示了这一主机的别名，<br />
-可随意命名，用于区分具有同一个 <code>hostname</code> 的不同账户的仓库。<code>IdentityFile</code> 为私钥认证文件，即上文生成的 <code>id_rsa_work</code> 文件.</p>
+
+<p>   其中 <code>hostname</code>, <code>User</code>, <code>Port</code> 对应于 git 仓库地址里的信息，而 <code>host</code> 可以认为是一个别名，表示了这一主机的别名，<br>    可随意命名，用于区分具有同一个 <code>hostname</code> 的不同账户的仓库。<code>IdentityFile</code> 为私钥认证文件，即上文生成的 <code>id_rsa_work</code> 文件.</p>
 <ol start="6">
-<li>
-<p>部署公钥到 git 服务器<br />
-例如在 bitbucket 服务器网页上菜单 <code>bitbucket Settings &gt; SSH keys &gt; Add key</code>,<br />
-把公钥文件里的公钥字符串拷贝粘贴到此处设置处.</p>
+<li><p>部署公钥到 git 服务器<br> 例如在 bitbucket 服务器网页上菜单 <code>bitbucket Settings &gt; SSH keys &gt; Add key</code>,<br> 把公钥文件里的公钥字符串拷贝粘贴到此处设置处.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 拷贝公钥字符串到系统剪贴板，此处是 macOS 的系统剪贴板</span></span><br><span class="line">cat ~/.ssh/id_rsa_work.pub | pbcopy</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>测试 ssh 能否免密码直连</p>
+<li><p>测试 ssh 能否免密码直连</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -vT git@bitbucket.org</span><br></pre></td></tr></table></figure>
+
 <p>或者使用 <code>git clone</code> 一个当前账户下的私人项目到本地看是否成功。</p>
 </li>
-<li>
-<p>修改本地 git 仓库的远程服务器地址</p>
+<li><p>修改本地 git 仓库的远程服务器地址</p>
 </li>
 </ol>
 <ul>
-<li>
-<p>如果你在 github 或者 bitbucket 服务器上都只注册了一个账户，在配置 <code>~/.ssh/config</code> 时建议 <code>host</code> 与 <code>hostname</code> 保持一致，<br />
-如此不用修改配置。</p>
+<li><p>如果你在 github 或者 bitbucket 服务器上都只注册了一个账户，在配置 <code>~/.ssh/config</code> 时建议 <code>host</code> 与 <code>hostname</code> 保持一致，<br> 如此不用修改配置。</p>
 </li>
-<li>
-<p>如果你在同一个 git 服务器上有两个账户，例如在 bitbucket 上有常用的</p>
+<li><p>如果你在同一个 git 服务器上有两个账户，例如在 bitbucket 上有常用的</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">work</span><br></pre></td></tr></table></figure>
-<p>账户和不太常用的</p>
+
+<p> 账户和不太常用的 </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">life</span><br></pre></td></tr></table></figure>
-<p>账户，</p>
+
+<p> 账户，</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.ssh/config</span><br></pre></td></tr></table></figure>
-<p>可以配置如下：</p>
+
+<p> 可以配置如下： </p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># personal git account "work" in bitbucket</span></span><br><span class="line">host git@bitbucket.org</span><br><span class="line">   hostname bitbucket.org</span><br><span class="line">   Port 22</span><br><span class="line">   User git</span><br><span class="line">   IdentityFile "~/.ssh/id_rsa_work"</span><br><span class="line">   </span><br><span class="line"><span class="comment"># personal git account "life" in bitbucket</span></span><br><span class="line">host lifebucket</span><br><span class="line">   hostname bitbucket.org</span><br><span class="line">   Port 22</span><br><span class="line">   User git</span><br><span class="line">   IdentityFile "~/.ssh/id_rsa_life"</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>
-<p>使用上述配置，对于要新 <code>clone</code> 的 <code>work</code> 账户下的仓库或是本地已存在的仓库，不需要修改任何配置，因为 <code>host</code> 与 <code>hostname</code> 一样。</p>
+<li><p>使用上述配置，对于要新 <code>clone</code> 的 <code>work</code> 账户下的仓库或是本地已存在的仓库，不需要修改任何配置，因为 <code>host</code> 与 <code>hostname</code> 一样。</p>
 </li>
-<li>
-<p>对于</p>
+<li><p>对于 </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">life</span><br></pre></td></tr></table></figure>
-<p>账户下的仓库：</p>
+
+<p> 账户下的仓库：</p>
 <ul>
-<li>新 clone 的仓库需要修改仓库地址url，例如 <code>git clone git@bitbucket.org:life/tutorial.git</code> 改为 <code>git clone lifebucket:life/tutorial.git</code></li>
+<li>新 clone 的仓库需要修改仓库地址url，例如 <code>git clone git@bitbucket.org:life/tutorial.git</code> 改为 <code>git clone lifebucket:life/tutorial.git</code> </li>
 <li>已经存在的仓库，切换到该仓库根目录，执行 <code>git remote remove origin &amp;&amp; git remote add origin lifebucket:life/tutorial.git</code>.</li>
 </ul>
 </li>
@@ -190,17 +178,19 @@ function activateLightMode(){
 </li>
 </ul>
 <ol>
-<li>
-<p>git 设置</p>
-<p>由于有多个不同的 git 账户，一般不能随意设置 git 全局设置了，尤其是</p>
+<li><p>git 设置</p>
+<p> 由于有多个不同的 git 账户，一般不能随意设置 git 全局设置了，尤其是 </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user.name</span><br></pre></td></tr></table></figure>
-<p>和</p>
+
+<p> 和 </p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user.email</span><br></pre></td></tr></table></figure>
+
 <p>，需要单独给每个仓库设置。</p>
-<p>首先移除全局设置：</p>
+<p> 首先移除全局设置：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset user.name &amp;&amp; git config --global --unset user.email</span><br></pre></td></tr></table></figure>
+
 <p>,</p>
-<p>然后到对应的仓库根目录下执行类似于下面的命令：</p>
+<p> 然后到对应的仓库根目录下执行类似于下面的命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --local user.name "life"</span><br><span class="line">git config --local user.email "life@163.com"</span><br></pre></td></tr></table></figure>
 </li>
 </ol>

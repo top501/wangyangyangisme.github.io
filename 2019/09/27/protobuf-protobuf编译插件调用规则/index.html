@@ -83,22 +83,21 @@ function activateLightMode(){
 <p>参考： <a href="https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.compiler.plugin" target="_blank" rel="noopener">https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.compiler.plugin</a></p>
 <p>产生go的 grpc 代码的插件命令为：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc --go_out=plugins=grpc,import_path=mypackage:. *.proto</span><br></pre></td></tr></table></figure>
-<p>这里通过 --NAME_out ，就能知道是需要找 protoc-gen-NAME 插件， 即 protoc-gen-go 插件。</p>
-<p>而 --go_out=plugins=grpc 则会在 <a href="https://github.com/golang/protobuf" target="_blank" rel="noopener">https://github.com/golang/protobuf</a> 这里找到</p>
+<p>这里通过 –NAME_out ，就能知道是需要找 protoc-gen-NAME 插件， 即 protoc-gen-go 插件。</p>
+<p>而 –go_out=plugins=grpc 则会在 <a href="https://github.com/golang/protobuf" target="_blank" rel="noopener">https://github.com/golang/protobuf</a> 这里找到</p>
 <p><a href="https://github.com/golang/protobuf/blob/master/protoc-gen-go/grpc/grpc.go" target="_blank" rel="noopener">https://github.com/golang/protobuf/blob/master/protoc-gen-go/grpc/grpc.go</a></p>
 <p><strong>protoc使用</strong></p>
-<p>我们按照惯例执行protoc --help（查看帮助文档），我们抽出几个常用的命令进行讲解</p>
+<p>我们按照惯例执行protoc –help（查看帮助文档），我们抽出几个常用的命令进行讲解</p>
 <ol>
-<li>
-<p>-IPATH, --proto_path=PATH：指定import搜索的目录，可指定多个，如果不指定则默认当前工作目录</p>
+<li><p>-IPATH, –proto_path=PATH：指定import搜索的目录，可指定多个，如果不指定则默认当前工作目录</p>
 </li>
-<li>
-<p>–go_out：生成golang源文件</p>
+<li><p>–go_out：生成golang源文件</p>
 </li>
 </ol>
 <p>参数</p>
 <p>若要将额外的参数传递给插件，可使用从输出目录中分离出来的逗号分隔的参数列表:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protoc --go_out=plugins=grpc,import_path=mypackage:. *.proto</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>import_prefix=xxx：将指定前缀添加到所有import路径的开头</li>
 <li>import_path=foo/bar：如果文件没有声明go_package，则用作包。如果它包含斜杠，那么最右边的斜杠将被忽略。</li>
