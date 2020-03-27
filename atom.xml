@@ -464,33 +464,6 @@
   </entry>
   
   <entry>
-    <title>algorithms</title>
-    <link href="http://wangyangyangisme.github.io/2019/12/07/README-algorithms/"/>
-    <id>http://wangyangyangisme.github.io/2019/12/07/README-algorithms/</id>
-    <published>2019-12-07T08:52:36.000Z</published>
-    <updated>2019-12-09T09:49:37.994Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/Dev-XYS/Algorithms" target="_blank" rel="noopener">Algorithms</a> 全面的算法代码仓库</p><p><a href="https://github.com/xtaci/algorithms" target="_blank" rel="noopener">algorithms</a> Algorithms &amp; Data structures in C++.</p><p><a href="https://github.com/nonstriater/Learn-Algorithms" target="_blank" rel="noopener">Learn-Algorithms</a> 算法学习笔记 </p><p><a href="https://github.com/fragglet/c-algorithms" target="_blank" rel="noopener">c-algorithms</a> A library of common data structures and algorithms written in C.</p><p><a href="https://github.com/TheAlgorithms/C" target="_blank" rel="noopener">C</a> All Algorithms implemented in C </p><p><a href="https://github.com/yourtion/LearningMasteringAlgorithms-C" target="_blank" rel="noopener">LearningMasteringAlgorithms-C</a> Mastering Algorithms with C 《算法精解：C语言描述》源码及Xcode工程、Linux工程 </p><p><a href="https://github.com/VAR-solutions/Algorithms" target="_blank" rel="noopener">Algorithms</a> Efficient Algorithms </p><p><a href="https://github.com/Thuva4/Algorithms" target="_blank" rel="noopener">Algorithms</a> Collection of algorithms in multiple programming languages. </p><p><a href="https://github.com/mandliya/algorithms_and_data_structures" target="_blank" rel="noopener">algorithms_and_data_structures</a> 180+ Algorithm &amp; Data Structure Problems using C++ </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://github.com/Dev-XYS/Algorithms&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Algorithms&lt;/a&gt; 全面的算法代码仓库&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.co
-      
-    
-    </summary>
-    
-    
-      <category term="README" scheme="http://wangyangyangisme.github.io/categories/README/"/>
-    
-    
-      <category term="README" scheme="http://wangyangyangisme.github.io/tags/README/"/>
-    
-  </entry>
-  
-  <entry>
     <title>cc++</title>
     <link href="http://wangyangyangisme.github.io/2019/12/07/README-CC++/"/>
     <id>http://wangyangyangisme.github.io/2019/12/07/README-CC++/</id>
@@ -504,6 +477,32 @@
       
       
         &lt;p&gt;&lt;a href=&quot;https://github.com/wangyangyangisme/NIM_Duilib_Framework&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NIM_Duilib_Framework&lt;/a&gt; 网易云信Windows应用界
+      
+    
+    </summary>
+    
+    
+      <category term="README" scheme="http://wangyangyangisme.github.io/categories/README/"/>
+    
+    
+      <category term="README" scheme="http://wangyangyangisme.github.io/tags/README/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>architecture</title>
+    <link href="http://wangyangyangisme.github.io/2019/12/07/README-architecture/"/>
+    <id>http://wangyangyangisme.github.io/2019/12/07/README-architecture/</id>
+    <published>2019-12-07T08:52:36.000Z</published>
+    <updated>2019-12-09T09:49:37.995Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/wangyangyangisme/architecture.of.internet-product" target="_blank" rel="noopener">architecture.of.internet-product</a> 互联网公司技术架构，微信/淘宝/微博/腾讯/阿里/美团点评/百度/Google/Facebook/Amazon/eBay的架构</p><p><a href="https://github.com/wangyangyangisme/architecture.taobao-alibaba" target="_blank" rel="noopener">architecture.taobao-alibaba</a> 互联网公司架构: 淘宝技术架构，阿里巴巴技术架构 </p><p><a href="https://github.com/wangyangyangisme/architecture.wechat-tencent" target="_blank" rel="noopener">architecture.wechat-tencent</a> 互联网公司架构: 微信技术架构， 腾讯技术架构 </p><p><a href="https://github.com/wangyangyangisme/architecture.meituan-dianping" target="_blank" rel="noopener">architecture.meituan-dianping</a> 互联网公司架构: 美团点评技术架构 </p><p><a href="https://github.com/wangyangyangisme/architect-awesome" target="_blank" rel="noopener">architect-awesome</a> 后端架构师技术图谱</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://github.com/wangyangyangisme/architecture.of.internet-product&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;architecture.of.internet-pr
       
     
     </summary>
