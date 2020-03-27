@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>qml | WangYangYang</title><meta name="description" content="qml"><meta name="keywords" content="README"><meta name="author" content="Wang YangYang"><meta name="copyright" content="Wang YangYang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="qml"><meta name="twitter:description" content="qml"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><meta property="og:type" content="article"><meta property="og:title" content="qml"><meta property="og:url" content="http://wangyangyangisme.github.io/2019/12/07/README-qml/"><meta property="og:site_name" content="WangYangYang"><meta property="og:description" content="qml"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>const autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  const isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  const isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      now = new Date();
+      hour = now.getHours();
+      isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://wangyangyangisme.github.io/2019/12/07/README-qml/"><link rel="prev" title="vue" href="http://wangyangyangisme.github.io/2019/12/07/README-vue/"><link rel="next" title="web" href="http://wangyangyangisme.github.io/2019/12/07/README-web/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.css"><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.5/dist/instantsearch.min.js" defer></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: {"appId":"C4QN4OTLJM","apiKey":"c2c026ba64eeb77abd2164975fa41f34","indexName":"wyy","hits":{"per_page":10},"languages":{"input_placeholder":"搜索文章","hits_empty":"找不到您查询的内容:${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"cookieDomain":"https://wangyangyangisme.github.io","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    title: 'Snackbar.bookmark.title',
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: false,
+  isFontAwesomeV5: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false
+}</script><meta name="generator" content="Hexo 4.2.0"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/theme/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">187</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">18</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">36</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#物理"><span class="toc-text">[物理]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图形"><span class="toc-text">[图形]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#日志系统"><span class="toc-text">[日志系统]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3D"><span class="toc-text">[3D]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#opengl"><span class="toc-text">[opengl]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目"><span class="toc-text">[项目]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图表"><span class="toc-text">[图表]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#UI"><span class="toc-text">[UI]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#音视频"><span class="toc-text">[音视频]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#game"><span class="toc-text">[game]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#控件"><span class="toc-text">[控件]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#功能"><span class="toc-text">[功能]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据库"><span class="toc-text">[数据库]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#通信"><span class="toc-text">[通信]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#camera"><span class="toc-text">[camera]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#粒子"><span class="toc-text">[粒子]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#杂项"><span class="toc-text">[杂项]</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Android"><span class="toc-text">[Android]</span></a></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">WangYangYang</a></span><span class="toggle-menu pull_right close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fa fa-image"></i><span> 相册</span></a></div><div class="menus_item"><a class="site-page" href="/messageboard/"><i class="fa-fw fa fa-coffee"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 清单</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movie/"><i class="fa-fw fa fa-film"></i><span> 电影</span></a></li></ul></div></div></span><span class="pull_right" id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></span></div><div id="post-info"><div id="post-title"><div class="posttitle">qml</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2019-12-07<span class="post-meta__separator">|</span><i class="fa fa-history" aria-hidden="true"></i> 更新于 2019-12-09</time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/README/">README</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="post-meta__icon fa fa-file-word-o" aria-hidden="true"></i><span>字数总计:</span><span class="word-count">1.7k</span><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-clock-o" aria-hidden="true"></i><span>阅读时长: 9 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2019/12/07/README-qml/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count comment-count" data-xid="/2019/12/07/README-qml/" itemprop="commentCount"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="物理"><a href="#物理" class="headerlink" title="[物理]"></a>[物理]</h1><p><a href="https://github.com/wangyangyangisme/qml-box2d" target="_blank" rel="noopener">qml-box2d</a> 物理引擎</p>
+<h1 id="图形"><a href="#图形" class="headerlink" title="[图形]"></a>[图形]</h1><p><a href="https://github.com/wangyangyangisme/qmltoolbox" target="_blank" rel="noopener">qmltoolbox</a>QML item library for cross-platform graphics applications</p>
+<h1 id="日志系统"><a href="#日志系统" class="headerlink" title="[日志系统]"></a>[日志系统]</h1><p><a href="https://github.com/wangyangyangisme/qml-logger" target="_blank" rel="noopener">qml-logger</a></p>
+<h1 id="3D"><a href="#3D" class="headerlink" title="[3D]"></a>[3D]</h1><p><a href="https://github.com/wangyangyangisme/learnopengl-qt3d" target="_blank" rel="noopener">learnopengl-qt3d</a></p>
+<h1 id="opengl"><a href="#opengl" class="headerlink" title="[opengl]"></a>[opengl]</h1><p><a href="https://github.com/wangyangyangisme/ShaderToy.qml" target="_blank" rel="noopener">ShaderToy.qml</a></p>
+<p><a href="https://github.com/wangyangyangisme/GLSL.qml" target="_blank" rel="noopener">GLSL.qml</a></p>
+<p><a href="https://github.com/wangyangyangisme/StandGL" target="_blank" rel="noopener">StandGL</a>Stand motion in GLSL+QML</p>
+<p><a href="https://github.com/fly204/ShaderToy.qml" target="_blank" rel="noopener">ShaderToy.qml</a>ShaderToy demo by QML.</p>
+<h1 id="项目"><a href="#项目" class="headerlink" title="[项目]"></a>[项目]</h1><p><a href="https://github.com/wangyangyangisme/CleanPlayer" target="_blank" rel="noopener">CleanPlayer</a>基于Qt编写的音乐播放器，界面由QML编写，网络和文件由C++实现，能够搜索和播放在线歌曲。</p>
+<p><a href="https://github.com/wangyangyangisme/asteroid-launcher" target="_blank" rel="noopener">asteroid-launcher</a>AsteroidOS launcher and Wayland compositor based on Qt5, QML and QtWayland via Lipstick.</p>
+<p><a href="https://github.com/wangyangyangisme/AudioPlayer_qml" target="_blank" rel="noopener">AudioPlayer_qml</a>Simple audio player (c++/Qt/QML/QtQuick #gui)</p>
+<p><a href="https://github.com/wangyangyangisme/BaiduTranslation" target="_blank" rel="noopener">BaiduTranslation</a>Baidu Translation API demo by qml.</p>
+<p><a href="https://github.com/wangyangyangisme/BBIOConfig" target="_blank" rel="noopener">BBIOConfig</a>A GUI for the BB universal IO</p>
+<p><a href="https://github.com/wangyangyangisme/BezierClock" target="_blank" rel="noopener">BezierClock</a>ort the Processing.js Bezier Clock by Jack Frigaard to Qt Quick/QML for KDE Plasma 5 Live Wallpaper</p>
+<p><a href="https://github.com/wangyangyangisme/CarsAndroid" target="_blank" rel="noopener">CarsAndroid</a>Car rental in company. C++/Qt for Android/QML/MySQL.</p>
+<p><a href="https://github.com/wangyangyangisme/ClocksQML" target="_blank" rel="noopener">ClocksQML</a>A bunch of diferent clocks designed by the canvas of QML</p>
+<p><a href="https://github.com/wangyangyangisme/ContinuousImageRotation" target="_blank" rel="noopener">ContinuousImageRotation</a>QML project that rotates pinwheel png image continuously </p>
+<p><a href="https://github.com/wangyangyangisme/DropNote" target="_blank" rel="noopener">DropNote</a>Simple note taking app created with Qt and QML</p>
+<p><a href="https://github.com/wangyangyangisme/eloFM" target="_blank" rel="noopener">eloFM</a>Internet radio player for Windows and Android (QML/JavaScript/Qt/C++/SQL)</p>
+<p><a href="https://github.com/wangyangyangisme/EpicsQml" target="_blank" rel="noopener">EpicsQml</a> Qt/QML app for android that comunicates to a websocket and interact with Epics PVs</p>
+<p><a href="https://github.com/wangyangyangisme/FlyingEagle" target="_blank" rel="noopener">FlyingEagle</a>飞鹰点歌系统项目</p>
+<p><a href="https://github.com/wangyangyangisme/SlateKit" target="_blank" rel="noopener">SlateKit</a> FakeKey是虚拟键盘的，Zinnia是中日韩手写识别引擎的</p>
+<p><a href="https://github.com/wangyangyangisme/Gbyzanz" target="_blank" rel="noopener">Gbyzanz</a>Gbyzanz is a GUI front-end for byzanz which develop by QML</p>
+<p><a href="https://github.com/wangyangyangisme/WallpapersAndroidQt" target="_blank" rel="noopener">WallpapersAndroidQt</a>Wallpapers application for Android written with Qt</p>
+<p><a href="https://github.com/wangyangyangisme/StateMachineEditor" target="_blank" rel="noopener">StateMachineEditor</a>QML Declarative State Machine Editor</p>
+<p><a href="https://github.com/wangyangyangisme/myAirCoachMobile" target="_blank" rel="noopener">myAirCoachMobile</a>Qt (QQuick, C++, QML) application for myAirCoachProject</p>
+<p><a href="https://github.com/wangyangyangisme/ni-traktor-qml" target="_blank" rel="noopener">ni-traktor-qml</a></p>
+<p><a href="https://github.com/wangyangyangisme/Party-Mixer-Qml" target="_blank" rel="noopener">Party-Mixer-Qml</a>Cross plate-form DJ Mixing App</p>
+<p><a href="https://github.com/wangyangyangisme/PhoenixPlayer" target="_blank" rel="noopener">PhoenixPlayer</a>Yet another cross platform music player by Qt/qml</p>
+<p><a href="https://github.com/wangyangyangisme/qml_music" target="_blank" rel="noopener">qml_music</a></p>
+<p><a href="https://github.com/wangyangyangisme/qmlcreator" target="_blank" rel="noopener">qmlcreator</a> 编辑器</p>
+<p><a href="https://github.com/wangyangyangisme/qml-image-viewer" target="_blank" rel="noopener">qml-image-viewer</a>图片查看器</p>
+<p><a href="https://github.com/wangyangyangisme/qml-screenshot" target="_blank" rel="noopener">qml-screenshot</a>A simple screenshot application written entirely in QML using Qt Components Hildon</p>
+<p><a href="https://github.com/wangyangyangisme/qmlendar" target="_blank" rel="noopener">qmlendar</a>Yet another a calendar application using Qt Quick</p>
+<p><a href="https://github.com/wangyangyangisme/JKeyboard" target="_blank" rel="noopener">JKeyboard</a> 键盘</p>
+<p><a href="https://github.com/wangyangyangisme/QMLOnscreenKeyboard" target="_blank" rel="noopener">QMLOnscreenKeyboard</a>QMLOnscreenKeyboard is virtual keyboard for touch screen built for QML Applications. Version 0.1</p>
+<p><a href="https://github.com/wangyangyangisme/qml-virtualkey" target="_blank" rel="noopener">qml-virtualkey</a>Pure QML in-app virtual key/keyboard/pad</p>
+<p><a href="https://github.com/wangyangyangisme/QtFreeVirtualKeyboard" target="_blank" rel="noopener">QtFreeVirtualKeyboard</a></p>
+<p><a href="https://github.com/wangyangyangisme/QMLGalaxyPortal" target="_blank" rel="noopener">QMLGalaxyPortal</a>A mobile QML app for interfacing with the Galaxy API</p>
+<p><a href="https://github.com/wangyangyangisme/QmlGallery" target="_blank" rel="noopener">QmlGallery</a>collection of demo applications using Qt/QML</p>
+<p><a href="https://github.com/wangyangyangisme/QMLGallery-1" target="_blank" rel="noopener">QMLGallery-1</a>Simple image gallery made durning QML Lessons</p>
+<p><a href="https://github.com/wangyangyangisme/QML-Generator" target="_blank" rel="noopener">QML-Generator</a>This project can automatically generate QML Codes!!</p>
+<p><a href="https://github.com/wangyangyangisme/plasma-simpleMonitor" target="_blank" rel="noopener">plasma-simpleMonitor</a>plasma-simpleMonitor</p>
+<p><a href="https://github.com/wangyangyangisme/niftly" target="_blank" rel="noopener">niftly</a>Niftly is a RSS Reader built with Qt/QML and QML Material</p>
+<p><a href="https://github.com/wangyangyangisme/QmlPresentation" target="_blank" rel="noopener">QmlPresentation</a>My Qml presentation source - ZConf - 2015</p>
+<p><a href="https://github.com/wangyangyangisme/qmlscratch" target="_blank" rel="noopener">qmlscratch</a> A spot for prototyping my QML</p>
+<p><a href="https://github.com/wangyangyangisme/quickslides" target="_blank" rel="noopener">quickslides</a>Presentation framework using QML</p>
+<p><a href="https://github.com/wangyangyangisme/quartz-ui" target="_blank" rel="noopener">quartz-ui</a>Quartz UI - A collection of QML widgets with a lightweight theme.</p>
+<p><a href="https://github.com/wangyangyangisme/qml-launcher" target="_blank" rel="noopener">qml-launcher</a></p>
+<p><a href="https://github.com/wangyangyangisme/QuteLauncher" target="_blank" rel="noopener">QuteLauncher</a>QML Android Launcher</p>
+<p><a href="https://github.com/wangyangyangisme/smarthouse-client" target="_blank" rel="noopener">smarthouse-client</a>QML-based client to <code>smarthouse-service</code> project</p>
+<p><a href="https://github.com/wangyangyangisme/Textractor" target="_blank" rel="noopener">Textractor</a>OCR application for Sailfish OS. Based on Google’s Tesseract OCR engine and Leptonica image processing library.</p>
+<p><a href="https://github.com/wangyangyangisme/WellChat" target="_blank" rel="noopener">WellChat</a>仿制安卓微信的Qt程序，可以运行在安卓上。</p>
+<p><a href="https://github.com/wangyangyangisme/sqlite-editor-qtqml" target="_blank" rel="noopener">sqlite-editor-qtqml</a> A SQLite Editor written in Qt+QML</p>
+<p><a href="https://github.com/wangyangyangisme/kmusicplay" target="_blank" rel="noopener">kmusicplay</a></p>
+<p><a href="https://github.com/wangyangyangisme/ImitationLeQiSoccerUI" target="_blank" rel="noopener">ImitationLeQiSoccerUI</a>用Qml写的仿乐奇足球界面，跨Android(4.4)、iOS(9.3)、Linux(debian 8)、Windows(8.1)、MacOSX(10.11.3)、WinPhone(8.1)平台，自适应屏幕尺寸。</p>
+<p><a href="https://github.com/wangyangyangisme/harbour-editor" target="_blank" rel="noopener">harbour-editor</a>Functional rich editor for Sailfish OS.</p>
+<p><a href="https://github.com/wangyangyangisme/girigirilove" target="_blank" rel="noopener">girigirilove</a></p>
+<p><a href="https://github.com/wangyangyangisme/hybris-ready-bootanim" target="_blank" rel="noopener">hybris-ready-bootanim</a>Friendly boot animation in QML (gnulinux_support)</p>
+<p><a href="https://github.com/wangyangyangisme/SATDasSpiel" target="_blank" rel="noopener">SATDasSpiel</a></p>
+<p><a href="https://github.com/wangyangyangisme/ShaderTransitionView" target="_blank" rel="noopener">ShaderTransitionView</a></p>
+<p><a href="https://github.com/wangyangyangisme/QuickVtk" target="_blank" rel="noopener">QuickVtk</a>A VTK prototyping application based on QtQuick/QML</p>
+<p><a href="https://github.com/wangyangyangisme/qtPiPhotoViewer2" target="_blank" rel="noopener">qtPiPhotoViewer2</a></p>
+<p><a href="https://github.com/wangyangyangisme/harbour-tIDE" target="_blank" rel="noopener">harbour-tIDE</a>transportable IDE for SailfishOS devices</p>
+<p><a href="https://github.com/wangyangyangisme/Instagraph" target="_blank" rel="noopener">Instagraph</a>Unofficial Instagram Client</p>
+<p><a href="https://github.com/wangyangyangisme/poor-maps" target="_blank" rel="noopener">poor-maps</a>Poor Maps is an application for Sailfish OS to display tiled maps (e.g.<br>OpenStreetMap)</p>
+<p><a href="https://github.com/wangyangyangisme/HockeySDK-QML" target="_blank" rel="noopener">HockeySDK-QML</a>An unofficial, lightweight, crossplatform HockeyApp SDK for Qt/QML</p>
+<p><a href="https://github.com/wangyangyangisme/harbour-sailbook" target="_blank" rel="noopener">harbour-sailbook</a>Sailbook is an unofficial Facebook client for Sailfish OS</p>
+<p><a href="https://github.com/wangyangyangisme/OSM-Shapefile-QGIS-stylesheets" target="_blank" rel="noopener">OSM-Shapefile-QGIS-stylesheets</a></p>
+<p><a href="https://github.com/wangyangyangisme/QtMobileApp" target="_blank" rel="noopener">QtMobileApp</a>This repository contains basic template for Qt for mobile app development using QML and C++ as backend to access RESTful API’s</p>
+<p><a href="https://github.com/wangyangyangisme/TwitchTube" target="_blank" rel="noopener">TwitchTube</a>Unofficial Twitch client</p>
+<p><a href="https://github.com/wangyangyangisme/Reader-YC" target="_blank" rel="noopener">Reader-YC</a>A native Hackernews client for BlackBerry 10</p>
+<p><a href="https://github.com/wangyangyangisme/CloudMusic" target="_blank" rel="noopener">CloudMusic</a>仿网易云音乐的qml版</p>
+<p><a href="https://github.com/wangyangyangisme/MyCloudMusic" target="_blank" rel="noopener">MyCloudMusic</a>网易云音乐与虾米音乐的部分功能混合</p>
+<p><a href="https://github.com/wangyangyangisme/QMLPlayer" target="_blank" rel="noopener">QMLPlayer</a></p>
+<p><a href="https://github.com/wangyangyangisme/iTravel" target="_blank" rel="noopener">iTravel</a></p>
+<p><a href="https://github.com/wangyangyangisme/qt-apps-qmllive" target="_blank" rel="noopener">qt-apps-qmllive</a>It is available for the PC but also for an embedded device, which supports Qt5.</p>
+<p><a href="https://github.com/wangyangyangisme/QRegovar" target="_blank" rel="noopener">QRegovar</a>The official heavy client (in Qt) of the Regovar project</p>
+<h1 id="图表"><a href="#图表" class="headerlink" title="[图表]"></a>[图表]</h1><p><a href="https://github.com/wangyangyangisme/hirachart" target="_blank" rel="noopener">hirachart</a></p>
+<p><a href="https://github.com/wangyangyangisme/Chart.qml" target="_blank" rel="noopener">Chart.qml</a></p>
+<h1 id="UI"><a href="#UI" class="headerlink" title="[UI]"></a>[UI]</h1><p><a href="https://github.com/wangyangyangisme/Flat.qml" target="_blank" rel="noopener">Flat.qm</a>FlatUI by qml, 参考FlatUI设计的一套qml控件</p>
+<p><a href="https://github.com/wangyangyangisme/WP8.qml" target="_blank" rel="noopener">WP8.qml</a> 仿制 WP8 的主系统界面。</p>
+<p><a href="https://github.com/wangyangyangisme/StratifyQML" target="_blank" rel="noopener">StratifyQML</a>Stratify Labs UI QML framework inspired by Twitter Bootstrap</p>
+<p><a href="https://github.com/wangyangyangisme/RS-QML-GUI" target="_blank" rel="noopener">RS-QML-GU</a>Retroshare GUI implementation in QML</p>
+<p><a href="https://github.com/wangyangyangisme/QML-UI-Animations" target="_blank" rel="noopener">QML-UI-Animations</a></p>
+<p><a href="https://github.com/wangyangyangisme/Metro.qml" target="_blank" rel="noopener">Metro.qml</a> 使用纯qml构建的Metro风格控件</p>
+<p><a href="https://github.com/wangyangyangisme/QMLBootstrap" target="_blank" rel="noopener">QMLBootstrap</a>QML UI Kit for Mobile</p>
+<p><a href="https://github.com/wangyangyangisme/quey-ui" target="_blank" rel="noopener">quey-ui</a>A truly cute QML toolkit for cross-platform application development</p>
+<p><a href="https://github.com/wangyangyangisme/Sparrow.2" target="_blank" rel="noopener">Sparrow.2</a></p>
+<p><a href="https://github.com/wangyangyangisme/qml-bootstrap" target="_blank" rel="noopener">qml-bootstrap</a>Sweet Qml components inspired from Ionic framework style for mobile and desktop Qt/Qml projects</p>
+<p><a href="https://github.com/wangyangyangisme/MultiPlatformUITemplate" target="_blank" rel="noopener">MultiPlatformUITemplate</a></p>
+<p><a href="https://github.com/wangyangyangisme/mobos-gui" target="_blank" rel="noopener">mobos-gui</a>A simple QML GUI to use with oFono</p>
+<p><a href="https://github.com/wangyangyangisme/MaterialUiSamplesQtQml" target="_blank" rel="noopener">MaterialUiSamplesQtQml)</a> </p>
+<p><a href="https://github.com/wangyangyangisme/Gurra" target="_blank" rel="noopener">Gurra</a>QML ui framework</p>
+<p><a href="https://github.com/wangyangyangisme/fluid" target="_blank" rel="noopener">fluid</a>Library for QtQuick apps with Material Design</p>
+<p><a href="https://github.com/wangyangyangisme/FlatUI" target="_blank" rel="noopener">FlatUI</a></p>
+<p><a href="https://github.com/wangyangyangisme/FlatUi2" target="_blank" rel="noopener">FlatUi2</a></p>
+<p><a href="https://github.com/wangyangyangisme/material" target="_blank" rel="noopener">material</a></p>
+<p><a href="https://github.com/wangyangyangisme/codesnippets-joona" target="_blank" rel="noopener">codesnippets-joona</a></p>
+<p><a href="https://github.com/wangyangyangisme/QuickFrame" target="_blank" rel="noopener">QuickFrame</a> 一个快速搭建Flat UI 的Qt Quick框架</p>
+<p><a href="https://github.com/wangyangyangisme/qml-material" target="_blank" rel="noopener">qml-material</a>一款已经封装好的框架材料</p>
+<h1 id="音视频"><a href="#音视频" class="headerlink" title="[音视频]"></a>[音视频]</h1><p><a href="https://github.com/wangyangyangisme/MvGather-qml" target="_blank" rel="noopener">MvGather-qml</a></p>
+<p><a href="https://github.com/wangyangyangisme/pmeas-frontend" target="_blank" rel="noopener">pmeas-frontend</a>pmeas-frontend is a frontend application to the pmeas-backend</p>
+<p><a href="https://github.com/wangyangyangisme/QmlVlcDemo" target="_blank" rel="noopener">QmlVlcDemo</a>Simple demo app for QmlVlc lib</p>
+<p><a href="https://github.com/wangyangyangisme/qml-audio-player" target="_blank" rel="noopener">qml-audio-player</a>Test QML/JS app created in QT5. App is an audio player with basic player functionalities.</p>
+<p><a href="https://github.com/wangyangyangisme/QFFmpeg-OpenAL" target="_blank" rel="noopener">QFFmpeg-OpenAL</a> </p>
+<p><a href="https://github.com/wangyangyangisme/VideoItem" target="_blank" rel="noopener">VideoItem</a>Wrap ffmpge api by c++ and register in qml. You can use the qml type VideoItem such as QtMutilMedia.</p>
+<p><a href="https://github.com/wangyangyangisme/AudioTestByFFmpeg" target="_blank" rel="noopener">AudioTestByFFmpeg)</a>Use ffmpeg decode audio file, QAudioOutput play the sound.</p>
+<h1 id="game"><a href="#game" class="headerlink" title="[game]"></a>[game]</h1><p><a href="https://github.com/wangyangyangisme/AirBattle-ga" target="_blank" rel="noopener">AirBattle-ga</a>A platoform-indipendent game written in QML/Javascript</p>
+<p><a href="https://github.com/wangyangyangisme/BattleCityQt" target="_blank" rel="noopener">BattleCityQt</a>Qt (C++/QML) Version of the classic game Battle City (1985)</p>
+<p><a href="https://github.com/wangyangyangisme/CuteEngine" target="_blank" rel="noopener">CuteEngine</a>QML Game Engine for Visual Novel and Adventure</p>
+<p><a href="https://github.com/wangyangyangisme/DeadAscend" target="_blank" rel="noopener">DeadAscend</a>A 2D point’n’click-like adventure game written in Qt/QML and Javascript</p>
+<p><a href="https://github.com/wangyangyangisme/gameframe-qml" target="_blank" rel="noopener">gameframe-qml</a>2D Physics Game Framework for QML using Box2D</p>
+<p><a href="https://github.com/leonardogcsoares/SlidingPuzzleQml" target="_blank" rel="noopener">SlidingPuzzleQml</a></p>
+<p><a href="https://github.com/wangyangyangisme/qmlplane" target="_blank" rel="noopener">qmlplane</a></p>
+<p><a href="https://github.com/wangyangyangisme/Player" target="_blank" rel="noopener">Player</a>EasyRPG Player is a program that allows to play games created with RPG Maker 2000 and 2003.</p>
+<h1 id="控件"><a href="#控件" class="headerlink" title="[控件]"></a>[控件]</h1><p><a href="https://github.com/qyvlik/CircularProgress.qml" target="_blank" rel="noopener">CircularProgress</a>CircularProgress</p>
+<p><a href="https://github.com/wangyangyangisme/CustomBusyIndicator-QML" target="_blank" rel="noopener">CustomBusyIndicator</a>A customizable BusyIndicator in Qt Quick / QML</p>
+<p><a href="https://github.com/wangyangyangisme/DigitalClock_cpp_qml" target="_blank" rel="noopener">DigitalClock_cpp_qml</a>Simple Digital clock (c++, Qt, QtQuick/QML #gui)</p>
+<p><a href="https://github.com/Harrix/Harrix-QML" target="_blank" rel="noopener">Harrix-QML</a>Set QML components. [Under Construction]</p>
+<p><a href="https://github.com/wangyangyangisme/sfm-qml" target="_blank" rel="noopener">sfm-qml</a></p>
+<p><a href="https://github.com/wangyangyangisme/qmlStyle" target="_blank" rel="noopener">qmlStyle</a>qt qml样式</p>
+<p><a href="https://github.com/wangyangyangisme/qmldemoswitch" target="_blank" rel="noopener">qmldemoswitch</a></p>
+<p><a href="https://github.com/wangyangyangisme/qmlcompletionbox" target="_blank" rel="noopener">qmlcompletionbox</a>Just an example of completion box in Qt with QtQuick</p>
+<p><a href="https://github.com/wangyangyangisme/QmlExplorer" target="_blank" rel="noopener">QmlExplorer</a>A Qt QML running environment and examples explorer app.</p>
+<p><a href="https://github.com/wangyangyangisme/qml-filedialog" target="_blank" rel="noopener">qml-filedialog</a>Qt Quick File picker (filedialog)</p>
+<p><a href="https://github.com/wangyangyangisme/QML-Loaders" target="_blank" rel="noopener">QML-Loaders</a>Loading animation implementations in QML</p>
+<p><a href="https://github.com/wangyangyangisme/qml-material-windows" target="_blank" rel="noopener">qml-material-windows</a></p>
+<p><a href="https://github.com/wangyangyangisme/QmlNavigationDrawer" target="_blank" rel="noopener">QmlNavigationDrawer</a></p>
+<p><a href="https://github.com/wangyangyangisme/qml-colorpicker" target="_blank" rel="noopener">qml-colorpicker</a>A basic colorpicker control made in Qt Quick/QML</p>
+<p><a href="https://github.com/wangyangyangisme/qml-triangle" target="_blank" rel="noopener">qml-triangle</a>how to make a triangle button in qml</p>
+<p><a href="https://github.com/wangyangyangisme/timePickerCircular" target="_blank" rel="noopener">timePickerCircular</a>QML control that lets you choose a time in a painless manner</p>
+<p><a href="https://github.com/wangyangyangisme/QmlReusableControls" target="_blank" rel="noopener">QmlReusableControls</a>Commonly used/needed QML controls to save time and quick embedd in your projects.</p>
+<p><a href="https://github.com/wangyangyangisme/QtQml_Clock" target="_blank" rel="noopener">QtQml_Clock</a></p>
+<p><a href="https://github.com/wangyangyangisme/QMLRearrangeableTreeView" target="_blank" rel="noopener">QMLRearrangeableTreeView</a>A list-based TreeView that can be rearranged with a mouse or touch device.</p>
+<p><a href="https://github.com/wangyangyangisme/qmlnotify" target="_blank" rel="noopener">qmlnotify</a>Awesome notification server in QMLs</p>
+<p><a href="https://github.com/wangyangyangisme/qmlplayground" target="_blank" rel="noopener">qmlplayground</a>Playground for QML components</p>
+<p><a href="https://github.com/wangyangyangisme/QMLSharedComponents" target="_blank" rel="noopener">QMLSharedComponents</a>Shared Components for Qt/QML</p>
+<p><a href="https://github.com/wangyangyangisme/PersianCalendar" target="_blank" rel="noopener">PersianCalendar</a>QML persian calendar also support gregorian</p>
+<p><a href="https://github.com/wangyangyangisme/qml-presenter" target="_blank" rel="noopener">qml-presenter</a>Simle QML-based app to show some slides.</p>
+<p><a href="https://github.com/wangyangyangisme/quickpromise" target="_blank" rel="noopener">quickpromise</a></p>
+<p><a href="https://github.com/wangyangyangisme/quickios" target="_blank" rel="noopener">quickios</a> QML Theme and Component Library for iOS</p>
+<p><a href="https://github.com/wangyangyangisme/quickandroid" target="_blank" rel="noopener">quickandroid</a>QML Theme and Component Library for Android</p>
+<p><a href="https://github.com/wangyangyangisme/translating-qml" target="_blank" rel="noopener">translating-qml</a> Demonstration of dynamic switching between languages in QML application</p>
+<p><a href="https://github.com/wangyangyangisme/GooeyEffects.qml" target="_blank" rel="noopener">GooeyEffects.qml</a>实现QQ粘性动画效果</p>
+<p><a href="https://github.com/wangyangyangisme/GlowingRect" target="_blank" rel="noopener">GlowingRect</a>Demo QML appshows Qt Graphical Effect</p>
+<p><a href="https://github.com/wangyangyangisme/QmlAssetExporter" target="_blank" rel="noopener">QmlAssetExporter</a></p>
+<p><a href="https://github.com/wangyangyangisme/MessageDialogIOSQml" target="_blank" rel="noopener">MessageDialogIOSQml</a>Native Qml MessageDialog for iOS</p>
+<p><a href="https://github.com/wangyangyangisme/qmlweb.components" target="_blank" rel="noopener">qmlweb.components</a>gui components for qmlweb</p>
+<p><a href="https://github.com/wangyangyangisme/qak" target="_blank" rel="noopener">qak</a>Qak aims to provide a set of helpful and reusable (Qt5) QML components.</p>
+<p><a href="https://github.com/wangyangyangisme/Machineface" target="_blank" rel="noopener">Machineface</a>User interface for Machinekit optimized for 3D printers and mobile devices </p>
+<p><a href="https://github.com/wangyangyangisme/ofxDatGui" target="_blank" rel="noopener">ofxDatGui</a>Simple to use, fully customizable, high-resolution graphical user interface for openFrameworks </p>
+<p><a href="https://github.com/wangyangyangisme/qml-creative-controls" target="_blank" rel="noopener">qml-creative-controls</a>QML controls for creative applications and creative coding</p>
+<p><a href="https://github.com/wangyangyangisme/TableEdit" target="_blank" rel="noopener">TableEdit</a>qml TableView 表格编辑器</p>
+<p><a href="https://github.com/wangyangyangisme/timekeeper" target="_blank" rel="noopener">timekeeper</a>Time Keeper - QML plasmoid for KDE</p>
+<p><a href="https://github.com/wangyangyangisme/SlideMenu" target="_blank" rel="noopener">SlideMenu)</a></p>
+<p><a href="https://github.com/wangyangyangisme/QMLCalendar" target="_blank" rel="noopener">QMLCalendar</a></p>
+<p><a href="https://github.com/wangyangyangisme/QmlGalleryclock" target="_blank" rel="noopener">QmlGalleryclock</a></p>
+<p><a href="https://github.com/wangyangyangisme/fancy-components" target="_blank" rel="noopener">fancy-components</a></p>
+<p><a href="https://github.com/wangyangyangisme/CircularProgress.qml" target="_blank" rel="noopener">CircularProgress.qml</a>CircularProgress</p>
+<h1 id="功能"><a href="#功能" class="headerlink" title="[功能]"></a>[功能]</h1><p><a href="https://github.com/wangyangyangisme/CppQML-PropPage" target="_blank" rel="noopener">CppQML-PropPage)</a>The example of using the c++ model (QAbstractListModel) with QML view (ListView)</p>
+<p><a href="https://github.com/wangyangyangisme/d3js-qml" target="_blank" rel="noopener">d3js-qml</a>d3.js visualization integrated into Qt (qml)</p>
+<p><a href="https://github.com/wangyangyangisme/FontAwesomeQML" target="_blank" rel="noopener">FontAwesomeQML</a>A FontAwesome wrapper for QML(Qt Quick)</p>
+<p><a href="https://github.com/wangyangyangisme/fontawesome.pri" target="_blank" rel="noopener">fontawesome.pri</a></p>
+<p><a href="https://github.com/wangyangyangisme/font-awesome-qml" target="_blank" rel="noopener">font-awesome-qml</a>Font Awesome in QML (Qt Quick)</p>
+<p><a href="https://github.com/wangyangyangisme/qml-iconfonts" target="_blank" rel="noopener">qml-iconfonts</a></p>
+<p><a href="https://github.com/wangyangyangisme/QtPicto" target="_blank" rel="noopener">QtPicto</a>Qt and Qml font awesome, material</p>
+<p><a href="https://github.com/wangyangyangisme/webontv-front-qml" target="_blank" rel="noopener">webontv-front-qml</a></p>
+<p><a href="https://github.com/wangyangyangisme/qml-twitterwall" target="_blank" rel="noopener">qml-twitterwall</a></p>
+<p><a href="https://github.com/wangyangyangisme/QMLTuts" target="_blank" rel="noopener">QMLTuts</a>Simple QML Repository following the VoidRealms youtube channel</p>
+<p><a href="https://github.com/wangyangyangisme/QMLText2" target="_blank" rel="noopener">QMLText2</a>Qt QML Text Module</p>
+<p><a href="https://github.com/wangyangyangisme/qml_cascadeflow_demo" target="_blank" rel="noopener">qml_cascadeflow_demo</a>简单粗暴的瀑布流布局</p>
+<p><a href="https://github.com/wangyangyangisme/QMLAutoResize" target="_blank" rel="noopener">QMLAutoResize</a>QML AutoResize</p>
+<p><a href="https://github.com/wangyangyangisme/qml-candy" target="_blank" rel="noopener">qml-candy</a>A sweet QML utility module</p>
+<p><a href="https://github.com/wangyangyangisme/QmlCurvedClippping" target="_blank" rel="noopener">QmlCurvedClippping</a>Smooth clipping along round edges in QML using shaders</p>
+<p><a href="https://github.com/wangyangyangisme/qml-extras" target="_blank" rel="noopener">qml-extras</a>Some functionality not provided by Qt Quick or provided in a worse way</p>
+<p><a href="https://github.com/wangyangyangisme/QmlGrid" target="_blank" rel="noopener">QmlGrid</a>This is a QML Data grid using Qt Quick Controls 2</p>
+<p><a href="https://github.com/wangyangyangisme/qmlpathview" target="_blank" rel="noopener">qmlpathview</a>基于QML PathView实现的一些效果</p>
+<p><a href="https://github.com/wangyangyangisme/qml-pusher" target="_blank" rel="noopener">qml-pusher</a> 推送</p>
+<p><a href="https://github.com/wangyangyangisme/QtAndroidSplash" target="_blank" rel="noopener">QtAndroidSplash</a>Example of let’s-say-native splash screen</p>
+<p><a href="https://github.com/wangyangyangisme/qtquick-palette-viewer" target="_blank" rel="noopener">qtquick-palette-viewer</a>A simple tool to view the current SystemPalette as seen by QtQuick Controls </p>
+<p><a href="https://github.com/wangyangyangisme/slime-engine" target="_blank" rel="noopener">slime-engine</a>A QML webview wrapper - Discontinued</p>
+<p><a href="https://github.com/wangyangyangisme/QMLShaderEffects" target="_blank" rel="noopener">QMLShaderEffects</a></p>
+<p><a href="https://github.com/wangyangyangisme/arcgis-runtime-toolkit-qt" target="_blank" rel="noopener">arcgis-runtime-toolkit-qt</a>ArcGIS Runtime SDK for Qt Toolkit</p>
+<p><a href="https://github.com/wangyangyangisme/better-sailfishos-qmltypes" target="_blank" rel="noopener">better-sailfishos-qmltypes</a></p>
+<p><a href="https://github.com/wangyangyangisme/qt-quick-responsive-helper" target="_blank" rel="noopener">qt-quick-responsive-helper</a>A simple toolbar for QtQuick based applications, to let developers test different resolutions and dpi settings easily. </p>
+<p><a href="https://github.com/wangyangyangisme/MyShoppingList" target="_blank" rel="noopener">MyShoppingList</a></p>
+<p><a href="https://github.com/wangyangyangisme/QRab" target="_blank" rel="noopener">QRab</a> 二维码</p>
+<p><a href="https://github.com/wangyangyangisme/QtQuickHotFix" target="_blank" rel="noopener">QtQuickHotFix</a>QtQuick Hot Fix. 尝试给 QtQuick 应用提供热补订技术。</p>
+<h1 id="数据库"><a href="#数据库" class="headerlink" title="[数据库]"></a>[数据库]</h1><p><a href="https://github.com/wangyangyangisme/sqml" target="_blank" rel="noopener">sqml</a>Simple layering CRUD (sqlite orm) for qml</p>
+<h1 id="通信"><a href="#通信" class="headerlink" title="[通信]"></a>[通信]</h1><p><a href="https://github.com/wangyangyangisme/qml-ajax" target="_blank" rel="noopener">qml-ajax</a>demo code for doing ajax via qml</p>
+<p><a href="https://github.com/wangyangyangisme/qml-sockets" target="_blank" rel="noopener">qml-sockets</a>Exposing Qt’s C++ socket objects to QML for declarative use.</p>
+<p><a href="https://github.com/wangyangyangisme/protobuf-qml" target="_blank" rel="noopener">protobuf-qml</a>Protocol Buffers and gRPC binding for QML (QtQuick2)</p>
+<p><a href="https://github.com/wangyangyangisme/qt-websocket-protobuf" target="_blank" rel="noopener">qt-websocket-protobuf</a></p>
+<p><a href="https://github.com/wangyangyangisme/BlockChainInfo.qml" target="_blank" rel="noopener">BlockChainInfo.qml</a>blockchain.info websocket api warp by qml</p>
+<p><a href="https://github.com/wangyangyangisme/HttpRequest" target="_blank" rel="noopener">HttpRequest</a>   `` 使用 Qt 的网络模块编写。通过注册到 QML 中，就可以像使用 <code>XMLHttpRequest</code> 那样使用了</p>
+<p><a href="https://github.com/wangyangyangisme/QmlNetwork" target="_blank" rel="noopener">QmlNetwork</a></p>
+<h1 id="camera"><a href="#camera" class="headerlink" title="[camera]"></a>[camera]</h1><p><a href="https://github.com/wangyangyangisme/QML-CameraTracker" target="_blank" rel="noopener">QML-CameraTracker</a></p>
+<p><a href="https://github.com/wangyangyangisme/qmlCamera" target="_blank" rel="noopener">qmlCamera</a>To get Camera data</p>
+<p><a href="https://github.com/wangyangyangisme/QMLCameraBeta" target="_blank" rel="noopener">QMLCameraBeta</a></p>
+<h1 id="粒子"><a href="#粒子" class="headerlink" title="[粒子]"></a>[粒子]</h1><p><a href="https://github.com/wangyangyangisme/qmlparticleeditor" target="_blank" rel="noopener">qmlparticleeditor</a>this tool allows you to easily create dynamic particle scenes</p>
+<p><a href="https://github.com/wangyangyangisme/QtParticleGraphWithQML" target="_blank" rel="noopener">QtParticleGraphWithQML</a></p>
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="[杂项]"></a>[杂项]</h1><p><a href="https://github.com/wangyangyangisme/amc-client" target="_blank" rel="noopener">amc-client</a> Qt5 c++, qml and javascript client to match amc-api</p>
+<p><a href="https://github.com/wangyangyangisme/QML_Material_Login" target="_blank" rel="noopener">QML_Material_Login</a></p>
+<p><a href="https://github.com/wangyangyangisme/qml-qt-snippets" target="_blank" rel="noopener">qml-qt-snippets</a>collection of useful snippets for qt/qml</p>
+<p><a href="https://github.com/wangyangyangisme/qml-singleton-issue" target="_blank" rel="noopener">qml-singleton-issue</a>  qml单例问题</p>
+<p><a href="https://github.com/wangyangyangisme/fluffy.qml" target="_blank" rel="noopener">fluffy.qml</a>Singleton thread for http handle in qml.</p>
+<p><a href="https://github.com/wangyangyangisme/qml-singleton-set-data" target="_blank" rel="noopener">qml-singleton-set-data</a></p>
+<p><a href="https://github.com/wangyangyangisme/qmlsoporte" target="_blank" rel="noopener">qmlsoporte</a></p>
+<p><a href="https://github.com/wangyangyangisme/LearnQML" target="_blank" rel="noopener">LearnQML</a>QML 与 C++混合编程</p>
+<p><a href="https://github.com/wangyangyangisme/tool" target="_blank" rel="noopener">tool</a></p>
+<p><a href="https://github.com/wangyangyangisme/DirectBroadcast.qml" target="_blank" rel="noopener">DirectBroadcast.qml</a>使用 <code>Camera</code> 将捕获的画面传送给 <code>VideoOutput</code> 展示</p>
+<p><a href="https://github.com/wangyangyangisme/InstanceOf.qml" target="_blank" rel="noopener">InstanceOf.qml</a>检查某个 QML 对象是否是某个类型的实例。</p>
+<p><a href="https://github.com/wangyangyangisme/QmlThread" target="_blank" rel="noopener">QmlThread</a>More powerful Thread module in QML.</p>
+<p><a href="https://github.com/wangyangyangisme/qml_snippets" target="_blank" rel="noopener">qml_snippets</a></p>
+<h1 id="Android"><a href="#Android" class="headerlink" title="[Android]"></a>[Android]</h1><p><a href="https://github.com/wangyangyangisme/StandardQtOnAndroid" target="_blank" rel="noopener">StandardQtOnAndroid</a>  QtQuick 开发安卓的模板项目</p>
+<p><a href="https://github.com/wangyangyangisme/quicknative" target="_blank" rel="noopener">quicknative</a>   封装了 Android 和 IOS 的原生对话框</p>
+<p><a href="https://github.com/wangyangyangisme/QtForAndroid" target="_blank" rel="noopener">QtForAndroid</a></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:null">Wang YangYang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://wangyangyangisme.github.io/2019/12/07/README-qml/">http://wangyangyangisme.github.io/2019/12/07/README-qml/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://wangyangyangisme.github.io" target="_blank">WangYangYang</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/README/">README</a></div><div class="post_share"><div class="addthis_inline_share_toolbox"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=null" async="async"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/76bc52296bcf2e0b7a1d628106ffcd52.png" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/donat/fab2285fdcd13ead0a8b4a853c659d03.jpg" alt="支付宝"/><div class="post-qr-code__desc">支付宝</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2019/12/07/README-vue/"><img class="prev_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">vue</div></div></a></div><div class="next-post pull_right"><a href="/2019/12/07/README-web/"><img class="next_cover lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">web</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fa fa-fw fa-thumbs-up" aria-hidden="true"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2019/12/07/README-CC++/" title="cc++"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-07</div><div class="relatedPosts_title">cc++</div></div></a></div><div class="relatedPosts_item"><a href="/2019/12/07/README-Qt/" title="Qt"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-07</div><div class="relatedPosts_title">Qt</div></div></a></div><div class="relatedPosts_item"><a href="/2019/12/07/README-algorithms/" title="algorithms"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-07</div><div class="relatedPosts_title">algorithms</div></div></a></div><div class="relatedPosts_item"><a href="/2019/12/07/README-architecture/" title="architecture"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-07</div><div class="relatedPosts_title">architecture</div></div></a></div><div class="relatedPosts_item"><a href="/2019/12/07/README-go/" title="go"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-07</div><div class="relatedPosts_title">go</div></div></a></div><div class="relatedPosts_item"><a href="/2019/12/07/README-embbeded/" title="embbeded"><img class="relatedPosts_cover lazyload"data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/cover/readme/c717b9d87da33c716fbec4b25842c177.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i> 2019-12-07</div><div class="relatedPosts_title">embbeded</div></div></a></div></div><div class="clear_both"></div></div><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div class="vcomment" id="vcomment"></div><script src="https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script><script>var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+
+window.valine = new Valine({
+  el:'#vcomment',
+  notify: true,
+  verify: false,
+  appId: '49gEIIGN7uRbL6vHhieSpBzM-MdYXbMMI',
+  appKey: 'uqts0urLKwikYQ0fKmIkMHBE',
+  placeholder: '请留下你的脚印',
+  avatar: 'monsterid',
+  meta: guest_info,
+  pageSize: '10',
+  lang: 'zh-cn',
+  recordIP: false,
+  serverURLs: ''
+});</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Wang YangYang</div><div class="framework-info"><span>驱动 </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://wangyangyangisme.github.io/">blog</a>!</div><div class="icp"><a><img class="icp-icon" src="/img/icp.png"/><span></span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="algolia-search"><div class="search-dialog__title" id="algolia-search-title">Algolia</div><div id="algolia-input-panel"><div id="algolia-search-input"></div></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-stats"></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/third-party/click_heart.js"></script><script src="/js/search/algolia.js"></script></body></html>
