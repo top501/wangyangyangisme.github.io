@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangyangyangisme.github.io/"/>
-  <updated>2020-03-30T05:16:06.784Z</updated>
+  <updated>2020-03-30T10:17:48.751Z</updated>
   <id>http://wangyangyangisme.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu安装mysql</title>
+    <link href="http://wangyangyangisme.github.io/2020/03/30/mysql-ubuntu%E5%AE%89%E8%A3%85mysql/"/>
+    <id>http://wangyangyangisme.github.io/2020/03/30/mysql-ubuntu安装mysql/</id>
+    <published>2020-03-30T09:38:36.000Z</published>
+    <updated>2020-03-30T10:17:48.751Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ubuntu安装mysql"><a href="#ubuntu安装mysql" class="headerlink" title="ubuntu安装mysql"></a>ubuntu安装mysql</h1><blockquote><p>ubuntu16.04</p></blockquote><p>apt-get资源库中mysql的最新版本为：mysql-5.7.29</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="一、卸载-清理残余"><a href="#一、卸载-清理残余" class="headerlink" title="一、卸载/清理残余"></a>一、卸载/清理残余</h3><p>1.查看mysql有没有已安装的依赖包</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --list|grep mysql</span><br></pre></td></tr></table></figure><p>先卸载mysql-common</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove mysql-common</span><br></pre></td></tr></table></figure><p>再执行：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get autoremove --purge mysql-server-5.0</span><br></pre></td></tr></table></figure><p>然后继续用 <code>dpkg --list|grep mysql</code> 查看，还剩什么就卸载什么；</p><h3 id="二、安装mysql"><a href="#二、安装mysql" class="headerlink" title="二、安装mysql"></a>二、安装mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#更新apt-get，更新后将会使用最新资源库</span></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line"><span class="comment">#安装MySQL:</span></span><br><span class="line">sudo apt-get install mysql-server</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看MySQL版本: </span></span><br><span class="line">mysql -V</span><br><span class="line"></span><br><span class="line"><span class="comment">#进入MySQL: </span></span><br><span class="line">mysql -u root -p</span><br><span class="line"><span class="comment">#启动: </span></span><br><span class="line">sudo service mysql start</span><br><span class="line"></span><br><span class="line"><span class="comment">#重启:</span></span><br><span class="line">sudo  service mysql restart </span><br><span class="line"></span><br><span class="line"><span class="comment">#关闭: </span></span><br><span class="line">sudo service mysql stop</span><br></pre></td></tr></table></figure><p><strong>Ubuntu16 - Ubuntu18安装mysql5.7未提示输入密码，mysql默认密码为空；直接登录即可；</strong></p><p>如果使用<code>mysql -uroot -p</code>命令连接mysql时，报错</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1045 (28000): Access denied <span class="keyword">for</span> user ‘root’@<span class="string">'localhost’</span></span><br></pre></td></tr></table></figure><p>此时修改root的默认密码即可：<br>1.进入到/etc/mysql/ 目录下，查看debian.cnf文件</p><p><img src="/" alt="img" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/mysql/install_mysql1.png"></p><p><img src="/" alt="img" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/mysql/install_mysql2.png"></p><p>2.找到用户名，密码 ，使用此账号登录mysql<br>用户名：debian-sys-maint<br>密码：sL1y1gRBbzlX6iyb<br>登录：<strong>mysql -udebian-sys-maint -psL1y1gRBbzlX6iyb</strong></p><p><img src="/" alt="img" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/mysql/install_mysql3.png"></p><p>3.修改root用户的的密码<br>这里是关键点，由于mysql5.7没有password字段，密码存储在authentication_string字段中，password()方法还能用在mysql中执行下面语句修改密码：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br><span class="line"><span class="keyword">use</span> mysql;</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> authentication_string=<span class="keyword">PASSWORD</span>(<span class="string">"123456"</span>) <span class="keyword">where</span> <span class="keyword">user</span>=<span class="string">'root'</span>;</span><br><span class="line"><span class="keyword">update</span> <span class="keyword">user</span> <span class="keyword">set</span> <span class="keyword">plugin</span>=<span class="string">"mysql_native_password"</span>;</span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br><span class="line">exit;</span><br></pre></td></tr></table></figure><p>4.修改完密码，需要重启mysql；再次登录就可以了；</p><p><em>如果这篇文章确实帮到了你，在这里，也请不要吝啬你的点赞 ~</em></p><h3 id="三、修改数据库编码格式"><a href="#三、修改数据库编码格式" class="headerlink" title="三、修改数据库编码格式"></a>三、修改数据库编码格式</h3><p>进入mysql命令行输入：<code>show variables like &#39;character%&#39;;</code></p><p>我们需要把database和server调成utf8即可；</p><p>首先我们找到mysqld.cnf文件：<code>find / -name mysqld.cnf</code></p><p><img src="/" alt="img" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/mysql/install_mysql4.png"></p><p>修改mysqld.cnf内容：在相应标签下添加即可（如下图），<strong>没有[mysql]标签就加上</strong>；</p><p><img src="/" alt="img" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/mysql/install_mysql5.png"></p><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">default-character-set</span>=utf8</span><br><span class="line"></span><br><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">character_set_server</span>=utf8</span><br><span class="line"><span class="attr">collation_server</span>=utf8_general_ci</span><br></pre></td></tr></table></figure><p>保存后重启mysql：<code>service mysql restart;</code>重启后再次登陆mysql命令行</p><p>输入<code>show variables like &#39;character%&#39;;</code></p><p>出现下图说明数据库配置完成；</p><p><img src="/" alt="img" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/mysql/install_mysql6.png"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;ubuntu安装mysql&quot;&gt;&lt;a href=&quot;#ubuntu安装mysql&quot; class=&quot;headerlink&quot; title=&quot;ubuntu安装mysql&quot;&gt;&lt;/a&gt;ubuntu安装mysql&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;ubuntu16.04&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="mysql" scheme="http://wangyangyangisme.github.io/categories/mysql/"/>
+    
+    
+      <category term="mysql" scheme="http://wangyangyangisme.github.io/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>goland远程调试</title>
@@ -487,32 +514,6 @@
     
       <category term="microservice" scheme="http://wangyangyangisme.github.io/categories/microservice/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>architecture</title>
-    <link href="http://wangyangyangisme.github.io/2019/12/07/README-architecture/"/>
-    <id>http://wangyangyangisme.github.io/2019/12/07/README-architecture/</id>
-    <published>2019-12-07T08:52:36.000Z</published>
-    <updated>2019-12-09T09:49:37.995Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/wangyangyangisme/architecture.of.internet-product" target="_blank" rel="noopener">architecture.of.internet-product</a> 互联网公司技术架构，微信/淘宝/微博/腾讯/阿里/美团点评/百度/Google/Facebook/Amazon/eBay的架构</p><p><a href="https://github.com/wangyangyangisme/architecture.taobao-alibaba" target="_blank" rel="noopener">architecture.taobao-alibaba</a> 互联网公司架构: 淘宝技术架构，阿里巴巴技术架构 </p><p><a href="https://github.com/wangyangyangisme/architecture.wechat-tencent" target="_blank" rel="noopener">architecture.wechat-tencent</a> 互联网公司架构: 微信技术架构， 腾讯技术架构 </p><p><a href="https://github.com/wangyangyangisme/architecture.meituan-dianping" target="_blank" rel="noopener">architecture.meituan-dianping</a> 互联网公司架构: 美团点评技术架构 </p><p><a href="https://github.com/wangyangyangisme/architect-awesome" target="_blank" rel="noopener">architect-awesome</a> 后端架构师技术图谱</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://github.com/wangyangyangisme/architecture.of.internet-product&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;architecture.of.internet-pr
-      
-    
-    </summary>
-    
-    
-      <category term="README" scheme="http://wangyangyangisme.github.io/categories/README/"/>
-    
-    
-      <category term="README" scheme="http://wangyangyangisme.github.io/tags/README/"/>
     
   </entry>
   
