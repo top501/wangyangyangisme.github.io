@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wangyangyangisme.github.io/"/>
-  <updated>2020-03-18T06:16:45.672Z</updated>
+  <updated>2020-03-30T05:16:06.784Z</updated>
   <id>http://wangyangyangisme.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>goland远程调试</title>
+    <link href="http://wangyangyangisme.github.io/2020/03/30/golang-goland%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
+    <id>http://wangyangyangisme.github.io/2020/03/30/golang-goland远程调试/</id>
+    <published>2020-03-30T05:38:36.000Z</published>
+    <updated>2020-03-30T05:16:06.784Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="goland远程调试"><a href="#goland远程调试" class="headerlink" title="goland远程调试"></a>goland远程调试</h1><blockquote><p>jetbrains golang: 2019.3</p><p>golang: 1.13</p></blockquote><h2 id="安装dlv"><a href="#安装dlv" class="headerlink" title="安装dlv"></a>安装dlv</h2><p><a href="https://github.com/go-delve/delve" target="_blank" rel="noopener">https://github.com/go-delve/delve</a></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mkdir $GOPATH/src</span><br><span class="line">mkdir $GOPATH/src/golang.org</span><br><span class="line">mkdir $GOPATH/src/golang.org/x</span><br><span class="line">cd $GOPATH/src/golang.org/x</span><br><span class="line">git clone https://github.com/golang/net.git</span><br><span class="line">git clone https://github.com/golang/sys.git</span><br><span class="line">git clone https://github.com/golang/arch.git</span><br><span class="line">git clone https://github.com/golang/sync.git</span><br><span class="line">git clone https://github.com/golang/tools.git</span><br><span class="line">cd $GOPATH/src</span><br><span class="line">go get -u github.com/go-delve/delve/cmd/dlv</span><br><span class="line"></span><br><span class="line">dlv version</span><br></pre></td></tr></table></figure><h2 id="golang配置"><a href="#golang配置" class="headerlink" title="golang配置"></a>golang配置</h2><p>在本地创建一个项目</p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote1.png"></p><p>添加远程服务器信息</p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote2.png"></p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote3.png"></p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote4.png"></p><p>添加远程主机的ip，指定登录的用户名和密码</p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote5.png"></p><p>这里映射远程主机的目录，目录名可以和本地的不一样<img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote6.png"></p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote7.png"></p><p>将本地代码上传到远程主机</p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote8.png"></p><p>配置远程调试</p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote9.png"></p><p>设置远程主机的ip</p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote10.png"></p><h2 id="运行调试"><a href="#运行调试" class="headerlink" title="运行调试"></a>运行调试</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /root/remote</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">dlv debug --headless --listen=:5002 --api-version=2 --accept-multiclient</span></span><br><span class="line"><span class="meta">#</span><span class="bash">加上--accept-multiclient选项后无法退出，这里就去掉这个选项</span></span><br><span class="line"><span class="meta">#</span><span class="bash">这个命令，同时完成了编译和运行，如果运行程序需要声明参数，直接加在后面就好</span></span><br><span class="line">dlv debug --headless --listen=:5002 --api-version=2</span><br></pre></td></tr></table></figure><p>在远程主机运行完上面的指令后，设置好断点，在golang ide中点击调试按钮即可</p><p><img src="/" alt="" class="lazyload" data-src="https://cdn.jsdelivr.net/gh/wangyangyangisme/CDN@latest/blog/golang/golang-remote11.png"></p><p>在本地可以查看变量，打印的日志本地是看不到的，在远程主机上才能看到</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;goland远程调试&quot;&gt;&lt;a href=&quot;#goland远程调试&quot; class=&quot;headerlink&quot; title=&quot;goland远程调试&quot;&gt;&lt;/a&gt;goland远程调试&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;jetbrains golang: 2019.3&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="goland" scheme="http://wangyangyangisme.github.io/categories/goland/"/>
+    
+    
+      <category term="debug" scheme="http://wangyangyangisme.github.io/tags/debug/"/>
+    
+  </entry>
   
   <entry>
     <title>golang实现无限级菜单</title>
@@ -464,46 +491,19 @@
   </entry>
   
   <entry>
-    <title>algorithms</title>
-    <link href="http://wangyangyangisme.github.io/2019/12/07/README-algorithms/"/>
-    <id>http://wangyangyangisme.github.io/2019/12/07/README-algorithms/</id>
+    <title>cc++</title>
+    <link href="http://wangyangyangisme.github.io/2019/12/07/README-CC++/"/>
+    <id>http://wangyangyangisme.github.io/2019/12/07/README-CC++/</id>
     <published>2019-12-07T08:52:36.000Z</published>
-    <updated>2019-12-09T09:49:37.994Z</updated>
+    <updated>2019-12-09T09:49:37.993Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://github.com/Dev-XYS/Algorithms" target="_blank" rel="noopener">Algorithms</a> 全面的算法代码仓库</p><p><a href="https://github.com/xtaci/algorithms" target="_blank" rel="noopener">algorithms</a> Algorithms &amp; Data structures in C++.</p><p><a href="https://github.com/nonstriater/Learn-Algorithms" target="_blank" rel="noopener">Learn-Algorithms</a> 算法学习笔记 </p><p><a href="https://github.com/fragglet/c-algorithms" target="_blank" rel="noopener">c-algorithms</a> A library of common data structures and algorithms written in C.</p><p><a href="https://github.com/TheAlgorithms/C" target="_blank" rel="noopener">C</a> All Algorithms implemented in C </p><p><a href="https://github.com/yourtion/LearningMasteringAlgorithms-C" target="_blank" rel="noopener">LearningMasteringAlgorithms-C</a> Mastering Algorithms with C 《算法精解：C语言描述》源码及Xcode工程、Linux工程 </p><p><a href="https://github.com/VAR-solutions/Algorithms" target="_blank" rel="noopener">Algorithms</a> Efficient Algorithms </p><p><a href="https://github.com/Thuva4/Algorithms" target="_blank" rel="noopener">Algorithms</a> Collection of algorithms in multiple programming languages. </p><p><a href="https://github.com/mandliya/algorithms_and_data_structures" target="_blank" rel="noopener">algorithms_and_data_structures</a> 180+ Algorithm &amp; Data Structure Problems using C++ </p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://github.com/wangyangyangisme/NIM_Duilib_Framework" target="_blank" rel="noopener">NIM_Duilib_Framework</a> 网易云信Windows应用界面开发框架（基于Duilib） </p><p><a href="https://github.com/wangyangyangisme/pubg-mobile-esp" target="_blank" rel="noopener">pubg-mobile-esp</a> 刺激战场腾讯模拟器透视+磁性自瞄 </p><p><a href="https://github.com/wangyangyangisme/easyserverdev" target="_blank" rel="noopener">easyserverdev</a> 操作系统层面提供的 API  socket API </p><p><a href="https://github.com/wangyangyangisme/QStudioSCADA" target="_blank" rel="noopener">QStudioSCADA</a> QStudioSCADA是一款集HMI，数据采集于一体的软件。</p><p><a href="https://github.com/wangyangyangisme/EasyLogger" target="_blank" rel="noopener">EasyLogger</a> 高性能的 C/C++ 日志库</p><p><a href="https://github.com/wangyangyangisme/Utils" target="_blank" rel="noopener">Utils</a> C/C++ 基础功能组件代码</p><p><a href="https://github.com/wangyangyangisme/Tachftp" target="_blank" rel="noopener">Tachftp</a> Linux下ftp服务器（仿vsftpd）</p><p><a href="https://github.com/wangyangyangisme/QtFtpServer" target="_blank" rel="noopener">QtFtpServer</a> QtFtpServer 基于QFtpServer </p><p><a href="https://github.com/wangyangyangisme/QFtpServer" target="_blank" rel="noopener">QFtpServer</a> QFtpServer - an FTP server written in Qt</p><p><a href="https://github.com/wangyangyangisme/jpeg_open" target="_blank" rel="noopener">jpeg_open</a> A hardware MJPEG encoder and RTP transmitter</p><p><a href="https://github.com/wangyangyangisme/qxmledit" target="_blank" rel="noopener">qxmledit</a> QXmlEdit XML editor</p><p><a href="https://github.com/wangyangyangisme/CycloneTCP" target="_blank" rel="noopener">CycloneTCP</a> Dual IPv4/IPv6 Stack</p><p><a href="https://github.com/wangyangyangisme/QtCustomControls" target="_blank" rel="noopener">QtCustomControls</a> Qt自定义控件</p><p><a href="https://github.com/wangyangyangisme/qntp" target="_blank" rel="noopener">qntp</a> NTP client implemented in C++ using Qt</p><p><a href="https://github.com/wangyangyangisme/ImageWidget-Qt" target="_blank" rel="noopener">ImageWidget-Qt</a> 画板</p><p><a href="https://github.com/wangyangyangisme/QCommandEdit" target="_blank" rel="noopener">QCommandEdit</a> A Qt widget, subclass of QLineEdit, for entering commands</p><p><a href="https://github.com/wangyangyangisme/architecture.of.internet-product" target="_blank" rel="noopener">architecture.of.internet-product</a> 互联网公司技术架构，微信/淘宝/微博/腾讯/阿里/美团点评/百度/Google/Facebook/Amazon/eBay的架构</p><p><a href="https://github.com/wangyangyangisme/be-a-professional-programmer" target="_blank" rel="noopener">be-a-professional-programmer</a> 成为专业程序员路上用到的各种优秀资料、神器及框架</p><p><a href="https://github.com/wangyangyangisme/SerialPortYmodem" target="_blank" rel="noopener">SerialPortYmodem</a> 串口通过 YMODEM 协议进行文件传输</p><p><a href="https://github.com/wangyangyangisme/q2c" target="_blank" rel="noopener">q2c</a> qmake &lt;-&gt; cmake convertor tool</p><p><a href="https://github.com/wangyangyangisme/SerialTool" target="_blank" rel="noopener">SerialTool</a> A cross platform Serial-Port/TCP/UDP debugging tool.</p><p><a href="https://github.com/wangyangyangisme/ntpclient" target="_blank" rel="noopener">ntpclient</a> NTP client.</p><p><a href="https://github.com/wangyangyangisme/MonitorStartup" target="_blank" rel="noopener">MonitorStartup</a> 用于检测软件使用启动，如果没有启动，自动启动软件</p><p><a href="https://github.com/wangyangyangisme/Opencv-module-build" target="_blank" rel="noopener">Opencv-module-build</a> Use different tools to compile the opencv module(Qt)</p><p><a href="https://github.com/wangyangyangisme/DFU-C-Sharp" target="_blank" rel="noopener">DFU-C-Sharp</a> 使用 C#语言写的一款基于TFTP协议的自动升级软件</p><p> <a href="https://github.com/wangyangyangisme/Graphics" target="_blank" rel="noopener">Graphics</a> 基于Qt+WebService的建模推演</p><p><a href="https://github.com/wangyangyangisme/QOffice" target="_blank" rel="noopener">QOffice</a> QOffice is an office UI framework for Qt.</p><p><a href="https://github.com/wangyangyangisme/swbox" target="_blank" rel="noopener">swbox</a></p><p><a href="https://github.com/wangyangyangisme/HTYInput" target="_blank" rel="noopener">HTYInput</a> Linux 平台基于 Qt 的拼音输入法程序(事件监听)</p><p><a href="https://github.com/wangyangyangisme/uModbusMaster" target="_blank" rel="noopener">uModbusMaster</a> modbus_Master|多主机|RTX支持|基本方法支持|归一化调用</p><p><a href="https://github.com/wangyangyangisme/access-controler-protocol" target="_blank" rel="noopener">access-controler-protocol</a> 门禁控制协议封装，C++</p><p><a href="https://github.com/maxritter/DIY-Thermocam" target="_blank" rel="noopener">DIY-Thermocam</a> diy红外设备</p><p><a href="https://github.com/wangyangyangisme/simple-modbus" target="_blank" rel="noopener">simple-modbus</a> 纯C语言实现，Modbus的一个子集</p><p><a href="https://github.com/wangyangyangisme/lepton3" target="_blank" rel="noopener">lepton3</a> C++ code on QT GUI for lepton v3, with 160x120 framesize, needs improvements !!</p><p><a href="https://github.com/wangyangyangisme/Flir_Camera" target="_blank" rel="noopener">Flir_Camera</a> F411_Flir</p><p><a href="https://github.com/wangyangyangisme/RQ_HMS" target="_blank" rel="noopener">RQ_HMS</a> 基于 Raspberry Pi 和 QT 的智能家居安防系统</p><p><a href="https://github.com/wangyangyangisme/Cows" target="_blank" rel="noopener">Cows</a> 奶牛健康信息采集</p><p><a href="https://github.com/wangyangyangisme/feiq" target="_blank" rel="noopener">feiq</a> 基于qt实现的mac版飞秋，遵循飞秋协议(飞鸽扩展协议)，支持多项飞秋特有功能</p><p><a href="https://github.com/wangyangyangisme/05-XBotHighCtrlBox" target="_blank" rel="noopener">XBotHighCtrlBox</a> Xbot高端控制盒项目所有资料</p><p><a href="https://github.com/wangyangyangisme/07-CRAB310" target="_blank" rel="noopener">07-CRAB310</a> 全向移动机器人项目资料</p><p><a href="https://github.com/wangyangyangisme/02-MyEasyPR" target="_blank" rel="noopener">02-MyEasyPR</a>车牌识别项目，主要是基于EasyPR</p><p><a href="https://github.com/wangyangyangisme/installer" target="_blank" rel="noopener">installer</a> InnoSetup高仿有道云笔记安装程序的脚本模板</p><p><a href="https://github.com/wangyangyangisme/OrderSystem" target="_blank" rel="noopener">OrderSystem</a> 使用Qt开发的一个简单的订餐系统</p><p><a href="https://github.com/wangyangyangisme/hzk-osd" target="_blank" rel="noopener">hzk-osd</a> 使用HZK16点阵字体库把字符转换为RGB555格式BMP图像，可用于视频叠加字符串OSD信息。</p><p><a href="https://github.com/wangyangyangisme/MultiCOMS" target="_blank" rel="noopener">MultiCOMS</a>4通道CMOS相机上位机项目描述：硬件FPGA进行CMOS图像采集</p><p><a href="https://github.com/wangyangyangisme/qmqtt-client" target="_blank" rel="noopener">qmqtt-client</a> MQTT Client GUI Written with Qt</p><p><a href="https://github.com/wangyangyangisme/iynaur-s-vector-drawing" target="_blank" rel="noopener">iynaur-s-vector-drawing</a> qt 画向量图</p><p> <a href="https://github.com/wangyangyangisme/GlobelCanTools" target="_blank" rel="noopener">GlobelCanTools </a>CAN通信的监视测试软件</p><p><a href="https://github.com/wangyangyangisme/tencent-open-source" target="_blank" rel="noopener">tencent-open-source</a> 腾讯开源作品整理</p><p><a href="https://github.com/wangyangyangisme/Open-Modbus-Poll-RTU" target="_blank" rel="noopener">Open-Modbus-Poll-RTU</a> Debug Modbus Protocol</p><p><a href="https://github.com/wangyangyangisme/daq" target="_blank" rel="noopener">daq</a> modbus数据采集，支持Tcp、串口。</p><p><a href="https://github.com/wangyangyangisme/DLMR-PDA" target="_blank" rel="noopener">DLMR-PDA</a> 电力抄表掌机</p><p><a href="https://github.com/wangyangyangisme/QAsioSocket" target="_blank" rel="noopener">QAsioSocket</a>把asio的socket操作封装成类似Qt Network类似的简单的api。</p><p><a href="https://github.com/wangyangyangisme/SuperCxHMI" target="_blank" rel="noopener">SuperCxHMI</a>监控组态软件</p><p><a href="https://github.com/wangyangyangisme/Device_Studio" target="_blank" rel="noopener">Device_Studio</a> 致力于使用Qt开发一款可以在多个平台运行的组态软件。</p><p><a href="https://github.com/wangyangyangisme/numeral-qt" target="_blank" rel="noopener">numeral-qt</a>Numeral format for Qt-based applications</p><p><a href="https://github.com/wangyangyangisme/CommLib" target="_blank" rel="noopener">CommLib</a>linux常用库,使用boost和标准库编写的常用库,包含线程池、内存池、通信、日志、时间处理、定时器</p><p><a href="https://github.com/wangyangyangisme/poco" target="_blank" rel="noopener">poco</a> ThePOCO C++ Libraries are powerful cross-platform C++ libraries for building network- and internet-based applications that run on desktop, server, mobile, IoT, and embedded systems.</p><p>freeglut<br><a href="http://freeglut.sourceforge.net/index.php#download" target="_blank" rel="noopener">http://freeglut.sourceforge.net/index.php#download</a><br><a href="https://www.transmissionzero.co.uk/software/freeglut-devel/" target="_blank" rel="noopener">https://www.transmissionzero.co.uk/software/freeglut-devel/</a></p><p>glew<br><a href="https://sourceforge.net/projects/glew/files/glew/" target="_blank" rel="noopener">https://sourceforge.net/projects/glew/files/glew/</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;https://github.com/Dev-XYS/Algorithms&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Algorithms&lt;/a&gt; 全面的算法代码仓库&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.co
-      
-    
-    </summary>
-    
-    
-      <category term="README" scheme="http://wangyangyangisme.github.io/categories/README/"/>
-    
-    
-      <category term="README" scheme="http://wangyangyangisme.github.io/tags/README/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>architecture</title>
-    <link href="http://wangyangyangisme.github.io/2019/12/07/README-architecture/"/>
-    <id>http://wangyangyangisme.github.io/2019/12/07/README-architecture/</id>
-    <published>2019-12-07T08:52:36.000Z</published>
-    <updated>2019-12-09T09:49:37.995Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://github.com/wangyangyangisme/architecture.of.internet-product" target="_blank" rel="noopener">architecture.of.internet-product</a> 互联网公司技术架构，微信/淘宝/微博/腾讯/阿里/美团点评/百度/Google/Facebook/Amazon/eBay的架构</p><p><a href="https://github.com/wangyangyangisme/architecture.taobao-alibaba" target="_blank" rel="noopener">architecture.taobao-alibaba</a> 互联网公司架构: 淘宝技术架构，阿里巴巴技术架构 </p><p><a href="https://github.com/wangyangyangisme/architecture.wechat-tencent" target="_blank" rel="noopener">architecture.wechat-tencent</a> 互联网公司架构: 微信技术架构， 腾讯技术架构 </p><p><a href="https://github.com/wangyangyangisme/architecture.meituan-dianping" target="_blank" rel="noopener">architecture.meituan-dianping</a> 互联网公司架构: 美团点评技术架构 </p><p><a href="https://github.com/wangyangyangisme/architect-awesome" target="_blank" rel="noopener">architect-awesome</a> 后端架构师技术图谱</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://github.com/wangyangyangisme/architecture.of.internet-product&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;architecture.of.internet-pr
+        &lt;p&gt;&lt;a href=&quot;https://github.com/wangyangyangisme/NIM_Duilib_Framework&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NIM_Duilib_Framework&lt;/a&gt; 网易云信Windows应用界
       
     
     </summary>
