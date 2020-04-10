@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wangyangyangisme.github.io/2019/12/07/README-go/</loc>
+    
+    <lastmod>2020-04-10T07:04:39.344Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wangyangyangisme.github.io/2019/12/07/README-web/</loc>
     
     <lastmod>2020-04-08T09:54:23.809Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://wangyangyangisme.github.io/2020/03/30/mysql-ubuntu%25E5%25AE%2589%25E8%25A3%2585mysql/</loc>
     
     <lastmod>2020-03-30T10:17:48.751Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wangyangyangisme.github.io/2019/12/07/README-go/</loc>
-    
-    <lastmod>2020-03-30T06:38:34.149Z</lastmod>
     
   </url>
   
@@ -247,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://wangyangyangisme.github.io/2019/12/07/README-library/</loc>
+    <loc>http://wangyangyangisme.github.io/2019/12/07/README-js-plugin/</loc>
     
     <lastmod>2019-12-09T09:49:38.001Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wangyangyangisme.github.io/2019/12/07/README-js-plugin/</loc>
+    <loc>http://wangyangyangisme.github.io/2019/12/07/README-library/</loc>
     
     <lastmod>2019-12-09T09:49:38.001Z</lastmod>
     
